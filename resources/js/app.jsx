@@ -8,7 +8,7 @@ const appName = "Stellar";
 
 createInertiaApp({
     title: (title) =>
-        title == "index" ? ` ${appName}` : ` ${appName} - ${title}`,
+        title == "index" ? ` ${appName} - Jardin` : ` ${appName} - ${title}`,
     resolve: (name) =>
         resolvePageComponent(
             `./Pages/${name}.jsx`,

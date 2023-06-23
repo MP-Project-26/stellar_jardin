@@ -2,6 +2,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Head } from "@inertiajs/react";
 import Aos from "aos";
+import "aos/dist/aos.css";
+import { initFlowbite } from "flowbite";
 import React from "react";
 import { useEffect } from "react";
 
@@ -10,9 +12,11 @@ export default function Layout({ children, title }) {
         Aos.init({
             once: true,
             disable: "phone",
-            duration: 600,
+            duration: 1200,
             easing: "ease-out-sine",
         });
+
+        initFlowbite();
     }, []);
     return (
         <>

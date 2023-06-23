@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 import React from "react";
 import { useEffect } from "react";
-import Logo from "../../assets/Logo.png";
+import Logo from "@/assets/Logo.png";
 
 export default function Navbar() {
     const location = window.location.pathname;
@@ -24,7 +24,7 @@ export default function Navbar() {
                 location === "/" && scroll <= 1.5
                     ? " bg-transparent backdrop-blur-[6px] text-white"
                     : "bg-green-custom shadow-lg text-white"
-            } lg:px-[4rem]  px-0 mt-0 sticky top-0 z-30 transition-all duration-180 ease-in-out `}
+            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-30 transition-all duration-180 ease-in-out `}
         >
             <div className="navbar">
                 <div className="navbar-start">

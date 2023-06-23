@@ -1,12 +1,16 @@
 import Layout from "@/Layout/Layout";
-import Slider from "@/components/ui/Slider";
+import AboutUs from "@/components/ui/About";
+import Carousel from "@/components/ui/Carousal";
 import React from "react";
 
 const Index = () => {
     return (
         <Layout title="index">
-            <Slider />
-            <div className=" h-[40vh]"></div>
+            <Carousel />
+            <AboutUs />
+            <AboutUs />
+            <AboutUs />
+            <AboutUs />
         </Layout>
     );
 };

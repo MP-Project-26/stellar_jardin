@@ -13,13 +13,14 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                sans: ["Saira Condensed", ...defaultTheme.fontFamily.sans],
             },
         },
     },
     darkMode: "class",
     daisyui: {
-        themes: ["cupcake"],
+        themes: ["cupcake"], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
+        base: false, // applies background color and foreground color for root element by default
     },
 
     plugins: [forms, require("daisyui")],

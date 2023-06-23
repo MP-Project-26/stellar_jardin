@@ -1,6 +1,7 @@
 import { Link } from "@inertiajs/react";
 import React from "react";
 import { useEffect } from "react";
+import Logo from "../../assets/Logo.png";
 
 export default function Navbar() {
     const location = window.location.pathname;
@@ -21,9 +22,9 @@ export default function Navbar() {
         <nav
             className={`w-full ${
                 location === "/" && scroll <= 1.5
-                    ? " bg-transparent"
-                    : "bg-green-custom"
-            } lg:px-[14rem] px-0 mt-0 sticky top-0 z-30  shadow-xl`}
+                    ? " bg-transparent backdrop-blur-[6px] text-white"
+                    : "bg-green-custom shadow-lg text-white"
+            } lg:px-[4rem]  px-0 mt-0 sticky top-0 z-30 transition-all duration-180 ease-in-out `}
         >
             <div className="navbar">
                 <div className="navbar-start">
@@ -46,63 +47,128 @@ export default function Navbar() {
                         </label>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-sm w-52"
+                            className="menu menu-sm dropdown-content mt-3 z-[1] py-2 px-6 shadow bg-base-100 rounded-sm w-52"
                         >
                             <li>
-                                <Link className=" font-extrabold text-lg text-white">
+                                <Link
+                                    href="/"
+                                    className=" font-semibold text-xl "
+                                >
                                     HOME
                                 </Link>
                             </li>
                             <li>
-                                <Link className=" font-extrabold text-lg text-white">
+                                <Link
+                                    href="/about"
+                                    className=" font-semibold text-xl "
+                                >
                                     ABOUT
                                 </Link>
                             </li>
                             <li>
-                                <Link className=" font-extrabold text-lg text-white">
-                                    TYPE
-                                </Link>
+                                <span className=" font-semibold text-xl ">
+                                    Type
+                                </span>
+                                <ul className="p-2">
+                                    <li>
+                                        <Link className=" font-semibold text-xl ">
+                                            Type
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className=" font-semibold text-xl ">
+                                            Custom
+                                        </Link>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
-                                <Link className=" font-extrabold text-lg text-white">
+                                <Link
+                                    href="/blog"
+                                    className=" font-semibold text-xl "
+                                >
                                     BLOG
                                 </Link>
                             </li>
                             <li>
-                                <Link className=" font-extrabold text-lg text-white  bg-yellow-custom rounded-r-[3rem] rounded-tl-none rounded-bl-[3rem]">
+                                <Link
+                                    href="/buy"
+                                    className=" font-semibold text-xl   bg-yellow-custom rounded-r-[3rem] rounded-tl-none rounded-bl-[3rem] px-[2rem]"
+                                >
                                     BUY
                                 </Link>
                             </li>
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl">
-                        daisyUI
+                    <Link href="/">
+                        <img
+                            src={Logo}
+                            alt="Logo"
+                            className="w-[4rem] lg:w-[6rem] cursor-pointer"
+                        />
                     </Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li>
-                            <Link className=" font-extrabold text-lg text-white">
+                            <Link href="/" className=" font-semibold text-xl ">
                                 HOME
                             </Link>
                         </li>
                         <li>
-                            <Link className=" font-extrabold text-lg text-white">
+                            <Link
+                                href="/about"
+                                className=" font-semibold text-xl "
+                            >
                                 ABOUT
                             </Link>
                         </li>
-                        <li>
-                            <Link className=" font-extrabold text-lg text-white">
-                                TYPE
-                            </Link>
+                        <li tabIndex={0}>
+                            <details>
+                                <summary className=" font-semibold text-xl ">
+                                    Type
+                                </summary>
+                                <ul
+                                    className="p-2"
+                                    style={
+                                        location === "/" && scroll <= 1.5
+                                            ? {
+                                                  backgroundColor:
+                                                      "transparent",
+                                                  marginTop: "-.1rem",
+                                              }
+                                            : {
+                                                  backgroundColor: "#0D7377",
+                                                  marginTop: "-.1rem",
+                                              }
+                                    }
+                                >
+                                    <li>
+                                        <Link className=" font-semibold text-xl ">
+                                            Type
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className=" font-semibold text-xl ">
+                                            Custom
+                                        </Link>
+                                    </li>
+                                </ul>{" "}
+                            </details>
                         </li>
                         <li>
-                            <Link className=" font-extrabold text-lg text-white">
+                            <Link
+                                href="/blog"
+                                className=" font-semibold text-xl "
+                            >
                                 BLOG
                             </Link>
                         </li>
                         <li>
-                            <Link className=" font-extrabold text-lg text-white  bg-yellow-custom rounded-r-[3rem] rounded-tl-none rounded-bl-[3rem]">
+                            <Link
+                                href="/buy"
+                                className=" font-semibold text-xl   bg-yellow-custom rounded-r-[3rem] rounded-tl-none rounded-bl-[3rem] px-[2rem]"
+                            >
                                 BUY
                             </Link>
                         </li>

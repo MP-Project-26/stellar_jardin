@@ -1,4 +1,7 @@
 import { Carousel as DCarousel } from "@material-tailwind/react";
+import ImageCarousel1 from "@/assets/carousal1.png";
+import ImageCarousel2 from "@/assets/carousal2.png";
+import ImageCarousel3 from "@/assets/carousal3.png";
 
 export default function Carousel() {
     return (
@@ -12,10 +15,10 @@ export default function Carousel() {
                     {new Array(length).fill("").map((_, i) => (
                         <span
                             key={i}
-                            className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                            className={`block h-3 cursor-pointer rounded-2xl transition-all content-[''] ${
                                 activeIndex === i
-                                    ? "bg-white w-8"
-                                    : "bg-white/50 w-4"
+                                    ? "bg-white w-14"
+                                    : "bg-white/50 w-6"
                             }`}
                             onClick={() => setActiveIndex(i)}
                         />
@@ -24,20 +27,21 @@ export default function Carousel() {
             )}
         >
             <img
-                src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                src={ImageCarousel1}
                 alt="image 1"
                 className="h-full w-full object-cover"
             />
             <img
-                src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                alt="image 2"
+                src={ImageCarousel2}
+                alt="image 1"
                 className="h-full w-full object-cover"
             />
             <img
-                src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-                alt="image 3"
+                src={ImageCarousel3}
+                alt="image 1"
                 className="h-full w-full object-cover"
             />
+          
         </DCarousel>
     );
 }

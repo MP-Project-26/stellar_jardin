@@ -20,8 +20,26 @@
         @apply bg-[#FFDE59]
     }
 
+    .text-yellow-custom {
+        @apply text-[#FFDE59]
+    }
+
+    .border-yellow-custom {
+        @apply border-[#FFDE59]
+    }
+
     .bg-green-custom {
         @apply bg-[#0D7377]
     }
+
+    .text-green-custom {
+        @apply text-[#0D7377]
+    }
+
+    .border-green-custom {
+        @apply border-[#0D7377]
+    }
+
+
 
 }

@@ -1,9 +1,14 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1.png";
+import ImageOurBlog1 from "@/assets/bg-kanan.png";
+import ImageOur1 from "@/assets/ourblog1-1.png";
+import ImageOur2 from "@/assets/ourblog1-2.png";
+import ImageOur3 from "@/assets/ourblog1-3.png";
+
 import ImageOurBlog2 from "@/assets/ourblog2.png";
 import ImageOurBlog3 from "@/assets/ourblog3.png";
 import Elipse1 from "@/assets/Ellipse1.png";
 import { Link } from "@inertiajs/react";
+import HomeImage from "../HomeImage";
 
 export default function OurBlog() {
     return (
@@ -30,17 +35,9 @@ export default function OurBlog() {
                         </span>
                     </div>
                     <div className="flex flex-col items-center justify-center space-y-10">
-                        <div className="flex flex-row items-center justify-around px-[1rem] gap-[3rem]">
-                            <img
-                                src={ImageOurBlog1}
-                                className=" w-[130rem] rounded-xl  filter-[sepia(100%) saturate(100%) hue-rotate(180deg)]]]"
-                                alt=""
-                                data-aos="fade-up-right"
-                                data-aos-easing="ease-out-cubic"
-                                data-aos-duration="1000"
-                            />
+                        <HomeImage src={ImageOur1} bg={false}>
                             <div
-                                className="flex flex-col gap-8 relative"
+                                className="flex flex-col gap-8 relative w-[50%]"
                                 data-aos="zoom-in-down"
                             >
                                 <img
@@ -80,15 +77,15 @@ export default function OurBlog() {
                                     </Link>
                                 </div>
                             </div>
-                        </div>
+                        </HomeImage>
                     </div>
                 </div>
             </div>
             <div className="py-[12rem] px-[6rem] bg-white">
                 <div className="flex flex-col items-center justify-center space-y-10">
-                    <div className="flex flex-row items-center justify-around px-[1rem] gap-[3rem]">
+                    <HomeImage src={ImageOur2} bg={true}>
                         <div
-                            className="flex flex-col gap-8 relative"
+                            className="flex flex-col gap-8 relative w-[50%]"
                             data-aos="zoom-in-down"
                         >
                             <img
@@ -125,31 +122,15 @@ export default function OurBlog() {
                                     MORE
                                 </Link>
                             </div>
-                        </div>
-                        <img
-                            src={ImageOurBlog2}
-                            className=" w-[130rem] rounded-xl filter-[sepia(100%) saturate(100%) hue-rotate(180deg)]]]"
-                            alt=""
-                            data-aos="fade-up-right"
-                            data-aos-easing="ease-out-cubic"
-                            data-aos-duration="1000"
-                        />
-                    </div>
+                        </div>{" "}
+                    </HomeImage>
                 </div>
             </div>
             <div className="py-[12rem] px-[6rem] bg-gray-200">
                 <div className="flex flex-col items-center justify-center space-y-10">
-                    <div className="flex flex-row items-center justify-around px-[1rem] gap-[3rem]">
-                        <img
-                            src={ImageOurBlog3}
-                            className=" w-[130rem] rounded-xl  filter-[sepia(100%) saturate(100%) hue-rotate(180deg)]]]"
-                            alt=""
-                            data-aos="fade-up-right"
-                            data-aos-easing="ease-out-cubic"
-                            data-aos-duration="1000"
-                        />
+                    <HomeImage src={ImageOur3} bg={false}>
                         <div
-                            className="flex flex-col gap-8 relative"
+                            className="flex flex-col gap-8 relative w-[50%]"
                             data-aos="zoom-in-down"
                         >
                             <img
@@ -188,7 +169,7 @@ export default function OurBlog() {
                                 </Link>
                             </div>
                         </div>
-                    </div>
+                    </HomeImage>
                 </div>
             </div>
         </>

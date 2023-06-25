@@ -18,19 +18,30 @@ use Inertia\Inertia;
 
 
 Route::get('/', function () {
-    return Inertia::render('Index', [
-        'title' => 'Kontol',
-    ]);
+    return Inertia::render('Index');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/about', function () {
+    return Inertia::render('About');
 });
+Route::get('/type', function () {
+    return Inertia::render('Type');
+});
+Route::get('/blog', function () {
+    return Inertia::render('Blog');
+});
+Route::get('/buy', function () {
+    return Inertia::render('Buy');
+});
+
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 require __DIR__ . '/auth.php';

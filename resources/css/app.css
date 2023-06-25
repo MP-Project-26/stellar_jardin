@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    body {
+        font-family: 'Saira Condensed', sans-serif;
+    }
+}
+
+
+
+@layer components {
+
+    .bg-yellow-custom {
+        @apply bg-[#FFDE59]
+    }
+
+    .text-yellow-custom {
+        @apply text-[#FFDE59]
+    }
+
+    .border-yellow-custom {
+        @apply border-[#FFDE59]
+    }
+
+    .bg-green-custom {
+        @apply bg-[#0D7377]
+    }
+
+    .text-green-custom {
+        @apply text-[#0D7377]
+    }
+
+    .border-green-custom {
+        @apply border-[#0D7377]
+    }
+
+
+
+}

@@ -1,34 +1,143 @@
 {
-  "resources/js/Pages/Home/Home.jsx": {
-    "file": "assets/Home-82e14e10.js",
+  "Layout.css": {
+    "file": "assets/Layout-73168167.css",
+    "src": "Layout.css"
+  },
+  "_Layout-75d9813d.js": {
+    "assets": [
+      "assets/Logo-1ca1936a.png"
+    ],
+    "css": [
+      "assets/Layout-73168167.css"
+    ],
+    "file": "assets/Layout-75d9813d.js",
     "imports": [
       "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/About.jsx": {
+    "file": "assets/About-e8fb3afb.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-75d9813d.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Home/Home.jsx"
+    "src": "resources/js/Pages/About.jsx"
+  },
+  "resources/js/Pages/Blog.jsx": {
+    "file": "assets/Blog-e6ff9b8a.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-75d9813d.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Blog.jsx"
+  },
+  "resources/js/Pages/Buy.jsx": {
+    "file": "assets/Buy-d46da700.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-75d9813d.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Buy.jsx"
   },
   "resources/js/Pages/Index.jsx": {
-    "file": "assets/Index-30b823f4.js",
+    "assets": [
+      "assets/aboutUs-50dd1a9e.png",
+      "assets/carousal1-86a2b900.png",
+      "assets/carousal2-1639965d.png",
+      "assets/carousal3-5135a8f0.png",
+      "assets/ourblog1-5066dada.png",
+      "assets/ourblog2-04adfe79.png",
+      "assets/ourblog3-479b6fcc.png",
+      "assets/Ellipse1-a4b7e5c3.png",
+      "assets/map1-6980d399.png",
+      "assets/map2-d42618eb.png",
+      "assets/map3-43c94822.png"
+    ],
+    "file": "assets/Index-8195dd9e.js",
     "imports": [
-      "resources/js/app.jsx"
+      "resources/js/app.jsx",
+      "_Layout-75d9813d.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Index.jsx"
   },
+  "resources/js/Pages/Type.jsx": {
+    "file": "assets/Type-5a9aea5d.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-75d9813d.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Type.jsx"
+  },
   "resources/js/app.css": {
-    "file": "assets/app-d235a30e.css",
+    "file": "assets/app-a521372d.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.jsx": {
     "css": [
-      "assets/app-d235a30e.css"
+      "assets/app-a521372d.css"
     ],
     "dynamicImports": [
-      "resources/js/Pages/Home/Home.jsx",
-      "resources/js/Pages/Index.jsx"
+      "resources/js/Pages/About.jsx",
+      "resources/js/Pages/Blog.jsx",
+      "resources/js/Pages/Buy.jsx",
+      "resources/js/Pages/Index.jsx",
+      "resources/js/Pages/Type.jsx"
     ],
-    "file": "assets/app-da0cccff.js",
+    "file": "assets/app-6fd0e613.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
+  },
+  "resources/js/assets/Ellipse1.png": {
+    "file": "assets/Ellipse1-a4b7e5c3.png",
+    "src": "resources/js/assets/Ellipse1.png"
+  },
+  "resources/js/assets/Logo.png": {
+    "file": "assets/Logo-1ca1936a.png",
+    "src": "resources/js/assets/Logo.png"
+  },
+  "resources/js/assets/aboutUs.png": {
+    "file": "assets/aboutUs-50dd1a9e.png",
+    "src": "resources/js/assets/aboutUs.png"
+  },
+  "resources/js/assets/carousal1.png": {
+    "file": "assets/carousal1-86a2b900.png",
+    "src": "resources/js/assets/carousal1.png"
+  },
+  "resources/js/assets/carousal2.png": {
+    "file": "assets/carousal2-1639965d.png",
+    "src": "resources/js/assets/carousal2.png"
+  },
+  "resources/js/assets/carousal3.png": {
+    "file": "assets/carousal3-5135a8f0.png",
+    "src": "resources/js/assets/carousal3.png"
+  },
+  "resources/js/assets/map1.png": {
+    "file": "assets/map1-6980d399.png",
+    "src": "resources/js/assets/map1.png"
+  },
+  "resources/js/assets/map2.png": {
+    "file": "assets/map2-d42618eb.png",
+    "src": "resources/js/assets/map2.png"
+  },
+  "resources/js/assets/map3.png": {
+    "file": "assets/map3-43c94822.png",
+    "src": "resources/js/assets/map3.png"
+  },
+  "resources/js/assets/ourblog1.png": {
+    "file": "assets/ourblog1-5066dada.png",
+    "src": "resources/js/assets/ourblog1.png"
+  },
+  "resources/js/assets/ourblog2.png": {
+    "file": "assets/ourblog2-04adfe79.png",
+    "src": "resources/js/assets/ourblog2.png"
+  },
+  "resources/js/assets/ourblog3.png": {
+    "file": "assets/ourblog3-479b6fcc.png",
+    "src": "resources/js/assets/ourblog3.png"
   }
 }

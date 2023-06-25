@@ -24,6 +24,15 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return Inertia::render('About');
 });
+Route::get('/type', function () {
+    return Inertia::render('Type');
+});
+Route::get('/blog', function () {
+    return Inertia::render('Blog');
+});
+Route::get('/buy', function () {
+    return Inertia::render('Buy');
+});
 
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');

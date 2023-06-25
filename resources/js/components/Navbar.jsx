@@ -22,7 +22,7 @@ export default function Navbar() {
         <nav
             className={`w-full ${
                 location === "/" && scroll <= 1.5
-                    ? " bg-transparent backdrop-blur-[4px] text-white"
+                    ? " bg-transparent backdrop-blur-[6px] text-white"
                     : "bg-green-custom shadow-lg text-white"
             } lg:px-[10rem] px-0 mt-0 sticky top-0 z-[200] transition-all duration-180 ease-in-out `}
         >

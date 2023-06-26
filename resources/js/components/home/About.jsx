@@ -4,9 +4,9 @@ import { Link } from "@inertiajs/react";
 
 const AboutUs = () => {
     return (
-        <div className="py-[12rem] px-[6rem]">
+        <div className="py-[12rem] px-0 md:px-[13rem]">
             <div className="flex flex-col items-center justify-center space-y-10">
-                <div className="flex flex-row items-center justify-around px-[1rem] gap-[3rem]">
+                <div className="flex flex-col md:flex-row items-center justify-around px-[1rem] gap-[3rem]">
                     <img
                         src={ImageAbout}
                         className=" w-[130rem] rounded-xl bg-white filter-[sepia(100%) saturate(100%) hue-rotate(180deg)]]]"

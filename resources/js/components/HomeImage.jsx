@@ -6,9 +6,9 @@ export default function HomeImage({ src, bg, children }) {
     return (
         <>
             {bg ? (
-                <div className="flex flex-row items-center justify-around px-[1rem] gap-[3rem]">
+                <div className="flex flex-col md:flex-row items-center justify-around px-[1rem] gap-[3rem]">
                     {" "}
-                    <div className="pl-14 w-[50%]">
+                    <div className="pl-14 w-full md:w-[50%]">
                         <div className="relative">
                             <img
                                 src={src}
@@ -31,9 +31,9 @@ export default function HomeImage({ src, bg, children }) {
                     {children}
                 </div>
             ) : (
-                <div className="flex flex-row items-center justify-around px-[1rem] gap-[3rem]">
+                <div className="flex flex-col md:flex-row items-center justify-around px-[1rem] gap-[3rem]">
                     {children}
-                    <div className="px-10 w-[50%]">
+                    <div className="px-10 w-full md:w-[50%]">
                         <div className="relative">
                             <img
                                 src={src}

@@ -13,7 +13,7 @@ import HomeImage from "../HomeImage";
 export default function OurBlog() {
     return (
         <>
-            <div className="py-[12rem] px-[6rem] bg-gray-200">
+            <div className="py-[12rem] px-0 md:px-[13rem] bg-gray-200">
                 <div className="flex flex-col items-center justify-center gap-8 ">
                     <div
                         className="text-6xl font-extrabold flex flex-col items-center gap-6 mb-6"
@@ -34,7 +34,7 @@ export default function OurBlog() {
                             </svg>
                         </span>
                     </div>
-                    <div className="flex flex-col items-center justify-center space-y-10">
+                    <div className="flex flex-col md:flex-row items-center justify-center space-y-10">
                         <HomeImage src={ImageOur1} bg={false}>
                             <div
                                 className="flex flex-col gap-8 relative w-[50%]"
@@ -81,8 +81,8 @@ export default function OurBlog() {
                     </div>
                 </div>
             </div>
-            <div className="py-[12rem] px-[6rem] bg-white">
-                <div className="flex flex-col items-center justify-center space-y-10">
+            <div className="py-[12rem] px-0 md:px-[13rem] bg-white">
+                <div className="flex flex-row items-center justify-center space-y-10">
                     <HomeImage src={ImageOur2} bg={true}>
                         <div
                             className="flex flex-col gap-8 relative w-[50%]"
@@ -126,8 +126,8 @@ export default function OurBlog() {
                     </HomeImage>
                 </div>
             </div>
-            <div className="py-[12rem] px-[6rem] bg-gray-200">
-                <div className="flex flex-col items-center justify-center space-y-10">
+            <div className="py-[12rem] px-0 md:px-[13rem] bg-gray-200">
+                <div className="flex flex-row items-center justify-center space-y-10">
                     <HomeImage src={ImageOur3} bg={false}>
                         <div
                             className="flex flex-col gap-8 relative w-[50%]"

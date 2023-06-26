@@ -3,7 +3,7 @@ import Logo from "@/assets/Logo.png";
 
 export default function Footer() {
     return (
-        <footer className="footer px-[15rem] py-[5rem] bg-green-custom text-neutral-content">
+        <footer className="footer px-0  md:px-[15rem] py-[5rem] bg-green-custom text-neutral-content">
             <div className="flex flex-col gap-8">
                 <img
                     src={Logo}

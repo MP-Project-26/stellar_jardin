@@ -27,6 +27,11 @@ Route::get('/about', function () {
 Route::get('/type', function () {
     return Inertia::render('Type');
 });
+
+Route::get('/type_2', function () {
+    return Inertia::render('Type_2');
+});
+
 Route::get('/blog', function () {
     return Inertia::render('Blog');
 });

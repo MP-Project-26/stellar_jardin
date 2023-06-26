@@ -14,7 +14,7 @@ const Index = () => {
             <AboutUs />
             <OurBlog />
             <div className="py-[12rem] px-[6rem] bg-white ">
-                <div className="flex flex-row items-center justify-center gap-8 ">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">
                     {/* 1 */}
                     <div
                         className="rounded-[1.1rem] border-green-custom border-[3px] w-[22rem] h-[35rem]"

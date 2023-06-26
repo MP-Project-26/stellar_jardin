@@ -7,7 +7,7 @@ import { Link } from "@inertiajs/react";
 export default function About() {
     return (
         <Layout title="About">
-            <div className="py-[12rem] px-[6rem] bg-gray-200">
+            <div className=" w-full py-[12rem] px-[6rem] bg-gray-200">
                 <div className="flex flex-col items-center justify-center gap-8 ">
                     <div
                         className="text-6xl font-extrabold flex flex-col items-center gap-6 mb-6"
@@ -28,7 +28,7 @@ export default function About() {
                             </svg>
                         </span>
                     </div>
-                    <div className="flex flex-col items-center justify-center space-y-10">
+                    <div className="flex flex-col items-center justify-center ">
                         <div className="flex flex-row items-center justify-around px-[1rem] gap-[3rem]">
                             <img
                                 src={ImageOurBlog1}

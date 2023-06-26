@@ -3,41 +3,41 @@
     "file": "assets/Layout-73168167.css",
     "src": "Layout.css"
   },
-  "_Layout-75d9813d.js": {
+  "_Layout-fa4908a5.js": {
     "assets": [
       "assets/Logo-1ca1936a.png"
     ],
     "css": [
       "assets/Layout-73168167.css"
     ],
-    "file": "assets/Layout-75d9813d.js",
+    "file": "assets/Layout-fa4908a5.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
   "resources/js/Pages/About.jsx": {
-    "file": "assets/About-e8fb3afb.js",
+    "file": "assets/About-9c15f8c2.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-75d9813d.js"
+      "_Layout-fa4908a5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/About.jsx"
   },
   "resources/js/Pages/Blog.jsx": {
-    "file": "assets/Blog-e6ff9b8a.js",
+    "file": "assets/Blog-42fe5411.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-75d9813d.js"
+      "_Layout-fa4908a5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Blog.jsx"
   },
   "resources/js/Pages/Buy.jsx": {
-    "file": "assets/Buy-d46da700.js",
+    "file": "assets/Buy-11a065be.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-75d9813d.js"
+      "_Layout-fa4908a5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Buy.jsx"
@@ -56,30 +56,37 @@
       "assets/map2-d42618eb.png",
       "assets/map3-43c94822.png"
     ],
-    "file": "assets/Index-8195dd9e.js",
+    "file": "assets/Index-fc1a4b99.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-75d9813d.js"
+      "_Layout-fa4908a5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Index.jsx"
   },
   "resources/js/Pages/Type.jsx": {
-    "file": "assets/Type-5a9aea5d.js",
+    "assets": [
+      "assets/imageType1-9e0e5750.png",
+      "assets/imageType2-a4c4577b.png",
+      "assets/imageType4-3950b876.png",
+      "assets/imageType5-00995030.png",
+      "assets/imageType6-46cd4bb0.png"
+    ],
+    "file": "assets/Type-792951c4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-75d9813d.js"
+      "_Layout-fa4908a5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Type.jsx"
   },
   "resources/js/app.css": {
-    "file": "assets/app-a521372d.css",
+    "file": "assets/app-0b84aeb7.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.jsx": {
     "css": [
-      "assets/app-a521372d.css"
+      "assets/app-0b84aeb7.css"
     ],
     "dynamicImports": [
       "resources/js/Pages/About.jsx",
@@ -88,7 +95,7 @@
       "resources/js/Pages/Index.jsx",
       "resources/js/Pages/Type.jsx"
     ],
-    "file": "assets/app-6fd0e613.js",
+    "file": "assets/app-d64ea116.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   },
@@ -115,6 +122,26 @@
   "resources/js/assets/carousal3.png": {
     "file": "assets/carousal3-5135a8f0.png",
     "src": "resources/js/assets/carousal3.png"
+  },
+  "resources/js/assets/imageType1.png": {
+    "file": "assets/imageType1-9e0e5750.png",
+    "src": "resources/js/assets/imageType1.png"
+  },
+  "resources/js/assets/imageType2.png": {
+    "file": "assets/imageType2-a4c4577b.png",
+    "src": "resources/js/assets/imageType2.png"
+  },
+  "resources/js/assets/imageType4.png": {
+    "file": "assets/imageType4-3950b876.png",
+    "src": "resources/js/assets/imageType4.png"
+  },
+  "resources/js/assets/imageType5.png": {
+    "file": "assets/imageType5-00995030.png",
+    "src": "resources/js/assets/imageType5.png"
+  },
+  "resources/js/assets/imageType6.png": {
+    "file": "assets/imageType6-46cd4bb0.png",
+    "src": "resources/js/assets/imageType6.png"
   },
   "resources/js/assets/map1.png": {
     "file": "assets/map1-6980d399.png",

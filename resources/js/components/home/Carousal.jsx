@@ -7,7 +7,7 @@ export default function Carousel() {
     return (
         <DCarousel
             loop
-            // autoplay
+            autoplay
             autoplayDelay={4000}
             // className="h-[40rem]"
             navigation={({ setActiveIndex, activeIndex, length }) => (
@@ -33,7 +33,7 @@ export default function Carousel() {
                     className="h-full w-full object-cover"
                 />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-                    <div className="w-[50rem] space-y-5">
+                    <div className="w-[50rem] space-y-5 -ml-[15rem]">
                         <h1 className="text-white text-7xl font-bold max-w-[25rem]">
                             BUILD HOUSE WITH PASSION
                         </h1>

@@ -263,9 +263,9 @@ export default function Blog() {
                                     id="search"
                                     placeholder="search"
                                 />{" "}
-                                <span className=" rounded-xl bg-green-custom flex justify-center items-center px-5">
+                                <button type="sumbit" className=" rounded-xl bg-green-custom flex justify-center items-center px-5 text-white">
                                     Search
-                                </span>
+                                </button>
                             </div>
                             {/* Popular Posts */}
                             <div className=" w-full border-green-custom border-[2px] flex flex-col gap-4 bg-white">

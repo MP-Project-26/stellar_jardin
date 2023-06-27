@@ -5,6 +5,27 @@ import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
 
 export default function ContentBlog({ data }) {
+    const [active, setActive] = React.useState(1);
+
+    const getItemProps = (index) => ({
+        className:
+            active === index
+                ? "text-[2rem] p-[2rem] border-[#209094] bg-[#209094] text-white"
+                : "text-[2rem] p-[2rem] border-green-custom bg-green-custom text-white",
+        onClick: () => setActive(index),
+    });
+
+    const next = () => {
+        if (active === 5) return;
+
+        setActive(active + 1);
+    };
+
+    const prev = () => {
+        if (active === 1) return;
+
+        setActive(active - 1);
+    };
     return (
         <div className="px-5 w-full lg:w-[65%] flex flex-col gap-[5rem]">
             {data.map((item, index) => (

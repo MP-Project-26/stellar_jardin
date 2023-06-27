@@ -263,10 +263,7 @@ export default function Blog() {
                                     id="search"
                                     placeholder="search"
                                 />{" "}
-                                <button
-                                    type="sumbit"
-                                    className=" rounded-xl bg-green-custom flex justify-center items-center px-5 text-white"
-                                >
+                                <button type="sumbit" className=" rounded-xl bg-green-custom flex justify-center items-center px-5 text-white">
                                     Search
                                 </button>
                             </div>

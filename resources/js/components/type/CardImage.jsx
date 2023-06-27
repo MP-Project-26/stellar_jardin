@@ -1,6 +1,6 @@
 export const CardImage = ({ image, title }) => {
     return (
-        <div className=" flex bg-white">
+        <div className=" flex bg-white select-none cursor-pointer">
             <img
                 src={image}
                 alt={title}

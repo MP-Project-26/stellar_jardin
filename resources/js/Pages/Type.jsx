@@ -8,17 +8,23 @@ import React from "react";
 export default function Type() {
     return (
         <Layout title="Type">
-            <div className="py-[12rem] px-[6rem] bg-white">
+            <div className="py-[10rem] lg:px-[6rem] bg-white md:px-[2rem] px-6">
                 <div>
                     <img
                         src={ImageType1}
                         alt="image1"
-                        className="h-full w-full rounded-[2rem]"
+                        className="h-full w-full lg:rounded-[2rem]  rounded-[1rem]"
                     />
                     <ImageSet />
-                    <div className="font-extrabold flex flex-col">
-                        <span className="text-5xl">Normal Type</span>
-                        <span className="text-3xl font-bold">
+                    <div
+                        className="font-extrabold flex flex-col"
+                        data-aos="fade-up"
+                        data-aos-duration="2000"
+                    >
+                        <span className="lg:text-5xl md:text-3xl text-2xl">
+                            Normal Type
+                        </span>
+                        <span className="lg:text-3xl md:text-xl font-bold">
                             Rp. 1,23 Miliar
                         </span>
                         <span className="font-normal py-[2rem]">

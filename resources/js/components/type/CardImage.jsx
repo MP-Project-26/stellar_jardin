@@ -4,7 +4,7 @@ export const CardImage = ({ image, title }) => {
             <img
                 src={image}
                 alt={title}
-                className="h-[9rem] w-[16rem] rounded-[1rem]"
+                className="lg:h-[9rem] lg:w-[16rem] md:h-[7rem] md:w-[11rem]"
             />
         </div>
     );

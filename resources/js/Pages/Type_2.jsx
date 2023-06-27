@@ -1,8 +1,40 @@
 import Layout from "@/Layout/Layout";
-import React from "react";
+import React, { useState } from "react";
 import imageType1 from "@/assets/imageType1.png";
+import { Link } from "@inertiajs/react";
+
 
 export default function Type_2() {
+
+
+    const galery = [
+        {
+            id: 1,
+            title : "Eksterior 1",
+            img : "/assets/img/eksterior/eksterior_1.png",
+            category : "Eksterior"
+        },
+        {
+            id: 2,
+            title : "Eksterior 2",
+            img : "/assets/img/eksterior/eksterior_2.png",
+            category : "Eksterior"
+        },
+        {
+            id: 3,
+            title : "Site Plan",
+            img : "/assets/img/eksterior/site_plan_1.png",
+            category : "Eksterior"
+        }
+    ]
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleImageClick = (image) => {
+      setSelectedImage(image);
+    };
+
+
     return (
         <Layout title="About">
             {/* container */}
@@ -17,41 +49,28 @@ export default function Type_2() {
 
                 {/* image */}
                 <div className="flex flex-col h-auto w-full gap-1 lg:flex-row lg:gap-3">
-                    <div className="w-full h-full lg:w-[80%]">
+                    <div className="w-full h-full lg:w-[80%] lg:h-full">
                         {/* Background Image */}
                         <div className="h-auto">
                             <img
-                                className="object-cover w-full lg:rounded-tl-3xl lg:rounded-br-3xl lg:h-[29rem]"
-                                src={imageType1}
+                                className="object-cover w-full lg:rounded-tl-3xl lg:rounded-br-3xl lg:h-full"
+                                src={selectedImage ? selectedImage.img : "/assets/img/eksterior/eksterior_1.png"}
                                 alt=""
                             />
                         </div>
                     </div>
 
-                    <div className="flex flex-row w-full gap-1 lg:flex-col lg:w-[20%] lg:gap-3">
-                        <div className="h-auto">
-                            <img
-                                className="object-cover lg:rounded-xl"
-                                src={imageType1}
-                                alt=""
-                            />
-                        </div>
+                    <div className="flex flex-row w-full gap-1 lg:flex-col lg:w-[20%] lg:gap-3 ">
 
-                        <div className="h-auto">
+                    {galery.slice(0, 3).map((foto) =>
+                        <div className="h-auto" key={foto.id} onClick={() => handleImageClick(foto)}>
                             <img
                                 className="object-cover lg:rounded-xl"
-                                src={imageType1}
+                                src={foto.img}
                                 alt=""
                             />
                         </div>
-
-                        <div className="h-auto">
-                            <img
-                                className="object-cover lg:rounded-xl"
-                                src={imageType1}
-                                alt=""
-                            />
-                        </div>
+                    )}
 
                         <div className="flex w-auto h-auto relative">
                             <img
@@ -63,6 +82,8 @@ export default function Type_2() {
                                 <h1 className="font-bold text-sm lg:text-xl">lihat semua</h1>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>

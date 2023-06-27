@@ -67,7 +67,6 @@ export default function Blog() {
                 <div className="flex flex-col items-center justify-center gap-8">
                     <div
                         className="text-6xl font-extrabold flex flex-col items-center gap-6 mb-6"
-                        data-aos="zoom-in"
                     >
                         <div>
                             <span className="text-green-custom">OUR</span> BLOG

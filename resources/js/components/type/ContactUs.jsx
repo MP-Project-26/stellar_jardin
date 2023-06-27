@@ -1,6 +1,6 @@
 export const ContactUs = () => {
     return (
-        <div>
+        <>
             <h1 className="font-extrabold lg:text-5xl py-[2rem] md:text-3xl text-2xl">
                 Contact Us
             </h1>

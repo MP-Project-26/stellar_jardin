@@ -30,7 +30,7 @@ Route::get('/type', function () {
 Route::get('/blog', function () {
     return Inertia::render('Blog');
 });
-Route::get('/blog/{id}', function () {
+Route::get('/blog/spesifik/{id}', function () {
     return Inertia::render('blog/[...id]');
 });
 Route::get('/buy', function () {

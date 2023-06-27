@@ -1,34 +1,13 @@
 import React from "react";
 import ImageOurBlog1 from "@/assets/ourblog1-1.png";
-import { IconButton, ButtonGroup } from "@material-tailwind/react";
-import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
+import ImageUser from "@/assets/user.png";
+import moment from "moment/moment";
 
-export default function ContentBlog({ data }) {
-    const [active, setActive] = React.useState(1);
-
-    const getItemProps = (index) => ({
-        className:
-            active === index
-                ? "text-[2rem] p-[2rem] border-[#209094] bg-[#209094] text-white"
-                : "text-[2rem] p-[2rem] border-green-custom bg-green-custom text-white",
-        onClick: () => setActive(index),
-    });
-
-    const next = () => {
-        if (active === 5) return;
-
-        setActive(active + 1);
-    };
-
-    const prev = () => {
-        if (active === 1) return;
-
-        setActive(active - 1);
-    };
+export default function SpesifikContentBlog({ dataContent }) {
     return (
         <div className="px-5 w-full lg:w-[65%] flex flex-col gap-[5rem]">
-            {data.map((item, index) => (
+            {dataContent.map((item, index) => (
                 <div className=" space-y-7" key={index}>
                     <span className="text-6xl font-semibold text-green-custom">
                         {item.title}
@@ -42,22 +21,26 @@ export default function ContentBlog({ data }) {
                         className="w-full"
                         data-aos="fade-right"
                     />
-                    <div
-                        className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl"
-                        data-aos="fade-up-right"
+
+                    <p
+                        className="text-lg text-justify text-black font-roboto font-medium max-w-full"
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom"
                     >
-                        <p>Tags</p> <p> : </p>
-                        <span className="rounded-md px-4 py-1 bg-green-custom text-white">
-                            {item.tags[0]}
-                        </span>{" "}
-                        <span className="rounded-md px-4 py-1 bg-green-custom text-white">
-                            {item.tags[1]}
-                        </span>
-                    </div>
-                    <p className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
                         {item.content}
                     </p>
-                    <div className="w-full flex justify-between items-center">
+                    <div
+                        className="w-full flex justify-between items-center"
+                    >
+                        <div className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl">
+                            <p>Tags</p> <p> : </p>
+                            <span className="rounded-md px-4 py-1 bg-green-custom text-white">
+                                {item.tags[0]}
+                            </span>{" "}
+                            <span className="rounded-md px-4 py-1 bg-green-custom text-white">
+                                {item.tags[1]}
+                            </span>
+                        </div>
                         <div className="flex  flex-row">
                             <div className="bg-green-custom px-5 py-2 flex gap-2 justify-center items-center ">
                                 <svg
@@ -122,56 +105,69 @@ export default function ContentBlog({ data }) {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex  flex-row">
-                            <div className="w-50 flex justify-end">
-                                <Link
-                                    href={item.link}
-                                    className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-[3.4rem] py-[1.2rem]"
-                                >
-                                    MORE
-                                </Link>
+                    </div>
+                    <div className="comment">
+                        <h1 className="font-extrabold text-5xl py-[2rem] text-green-custom font-roboto">
+                            Comments
+                        </h1>
+                        <div className="w-full justify-center rounded-[2rem] flex flex-col gap-6">
+                            <div className="flex flex-row items-center gap-4">
+                                <img src={ImageUser} alt="" />
+
+                                <div className="flex flex-col">
+                                    <p className="font-roboto font-bold text-lg">
+                                        Name
+                                    </p>
+                                    <p className="font-roboto font-normal text-xs">
+                                        10 Seccond Ago
+                                    </p>
+                                </div>
+                            </div>
+                            <p className="font-roboto font-medium text-lg">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Laboriosam doloribus tenetur
+                                ipsa? Sunt sit exercitationem aliquam excepturi
+                                molestias, provident placeat non vitae nemo
+                                dicta possimus neque, similique soluta culpa
+                                velit.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="contack">
+                        <h1 className="font-extrabold text-5xl py-[2rem] text-green-custom font-roboto">
+                            New Comment
+                        </h1>
+                        <div className="bg-[#FBF9F9] w-full justify-center rounded-[2rem] flex flex-col">
+                            <div className="mx-[4rem] my-[4rem] flex flex-col gap-[1rem]">
+                                <div className="flex items-center gap-[2.5rem]">
+                                    <p className="px-[1rem]">Name</p>
+                                    <input
+                                        type="text"
+                                        className="w-full rounded-[1rem]"
+                                    />
+                                </div>
+                                <div className="flex items-center">
+                                    <p className="px-[1rem]">
+                                        Notes{" "}
+                                        <span className="text-red-800">
+                                            optional
+                                        </span>
+                                    </p>
+                                    <textarea
+                                        type="text"
+                                        className="w-full h-32 rounded-[1rem]"
+                                    ></textarea>
+                                </div>
+                                <div className="flex justify-end">
+                                    <button className="h-12 w-24 rounded-[2rem] rounded-tl-none text-white bg-[#0D7377]">
+                                        Submit
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             ))}
-            <div className="w-full flex justify-center items-center">
-                <ButtonGroup
-                    variant="outlined"
-                    color="blue-gray"
-                    className="space-x-[1px]"
-                >
-                    <IconButton
-                        onClick={prev}
-                        style={{
-                            fontSize: "2rem",
-                            padding: "2rem",
-                            borderColor: "#0D7377",
-                            backgroundColor: "#0D7377",
-                            color: "white",
-                        }}
-                    >
-                        <ArrowLeftIcon strokeWidth={2} className="h-6 w-6" />
-                    </IconButton>
-                    <IconButton {...getItemProps(1)}>1</IconButton>
-                    <IconButton {...getItemProps(2)}>2</IconButton>
-                    <IconButton {...getItemProps(3)}>3</IconButton>
-                    <IconButton {...getItemProps(4)}>4</IconButton>
-                    <IconButton {...getItemProps(5)}>5</IconButton>
-                    <IconButton
-                        onClick={next}
-                        style={{
-                            fontSize: "2rem",
-                            padding: "2rem",
-                            borderColor: "#0D7377",
-                            backgroundColor: "#0D7377",
-                            color: "white",
-                        }}
-                    >
-                        <ArrowRightIcon strokeWidth={2} className="h-6 w-6" />
-                    </IconButton>
-                </ButtonGroup>
-            </div>
         </div>
     );
 }

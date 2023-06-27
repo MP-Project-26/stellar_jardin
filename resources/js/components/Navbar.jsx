@@ -71,7 +71,10 @@ export default function Navbar() {
                                 </span>
                                 <ul className="p-2">
                                     <li>
-                                        <Link className=" font-semibold text-xl ">
+                                        <Link
+                                            href="/type"
+                                            className=" font-semibold text-xl "
+                                        >
                                             Type
                                         </Link>
                                     </li>
@@ -143,7 +146,10 @@ export default function Navbar() {
                                     }
                                 >
                                     <li>
-                                        <Link className=" font-semibold text-xl ">
+                                        <Link
+                                            href="/type"
+                                            className=" font-semibold text-xl "
+                                        >
                                             Type
                                         </Link>
                                     </li>

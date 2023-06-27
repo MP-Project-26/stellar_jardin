@@ -1,6 +1,6 @@
 export const ContactUs = () => {
     return (
-        <div>
+        <>
             <h1 className="font-extrabold text-5xl py-[2rem]">Contact Us</h1>
             <div className="bg-[#FBF9F9] w-full h-[34rem] justify-center rounded-[2rem] flex flex-col">
                 <div className="mx-[4rem] my-[4rem] flex flex-col gap-[1rem]">
@@ -32,6 +32,6 @@ export const ContactUs = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };

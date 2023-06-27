@@ -20,7 +20,7 @@ export default function Layout({ children, title }) {
             {title && <Head title={title} />}
             <Navbar />
             <main className="-mt-[5rem] ">{children}</main>
-        <Footer />
+            <Footer />
         </>
     );
 }

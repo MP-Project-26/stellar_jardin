@@ -94,7 +94,7 @@ const Index = () => {
                         <div className=" -m-[2px] flex flex-col">
                             <img src={ImageMap1} alt="img" className="" />
                             <div className="w-full flex justify-center -mt-[3rem]">
-                                <span className="bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
+                                <span className="cursor-pointer bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
                                     Facilities
                                 </span>
                             </div>
@@ -215,7 +215,7 @@ const Index = () => {
                         <div className=" -m-[2px] flex flex-col">
                             <img src={ImageMap2} alt="img" className="" />
                             <div className="w-full flex justify-center -mt-[3rem]">
-                                <span className="bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
+                                <span className="cursor-pointer bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
                                     access
                                 </span>
                             </div>

@@ -10,6 +10,7 @@
     body {
         font-family: 'Saira Condensed', sans-serif;
     }
+
 }
 
 
@@ -68,6 +69,11 @@
         @media (max-width: 968px) {
             width: 30rem;
         } */
+    }
+
+
+    .scrollModal::-webkit-scrollbar {
+        width: 0px;
     }
 
 

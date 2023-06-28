@@ -3,23 +3,23 @@
     "file": "assets/Layout-73168167.css",
     "src": "Layout.css"
   },
-  "_Layout-edcfcdc9.js": {
+  "_Layout-fec766d2.js": {
     "assets": [
       "assets/Logo-1ca1936a.png"
     ],
     "css": [
       "assets/Layout-73168167.css"
     ],
-    "file": "assets/Layout-edcfcdc9.js",
+    "file": "assets/Layout-fec766d2.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_index-dec6678b.js": {
+  "_index-ac9f7e52.js": {
     "assets": [
       "assets/ourblog1-1-80650d81.png"
     ],
-    "file": "assets/index-dec6678b.js",
+    "file": "assets/index-ac9f7e52.js",
     "imports": [
       "resources/js/app.jsx"
     ]
@@ -29,36 +29,35 @@
       "assets/about-28f0df55.png",
       "assets/house-icon-5d653907.png"
     ],
-    "file": "assets/About-b3eb8353.js",
+    "file": "assets/About-c57d90be.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-edcfcdc9.js"
+      "_Layout-fec766d2.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/About.jsx"
   },
   "resources/js/Pages/Blog.jsx": {
-    "file": "assets/Blog-77913207.js",
+    "file": "assets/Blog-3bf76095.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-edcfcdc9.js",
-      "_index-dec6678b.js"
+      "_Layout-fec766d2.js",
+      "_index-ac9f7e52.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Blog.jsx"
   },
   "resources/js/Pages/Buy.jsx": {
-    "file": "assets/Buy-ee247912.js",
+    "file": "assets/Buy-2ae8ab56.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-edcfcdc9.js"
+      "_Layout-fec766d2.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Buy.jsx"
   },
   "resources/js/Pages/Index.jsx": {
     "assets": [
-      "assets/Ellipse1-a4b7e5c3.png",
       "assets/aboutUs-50dd1a9e.png",
       "assets/carousal1-86a2b900.png",
       "assets/carousal2-1639965d.png",
@@ -66,16 +65,17 @@
       "assets/bg-kanan-9f5b6524.png",
       "assets/ourblog1-2-f719d4f8.png",
       "assets/ourblog1-3-d96e774a.png",
+      "assets/Ellipse1-a4b7e5c3.png",
       "assets/bg-kiri-a6fdb8a5.png",
       "assets/map1-6980d399.png",
       "assets/map2-d42618eb.png",
       "assets/map3-43c94822.png"
     ],
-    "file": "assets/Index-073b6221.js",
+    "file": "assets/Index-3e3b5efd.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-edcfcdc9.js",
-      "_index-dec6678b.js"
+      "_Layout-fec766d2.js",
+      "_index-ac9f7e52.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Index.jsx"
@@ -88,30 +88,40 @@
       "assets/imageType5-00995030.png",
       "assets/imageType6-46cd4bb0.png"
     ],
-    "file": "assets/Type-7c113056.js",
+    "file": "assets/Type-424711fb.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-edcfcdc9.js"
+      "_Layout-fec766d2.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Type.jsx"
   },
+  "resources/js/Pages/Type_2.jsx": {
+    "file": "assets/Type_2-bf95fd62.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-fec766d2.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Type_2.jsx"
+  },
   "resources/js/app.css": {
-    "file": "assets/app-4f1d98b2.css",
+    "file": "assets/app-578ec3a1.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.jsx": {
     "css": [
-      "assets/app-4f1d98b2.css"
+      "assets/app-578ec3a1.css"
     ],
     "dynamicImports": [
       "resources/js/Pages/About.jsx",
       "resources/js/Pages/Blog.jsx",
       "resources/js/Pages/Buy.jsx",
       "resources/js/Pages/Index.jsx",
-      "resources/js/Pages/Type.jsx"
+      "resources/js/Pages/Type.jsx",
+      "resources/js/Pages/Type_2.jsx"
     ],
-    "file": "assets/app-9e08a723.js",
+    "file": "assets/app-6d12275b.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   },
@@ -198,10 +208,6 @@
   "resources/js/assets/ourblog1-3.png": {
     "file": "assets/ourblog1-3-d96e774a.png",
     "src": "resources/js/assets/ourblog1-3.png"
-  },
-  "resources/js/assets/ourblog1.png": {
-    "file": "assets/ourblog1-5066dada.png",
-    "src": "resources/js/assets/ourblog1.png"
   },
   "resources/js/assets/ourblog2.png": {
     "file": "assets/ourblog2-9e5f9cab.png",

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +29,7 @@ Route::get('/type', function () {
     return Inertia::render('Type');
 });
 
-Route::get('/type_2', function () {
-    return Inertia::render('Type_2');
-});
+Route::get('/type_2', [GalleryController::class, 'index']);
 
 Route::get('/blog', function () {
     return Inertia::render('Blog');

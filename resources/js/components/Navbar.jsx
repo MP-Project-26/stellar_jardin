@@ -18,13 +18,15 @@ export default function Navbar() {
             window.removeEventListener("scroll", scrollToTop);
         };
     }, []);
+
+
     return (
         <nav
             className={`w-full ${
                 location === "/" && scroll <= 1.5
                     ? " bg-transparent text-white"
                     : "bg-green-custom shadow-lg text-white"
-            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-[200] transition-all duration-180 ease-in-out`}
+            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-[20000] transition-all duration-180 ease-in-out `}
         >
             <div className="navbar">
                 <div className="navbar-start">
@@ -54,7 +56,7 @@ export default function Navbar() {
                                     href="/"
                                     className=" font-semibold text-xl "
                                 >
-                                    HOME
+                                    Home
                                 </Link>
                             </li>
                             <li>
@@ -62,7 +64,7 @@ export default function Navbar() {
                                     href="/about"
                                     className=" font-semibold text-xl "
                                 >
-                                    ABOUT
+                                    About
                                 </Link>
                             </li>
 
@@ -73,9 +75,11 @@ export default function Navbar() {
                                 </span>
                                 <ul className="p-2">
                                     <li>
-                                        <Link href="/type"
-                                        className=" font-semibold text-xl ">
-                                            Type
+                                        <Link
+                                            href="/type"
+                                            className=" font-semibold text-xl "
+                                        >
+                                            Standart
                                         </Link>
                                     </li>
                                     <li>
@@ -90,17 +94,10 @@ export default function Navbar() {
                                     href="/blog"
                                     className=" font-semibold text-xl "
                                 >
-                                    BLOG
+                                    Blog
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    href="/buy"
-                                    className=" font-semibold text-xl   bg-yellow-custom rounded-r-[3rem] rounded-tl-none rounded-bl-[3rem] px-[2rem]"
-                                >
-                                    BUY
-                                </Link>
-                            </li>
+
                         </ul>
                     </div>
                     <Link href="/">
@@ -115,7 +112,7 @@ export default function Navbar() {
                     <ul className="menu menu-horizontal px-1">
                         <li>
                             <Link href="/" className=" font-semibold text-xl ">
-                                HOME
+                                Home
                             </Link>
                         </li>
                         <li>
@@ -123,7 +120,7 @@ export default function Navbar() {
                                 href="/about"
                                 className=" font-semibold text-xl "
                             >
-                                ABOUT
+                                About
                             </Link>
                         </li>
                         <li tabIndex={0}>
@@ -146,8 +143,11 @@ export default function Navbar() {
                                     }
                                 >
                                     <li>
-                                        <Link href="/type" className=" font-semibold text-xl ">
-                                            Type
+                                        <Link
+                                            href="/type"
+                                            className=" font-semibold text-xl "
+                                        >
+                                            Standard
                                         </Link>
                                     </li>
                                     <li>
@@ -163,15 +163,7 @@ export default function Navbar() {
                                 href="/blog"
                                 className=" font-semibold text-xl "
                             >
-                                BLOG
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/buy"
-                                className=" font-semibold text-xl   bg-yellow-custom rounded-r-[3rem] rounded-tl-none rounded-bl-[3rem] px-[2rem]"
-                            >
-                                BUY
+                                Blog
                             </Link>
                         </li>
                     </ul>

@@ -8,7 +8,7 @@ import ImageOurBlog2 from "@/assets/ourblog2.png";
 import ImageOurBlog3 from "@/assets/ourblog3.png";
 import Elipse1 from "@/assets/Ellipse1.png";
 import { Link } from "@inertiajs/react";
-import HomeImage from "../HomeImage";
+import HomeImage from "./HomeImage";
 
 export default function OurBlog() {
     return (

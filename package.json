@@ -31,6 +31,8 @@
         "flowbite": "^1.6.6",
         "react-icons": "^4.10.1",
         "react-router-dom": "^6.14.0",
-        "react-scroll": "^1.8.9"
+        "react-scroll": "^1.8.9",   
+        "moment": "^2.29.4",
+        "react-multi-carousel": "^2.8.4"
     }
 }

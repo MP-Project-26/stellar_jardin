@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gallery;
+use App\Models\Galleries;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class GalleryController extends Controller
+class GalleriesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $gallery = Gallery::all();
-        return Inertia::render('Type_2', [
-            'gallery' => $gallery,
+
+        $galleries = Galleries::with('category')->get();
+
+        return Inertia::render('Type', [
+            'title' => 'Galleries',
+            'galleries' => $galleries,
         ]);
     }
 

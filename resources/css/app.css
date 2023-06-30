@@ -10,6 +10,7 @@
     body {
         font-family: 'Saira Condensed', sans-serif;
     }
+
 }
 
 
@@ -53,6 +54,26 @@
         @media (max-width: 968px) {
             width: 30rem;
         }
+    }
+
+    .paragraph-popular {
+        overflow          : hidden;
+        display           : -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+
+        /* @media (max-width: 768px) {
+            width: 40rem;
+        }
+
+        @media (max-width: 968px) {
+            width: 30rem;
+        } */
+    }
+
+
+    .scrollModal::-webkit-scrollbar {
+        width: 0px;
     }
 
 

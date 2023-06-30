@@ -10,7 +10,7 @@ export default function Type_2({gallery}) {
     return (
         <Layout title="About">
             {/* container */}
-            <div className="pt-24 lg:mt-10 pb-20 select-none">
+            <div className="  lg:mt-10 pb-20 select-none">
             <Galery gallery={gallery}/>
             <NavMid />
             <Prieview id="overview"/>

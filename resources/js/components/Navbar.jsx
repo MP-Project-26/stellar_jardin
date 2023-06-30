@@ -24,7 +24,11 @@ export default function Navbar() {
                 location === "/" && scroll <= 1.5
                     ? " bg-transparent text-white"
                     : "bg-green-custom shadow-lg text-white"
+<<<<<<< HEAD
             } lg:px-[10rem] px-0 mt-0 sticky top-0 z-[20000] transition-all duration-180 ease-in-out `}
+=======
+            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-[200] transition-all duration-180 ease-in-out`}
+>>>>>>> main
         >
             <div className="navbar">
                 <div className="navbar-start">
@@ -47,7 +51,7 @@ export default function Navbar() {
                         </label>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] py-2 px-6 shadow bg-base-100 rounded-sm w-52"
+                            className="menu menu-sm dropdown-content mt-3 z-[1] py-2 px-6 shadow bg-green-custom rounded-sm w-52"
                         >
                             <li>
                                 <Link
@@ -65,16 +69,23 @@ export default function Navbar() {
                                     ABOUT
                                 </Link>
                             </li>
+
+
                             <li>
                                 <span className=" font-semibold text-xl ">
                                     Type
                                 </span>
                                 <ul className="p-2">
                                     <li>
+<<<<<<< HEAD
                                         <Link
                                             href="/type"
                                             className=" font-semibold text-xl "
                                         >
+=======
+                                        <Link href="/type"
+                                        className=" font-semibold text-xl ">
+>>>>>>> main
                                             Type
                                         </Link>
                                     </li>
@@ -146,10 +157,14 @@ export default function Navbar() {
                                     }
                                 >
                                     <li>
+<<<<<<< HEAD
                                         <Link
                                             href="/type"
                                             className=" font-semibold text-xl "
                                         >
+=======
+                                        <Link href="/type" className=" font-semibold text-xl ">
+>>>>>>> main
                                             Type
                                         </Link>
                                     </li>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 
 const Galery = ({ gallery }) => {
-
+    //console.log(gallery);
     const exteriorGallery = gallery.filter(
         (item) => item.category === "exterior"
     );
@@ -14,6 +14,8 @@ const Galery = ({ gallery }) => {
     );
     // const denahGallery = gallery.filter(
     //     (item) => item.category === "denah");
+
+
 
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -65,9 +67,9 @@ const Galery = ({ gallery }) => {
 
     return (
         <>
-            <div  className="flex flex-col w-full lg:h-[30rem] mb-10 lg:px-40 px-2">
+            <div id="gallery" className="flex flex-col w-full lg:h-[30rem] mb-6 lg:mb-20 md:px-10 lg:px-40 px-2 select-none">
                 {/* title */}
-                <div className="flex w-full justify-start h-auto mb-2 lg:px-0 lg:mb-2">
+                <div  className="flex w-full justify-start h-auto mb-2 lg:px-0 lg:mb-2">
                     <div className="w-[6px] bg-[#0D7377] mr-3"></div>
                     <h1 className="font-sans font-bold text-[#0D7377] text-2xl md:text-4xl lg:text-5xl">
                         GA<span className="text-black">LLERY</span>
@@ -127,7 +129,7 @@ const Galery = ({ gallery }) => {
 
             <dialog
                 id="my_modal_4"
-                className="modal w-full h-auto bg-black bg-opacity-50 backdrop-blur-sm px-2 lg:px-0"
+                className="modal w-full h-auto bg-black bg-opacity-50 backdrop-blur-sm px-2 lg:px-0 select-none"
             >
                 <form
                     method="dialog"
@@ -154,7 +156,7 @@ const Galery = ({ gallery }) => {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex flex-col h-40 lg:h-[20%] overflow-y-auto">
+                        <div className="flex flex-col h-40 lg:h-40 overflow-y-auto">
                             <div className="">
                                 <h1 className="text-xl">Exterior</h1>
                             </div>

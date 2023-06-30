@@ -1,8 +1,5 @@
 import Layout from "@/Layout/Layout";
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1.png";
-import Elipse1 from "@/assets/Ellipse1.png";
-import { Link } from "@inertiajs/react";
 import Section1 from "@/components/about/Section1";
 import Section2 from "@/components/about/Section2";
 

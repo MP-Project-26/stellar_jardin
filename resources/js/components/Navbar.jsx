@@ -80,7 +80,10 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className=" font-semibold text-xl ">
+                                        <Link
+                                            href="/type_2"
+                                            className=" font-semibold text-xl "
+                                        >
                                             Custom
                                         </Link>
                                     </li>
@@ -155,7 +158,10 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className=" font-semibold text-xl ">
+                                        <Link
+                                            href="/type_2"
+                                            className=" font-semibold text-xl "
+                                        >
                                             Custom
                                         </Link>
                                     </li>

@@ -67,9 +67,12 @@ const Galery = ({ gallery }) => {
 
     return (
         <>
-            <div id="gallery" className="flex flex-col w-full lg:h-[30rem] mb-6 lg:mb-20 md:px-10 lg:px-40 px-2 select-none">
+            <div
+                id="gallery"
+                className="flex flex-col w-full lg:h-[30rem] mb-6 lg:mb-20 md:px-10 lg:px-40 px-2 select-none"
+            >
                 {/* title */}
-                <div  className="flex w-full justify-start h-auto mb-2 lg:px-0 lg:mb-2">
+                <div className="flex w-full justify-start h-auto mb-2 lg:px-0 lg:mb-2">
                     <div className="w-[6px] bg-[#0D7377] mr-3"></div>
                     <h1 className="font-sans font-bold text-[#0D7377] text-2xl md:text-4xl lg:text-5xl">
                         GA<span className="text-black">LLERY</span>
@@ -133,7 +136,7 @@ const Galery = ({ gallery }) => {
             >
                 <form
                     method="dialog"
-                    className="modal-box w-full lg:h-auto  flex justify-end max-w-4xl rounded-none p-1"
+                    className="modal-box w-full lg:h-auto scrollModal_type flex justify-end max-w-4xl rounded-none p-1"
                 >
                     <div className="flex w-full  lg:w-auto fixed m-0 justify-end modal-action ">
                         <button className="btn-sm lg:btn-md btn-circle flex justify-center items-center rounded-full bg-black bg-opacity-40 border-none">
@@ -141,7 +144,7 @@ const Galery = ({ gallery }) => {
                         </button>
                     </div>
 
-                    <div className="w-full h-auto pb-2">
+                    <div className="w-full  h-auto pb-2">
                         <div className="carousel w-auto ">
                             {gallery.map((item) => (
                                 <div
@@ -156,7 +159,7 @@ const Galery = ({ gallery }) => {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex flex-col h-40 lg:h-40 overflow-y-auto">
+                        <div className="flex flex-col h-40 lg:h-40 overflow-y-auto scrollModal_type">
                             <div className="">
                                 <h1 className="text-xl">Exterior</h1>
                             </div>

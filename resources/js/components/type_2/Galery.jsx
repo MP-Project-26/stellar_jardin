@@ -136,7 +136,11 @@ const Galery = ({ gallery }) => {
             >
                 <form
                     method="dialog"
+<<<<<<< HEAD
                     className="modal-box w-full lg:h-auto scrollModal_type flex justify-end max-w-4xl rounded-none p-1"
+=======
+                    className="modal-box w-full lg:h-auto  flex justify-end max-w-4xl rounded-none p-1"
+>>>>>>> fikri
                 >
                     <div className="flex w-full  lg:w-auto fixed m-0 justify-end modal-action ">
                         <button className="btn-sm lg:btn-md btn-circle flex justify-center items-center rounded-full bg-black bg-opacity-40 border-none">
@@ -144,7 +148,7 @@ const Galery = ({ gallery }) => {
                         </button>
                     </div>
 
-                    <div className="w-full  h-auto pb-2">
+                    <div className="w-full h-auto pb-2">
                         <div className="carousel w-auto ">
                             {gallery.map((item) => (
                                 <div

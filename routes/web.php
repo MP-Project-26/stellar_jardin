@@ -1,10 +1,16 @@
 <?php
 
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\DashboardController;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GalleriesController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +38,18 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return Inertia::render('About');
 });
-Route::get('/type', function () {
-    return Inertia::render('Type');
-});
 
-Route::get('/type_2', [GalleryController::class, 'index']);
+
+Route::get('/type', [GalleriesController::class, 'index']);
+
+Route::get('/loginadmin', [LoginController::class, 'index']);
+Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+Route::get('/admin/user', [UserController::class, 'index']);
+Route::get('/admin/contact', [ContactController::class, 'index']);
+Route::get('/admin/blog', [BlogController::class, 'index']);
+Route::get('/admin/content', [ContentController::class, 'index']);
+
+
 
 Route::get('/blog', function () {
     return Inertia::render('Blog');
@@ -57,5 +70,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Route::get('welcome', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 require __DIR__ . '/auth.php';

@@ -76,6 +76,7 @@
         width: 0px;
     }
 
+<<<<<<< HEAD
     .scrollModal_type::-webkit-scrollbar {
         width: 6px;
     }
@@ -89,5 +90,7 @@
         border-radius: 10px;
     }
 
+=======
+>>>>>>> fikri
 
 }

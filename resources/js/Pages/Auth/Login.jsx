@@ -1,4 +1,7 @@
 import TextInput from "@/Components/auth/login/TextInput";
+import FooterStelar from "@/assets/login/footer_stellar.png";
+import BGGAMBAR from "@/assets/login/BGGAMBAR.png";
+import MPFOOTER from "@/assets/login/mp-footer.png";
 import { Head, Link, useForm } from "@inertiajs/react";
 import React, { useEffect } from "react";
 
@@ -26,7 +29,7 @@ export default function Login({ status, canResetPassword }) {
             <div className="w-full flex flex-row">
                 <div className="bg-white w-full h-screen flex flex-col gap-8 p-[2rem] font-roboto">
                     <img
-                        src="./assets/img/footer_stellar.png"
+                        src={FooterStelar}
                         alt=""
                         className="w-[9rem] h-[9rem] invert"
                     />
@@ -52,12 +55,19 @@ export default function Login({ status, canResetPassword }) {
                                         <span className="text-green-custom font-extrabold">
                                             *
                                         </span>
-                                    </label>
+                                    </label>{" "}
+                                    {errors.email && (
+                                        <span className="text-red-800 text-xs font-semibold">
+                                            {errors.email}
+                                        </span>
+                                    )}
                                     <TextInput
                                         type="email"
                                         name="email"
                                         id="email"
-                                        className="text-green-custom"
+                                        className={`${
+                                            errors.email && "border-red-800"
+                                        } text-green-custom`}
                                         placeholder="Email"
                                         autoComplete="email"
                                         isFocused={true}
@@ -66,9 +76,6 @@ export default function Login({ status, canResetPassword }) {
                                             setData("email", e.target.value)
                                         }
                                     />
-                                    <span className="text-red-800 text-xs font-semibold">
-                                        Error
-                                    </span>
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <label htmlFor="password">
@@ -77,11 +84,18 @@ export default function Login({ status, canResetPassword }) {
                                             *
                                         </span>
                                     </label>
+                                    {errors.password && (
+                                        <span className="text-red-800 text-xs font-semibold">
+                                            {errors.password}
+                                        </span>
+                                    )}
                                     <TextInput
                                         type="password"
                                         name="password"
                                         id="password"
-                                        className="text-green-custom"
+                                        className={`${
+                                            errors.password && "border-red-800"
+                                        } text-green-custom`}
                                         placeholder="*******"
                                         autoComplete="password"
                                         isFocused={true}
@@ -124,15 +138,13 @@ export default function Login({ status, canResetPassword }) {
                 </div>
                 <div className="bg-gray-300 w-full h-screen flex flex-row relative ">
                     <img
-                        src="./assets/img/BGGAMBAR.png"
+                        src={BGGAMBAR}
                         alt=""
                         className="w-full object-cover"
                     />
                     <div className="absolute bottom-3 w-full flex justify-center">
                         <span className=" text-md font-roboto text-gray-300 flex flex-row items-center gap-3">
-                            Powered by{" "}
-                            <img src="./assets/img/mp-footer.png" alt="" />{" "}
-                            PROJECT
+                            Powered by <img src={MPFOOTER} alt="" /> PROJECT
                         </span>
                     </div>
                 </div>

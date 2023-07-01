@@ -1,17 +1,88 @@
 import Layout from "@/Layout/Layout";
 import AboutUs from "@/components/home/About";
-import Carousel from "@/components/home/Carousal";
+import CarouselHeader from "@/components/home/Carousal";
 import OurBlog from "@/components/home/OurBlog";
 import ImageMap1 from "@/assets/map1.png";
 import ImageMap2 from "@/assets/map2.png";
 import ImageMap3 from "@/assets/map3.png";
 import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import ImageType1 from "@/assets/imageType2.png";
+import ImageType2 from "@/assets/imageType4.png";
+import ImageType3 from "@/assets/imageType5.png";
+import ImageType4 from "@/assets/imageType6.png";
+import ModalLocation from "@/components/utils/modal/modalLocation";
+
+const image = [
+    {
+        title: "image1",
+        image: ImageType1,
+    },
+    {
+        title: "image2",
+        image: ImageType2,
+    },
+    {
+        title: "image3",
+        image: ImageType3,
+    },
+    {
+        title: "image4",
+        image: ImageType4,
+    },
+];
+
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 1750 },
+        items: 3,
+    },
+    desktop: {
+        breakpoint: { max: 1750, min: 1024 },
+        items: 3,
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+    },
+};
 
 const Index = () => {
     return (
         <Layout title="index">
-            <Carousel />
+            <CarouselHeader />
             <AboutUs />
+
+            <Carousel
+                responsive={responsive}
+                infinite={true}
+                className="image-slider"
+            >
+                {image.map((item, index) => (
+                    <div
+                        className="flex lg:gap-[3rem] py-[6rem] justify-center item-img"
+                        key={index}
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-out"
+                    >
+                        <div>
+                            <div className=" flex bg-white select-none cursor-pointer">
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="lg:w-[27rem] lg:h-full object-contain md:h-[7rem] md:w-[11rem]"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </Carousel>
             <OurBlog />
             <div className="py-[12rem] px-[6rem] bg-white ">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">
@@ -23,7 +94,7 @@ const Index = () => {
                         <div className=" -m-[2px] flex flex-col">
                             <img src={ImageMap1} alt="img" className="" />
                             <div className="w-full flex justify-center -mt-[3rem]">
-                                <span className="bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
+                                <span className="cursor-pointer bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
                                     Facilities
                                 </span>
                             </div>
@@ -144,7 +215,7 @@ const Index = () => {
                         <div className=" -m-[2px] flex flex-col">
                             <img src={ImageMap2} alt="img" className="" />
                             <div className="w-full flex justify-center -mt-[3rem]">
-                                <span className="bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
+                                <span className="cursor-pointer bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
                                     access
                                 </span>
                             </div>
@@ -166,11 +237,7 @@ const Index = () => {
                     >
                         <div className=" -m-[2px] flex flex-col">
                             <img src={ImageMap3} alt="img" className="" />
-                            <div className="w-full flex justify-center -mt-[3rem]">
-                                <span className="bg-green-custom text-white px-7 py-5 rounded-xl text-2xl font-extrabold">
-                                    location
-                                </span>
-                            </div>
+                            <ModalLocation />
                             <div className="w-full flex flex-col gap-4 justify-center items-center py-[2rem] px-[3rem]">
                                 <div className="flex w-full items-center">
                                     <p className=" text-center text-xl font-semibold">

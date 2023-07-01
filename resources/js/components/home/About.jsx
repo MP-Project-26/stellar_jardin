@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/react";
 
 const AboutUs = () => {
     return (
-        <div className="py-[12rem] px-0 md:px-[13rem]">
+        <div className="py-[6rem] px-0 md:px-[13rem]">
             <div className="flex flex-col items-center justify-center space-y-10">
                 <div className="flex flex-col md:flex-row items-center justify-around px-[1rem] gap-[3rem]">
                     <img

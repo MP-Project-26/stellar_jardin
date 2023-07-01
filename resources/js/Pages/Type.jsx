@@ -3,15 +3,24 @@ import ImageType1 from "@/assets/imageType1.png";
 import ImageSet from "@/components/type/ImageSet";
 import { Specification } from "@/components/type/Specification";
 import { ContactUs } from "@/components/type/ContactUs";
-import React from "react";
+import React, { useEffect } from "react";
 
-export default function Type({ gallery }) {
-    // console.log(gallery);
+
+
+export default function Type({ title, galleries }) {
+    // console.log(galleries);
+    // useEffect(() => {
+    //     console.log(galleries);
+    // }, [galleries]);
+
+    // const image1 = galleries.filter((item) => item.id === 1);
+    // console.log(image1);
+
     return (
-        <Layout title="Type">
-            <div className="py-[8rem] lg:px-[10rem] bg-white md:px-[3rem] px-6">
+        <Layout title={title}>
+            <div className="py-[10rem] lg:px-52 bg-white md:px-[2rem] px-6">
                 <div>
-                    <ImageSet gallery={gallery} />
+                    <ImageSet galleries={galleries} />
                     <div
                         className="font-extrabold flex flex-col"
                         data-aos="fade-up"

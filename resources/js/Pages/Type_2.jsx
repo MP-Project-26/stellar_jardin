@@ -1,4 +1,4 @@
-import Layout from "@/Layout/Layout";
+import Layout from "@/Layouts/Layout";
 import Galery from "@/components/type_2/Galery";
 import NavMid from "@/components/type_2/NavMid";
 import Prieview from "@/components/type_2/Section_Prieview";

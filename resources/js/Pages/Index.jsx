@@ -1,4 +1,4 @@
-import Layout from "@/Layout/Layout";
+import Layout from "@/Layouts/Layout";
 import AboutUs from "@/components/home/About";
 import CarouselHeader from "@/components/home/Carousal";
 import OurBlog from "@/components/home/OurBlog";

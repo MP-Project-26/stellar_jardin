@@ -1,21 +1,17 @@
 import Layout from "@/Layout/Layout";
 import ImageType1 from "@/assets/imageType1.png";
-import { ImageSet } from "@/components/type/ImageSet";
+import ImageSet from "@/components/type/ImageSet";
 import { Specification } from "@/components/type/Specification";
 import { ContactUs } from "@/components/type/ContactUs";
 import React from "react";
 
-export default function Type() {
+export default function Type({ gallery }) {
+    // console.log(gallery);
     return (
         <Layout title="Type">
-            <div className="py-[10rem] lg:px-[6rem] bg-white md:px-[2rem] px-6">
+            <div className="py-[8rem] lg:px-[10rem] bg-white md:px-[3rem] px-6">
                 <div>
-                    <img
-                        src={ImageType1}
-                        alt="image1"
-                        className="h-full w-full lg:rounded-[2rem]  rounded-[1rem]"
-                    />
-                    <ImageSet />
+                    <ImageSet gallery={gallery} />
                     <div
                         className="font-extrabold flex flex-col"
                         data-aos="fade-up"

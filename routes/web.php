@@ -42,7 +42,7 @@ Route::get('/about', function () {
 
 Route::get('/type', [GalleriesController::class, 'index']);
 
-Route::get('/loginadmin', [LoginController::class, 'index']);
+Route::get('/login/admin', [LoginController::class, 'index']);
 Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 Route::get('/admin/user', [UserController::class, 'index']);
 Route::get('/admin/contact', [ContactController::class, 'index']);

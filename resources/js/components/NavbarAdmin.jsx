@@ -34,7 +34,7 @@ const NavbarAdmin = () => {
     ];
     const [open, setOpen] = useState(true);
     return (
-        <div className="px-0 mt-0 sticky top-0 z-[20000]">
+        <div className="px-0 mt-0 h-screen select-none top-0 sticky z-[20000] ">
             <div className="flex h-full top gap-6">
                 <div
                     className={` ${
@@ -43,7 +43,7 @@ const NavbarAdmin = () => {
                 >
                     <div
                         src="./src/assets/control.png"
-                        className={`absolute cursor-pointer -right-3 top-7 w-7 text-black border-black
+                        className={`absolute cursor-pointer -right-3 top-[7rem] w-7 text-black border-black
            border-2 rounded-full  ${!open && "rotate-180"}`}
                         onClick={() => setOpen(!open)}
                     >
@@ -72,7 +72,7 @@ const NavbarAdmin = () => {
                         ></h1>
                     </div>
 
-                    <div className="mt-8 flex flex-col gap-4 relative">
+                    <div className="mt-8 flex flex-col gap-4 relative max-h-[84vh]  overflow-x-hidden webkit-scroll p-2">
                         {menu?.map((menu, i) => (
                             <Link
                                 href={menu?.link}

@@ -42,12 +42,11 @@ Route::get('/about', function () {
 
 Route::get('/type', [GalleriesController::class, 'index']);
 
-Route::get('/login/admin', [LoginController::class, 'index']);
-Route::get('/admin/dashboard', [DashboardController::class, 'index']);
-Route::get('/admin/user', [UserController::class, 'index']);
-Route::get('/admin/contact', [ContactController::class, 'index']);
-Route::get('/admin/blog', [BlogController::class, 'index']);
-Route::get('/admin/content', [ContentController::class, 'index']);
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/blog', [BlogController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
@@ -61,14 +60,11 @@ Route::get('/buy', function () {
     return Inertia::render('Buy');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('admin/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('admin/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('admin/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 // Route::get('welcome', function () {

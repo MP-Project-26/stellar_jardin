@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\SimulasiKPRController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GalleriesController;
+use App\Http\Controllers\SpesificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,10 @@ Route::get('/about', function () {
 
 
 Route::get('/type', [GalleriesController::class, 'index']);
+Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
+Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
+
+Route::get('/type_2', [SpesificationController::class, 'index']);
 
 Route::get('/blog', function () {
     return Inertia::render('Blog');

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 
-const Galery = ({ gallery }) => {
-    //console.log(gallery);
-    const exteriorGallery = gallery.filter(
-        (item) => item.category === "exterior"
+const Galery = ({ galleries }) => {
+    console.log("bbb",galleries);
+    const exteriorGallery = galleries.filter(
+        (item) => item.category.category_name === "Exterior"
     );
-    const interiorGallery = gallery.filter(
-        (item) => item.category === "interior"
+    const interiorGallery = galleries.filter(
+        (item) => item.category.category_name === "Interior"
     );
-    const potonganGallery = gallery.filter(
-        (item) => item.category === "potongan"
+    const potonganGallery = galleries.filter(
+        (item) => item.category.category_name === "Potongan"
     );
     // const denahGallery = gallery.filter(
     //     (item) => item.category === "denah");
@@ -19,7 +19,9 @@ const Galery = ({ gallery }) => {
 
     const [selectedImage, setSelectedImage] = useState(null);
 
+
     const Exterior = exteriorGallery.map((item) => {
+
         return (
             <div key={item.id} className="w-16 lg:w-28">
                 <a href={`#${item.id}`}>
@@ -94,7 +96,7 @@ const Galery = ({ gallery }) => {
                     </div>
 
                     <div className="flex flex-row w-full gap-1 lg:h-full lg:flex-col lg:w-[20%] lg:gap-1 cursor-pointer">
-                        {gallery.slice(0, 3).map((item) => (
+                        {galleries.slice(0, 3).map((item) => (
                             <div
                                 key={item.id}
                                 className="h-full "
@@ -143,7 +145,7 @@ const Galery = ({ gallery }) => {
 
                     <div className="w-full h-auto pb-2">
                         <div className="carousel w-auto ">
-                            {gallery.map((item) => (
+                            {galleries.map((item) => (
                                 <div
                                     key={item.id}
                                     id={item.id}

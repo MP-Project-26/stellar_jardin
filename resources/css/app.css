@@ -40,7 +40,7 @@
     .border-green-custom {
         @apply border-[#0D7377]
     }
-
+/* 
     .paragraph-Blog {
         overflow          : hidden;
         display           : -webkit-box;
@@ -54,7 +54,7 @@
         @media (max-width: 968px) {
             width: 30rem;
         }
-    }
+    } */
 
     .paragraph-popular {
         overflow          : hidden;

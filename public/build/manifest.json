@@ -3,55 +3,107 @@
     "file": "assets/Layout-73168167.css",
     "src": "Layout.css"
   },
-  "_Layout-fec766d2.js": {
+  "_Layout-77ddc66f.js": {
     "assets": [
       "assets/Logo-1ca1936a.png"
     ],
     "css": [
       "assets/Layout-73168167.css"
     ],
-    "file": "assets/Layout-fec766d2.js",
+    "file": "assets/Layout-77ddc66f.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_index-ac9f7e52.js": {
+  "_index-13b23698.js": {
+    "file": "assets/index-13b23698.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-387d7a00.js"
+    ]
+  },
+  "_index-387d7a00.js": {
+    "file": "assets/index-387d7a00.js"
+  },
+  "_index-c214d636.js": {
+    "file": "assets/index-c214d636.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-387d7a00.js"
+    ]
+  },
+  "_ourblog1-1-565eaf22.js": {
     "assets": [
       "assets/ourblog1-1-80650d81.png"
     ],
-    "file": "assets/index-ac9f7e52.js",
+    "file": "assets/ourblog1-1-565eaf22.js"
+  },
+  "_styles-70d1d3e2.js": {
+    "assets": [
+      "assets/revicons-f7b9c306.woff",
+      "assets/revicons-4ca02b8a.ttf",
+      "assets/revicons-9e4d4c68.eot"
+    ],
+    "css": [
+      "assets/styles-382cb509.css"
+    ],
+    "file": "assets/styles-70d1d3e2.js",
     "imports": [
       "resources/js/app.jsx"
     ]
+  },
+  "_user-516ed244.js": {
+    "assets": [
+      "assets/user-c82fa270.png"
+    ],
+    "file": "assets/user-516ed244.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "node_modules/react-multi-carousel/lib/revicons.eot": {
+    "file": "assets/revicons-9e4d4c68.eot",
+    "src": "node_modules/react-multi-carousel/lib/revicons.eot"
+  },
+  "node_modules/react-multi-carousel/lib/revicons.ttf": {
+    "file": "assets/revicons-4ca02b8a.ttf",
+    "src": "node_modules/react-multi-carousel/lib/revicons.ttf"
+  },
+  "node_modules/react-multi-carousel/lib/revicons.woff": {
+    "file": "assets/revicons-f7b9c306.woff",
+    "src": "node_modules/react-multi-carousel/lib/revicons.woff"
   },
   "resources/js/Pages/About.jsx": {
     "assets": [
       "assets/about-28f0df55.png",
       "assets/house-icon-5d653907.png"
     ],
-    "file": "assets/About-c57d90be.js",
+    "file": "assets/About-4c1cf986.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-fec766d2.js"
+      "_Layout-77ddc66f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/About.jsx"
   },
   "resources/js/Pages/Blog.jsx": {
-    "file": "assets/Blog-3bf76095.js",
+    "file": "assets/Blog-f0335326.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-fec766d2.js",
-      "_index-ac9f7e52.js"
+      "_Layout-77ddc66f.js",
+      "_ourblog1-1-565eaf22.js",
+      "_index-c214d636.js",
+      "_user-516ed244.js",
+      "_index-387d7a00.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Blog.jsx"
   },
   "resources/js/Pages/Buy.jsx": {
-    "file": "assets/Buy-2ae8ab56.js",
+    "file": "assets/Buy-c2b53cc1.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-fec766d2.js"
+      "_Layout-77ddc66f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Buy.jsx"
@@ -69,59 +121,86 @@
       "assets/bg-kiri-a6fdb8a5.png",
       "assets/map1-6980d399.png",
       "assets/map2-d42618eb.png",
-      "assets/map3-43c94822.png"
-    ],
-    "file": "assets/Index-3e3b5efd.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Layout-fec766d2.js",
-      "_index-ac9f7e52.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "resources/js/Pages/Index.jsx"
-  },
-  "resources/js/Pages/Type.jsx": {
-    "assets": [
-      "assets/imageType1-9e0e5750.png",
+      "assets/map3-43c94822.png",
       "assets/imageType2-a4c4577b.png",
       "assets/imageType4-3950b876.png",
       "assets/imageType5-00995030.png",
       "assets/imageType6-46cd4bb0.png"
     ],
-    "file": "assets/Type-424711fb.js",
+    "file": "assets/Index-d681febe.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-fec766d2.js"
+      "_Layout-77ddc66f.js",
+      "_index-c214d636.js",
+      "_ourblog1-1-565eaf22.js",
+      "_styles-70d1d3e2.js",
+      "_index-387d7a00.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Index.jsx"
+  },
+  "resources/js/Pages/SimulasiKPR.jsx": {
+    "file": "assets/SimulasiKPR-693039be.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-77ddc66f.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/SimulasiKPR.jsx"
+  },
+  "resources/js/Pages/Type.jsx": {
+    "file": "assets/Type-f7b6c1c8.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-77ddc66f.js",
+      "_styles-70d1d3e2.js",
+      "_index-13b23698.js",
+      "_index-387d7a00.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Type.jsx"
   },
   "resources/js/Pages/Type_2.jsx": {
-    "file": "assets/Type_2-bf95fd62.js",
+    "file": "assets/Type_2-927f3efc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-fec766d2.js"
+      "_Layout-77ddc66f.js",
+      "_index-13b23698.js",
+      "_index-387d7a00.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Type_2.jsx"
   },
+  "resources/js/Pages/blog/[...id].jsx": {
+    "file": "assets/_...id_-8f9a967b.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Layout-77ddc66f.js",
+      "_ourblog1-1-565eaf22.js",
+      "_user-516ed244.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/blog/[...id].jsx"
+  },
   "resources/js/app.css": {
-    "file": "assets/app-578ec3a1.css",
+    "file": "assets/app-327ec299.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.jsx": {
     "css": [
-      "assets/app-578ec3a1.css"
+      "assets/app-327ec299.css"
     ],
     "dynamicImports": [
       "resources/js/Pages/About.jsx",
       "resources/js/Pages/Blog.jsx",
       "resources/js/Pages/Buy.jsx",
       "resources/js/Pages/Index.jsx",
+      "resources/js/Pages/SimulasiKPR.jsx",
       "resources/js/Pages/Type.jsx",
-      "resources/js/Pages/Type_2.jsx"
+      "resources/js/Pages/Type_2.jsx",
+      "resources/js/Pages/blog/[...id].jsx"
     ],
-    "file": "assets/app-6d12275b.js",
+    "file": "assets/app-0c4176d4.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   },
@@ -216,5 +295,13 @@
   "resources/js/assets/ourblog3.png": {
     "file": "assets/ourblog3-479b6fcc.png",
     "src": "resources/js/assets/ourblog3.png"
+  },
+  "resources/js/assets/user.png": {
+    "file": "assets/user-c82fa270.png",
+    "src": "resources/js/assets/user.png"
+  },
+  "styles.css": {
+    "file": "assets/styles-382cb509.css",
+    "src": "styles.css"
   }
 }

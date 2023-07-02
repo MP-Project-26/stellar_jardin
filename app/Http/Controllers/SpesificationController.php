@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Galleries;
-use Illuminate\Http\Request;
+use App\Models\Spesification;
+use App\Http\Requests\StoreSpesificationRequest;
+use App\Http\Requests\UpdateSpesificationRequest;
 use Inertia\Inertia;
 
-class GalleriesController extends Controller
+class SpesificationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
         $galleries = Galleries::with('category')->get();
 
-        return Inertia::render('Type', [
+        return Inertia::render('Type_2', [
             'title' => 'Galleries',
             'galleries' => $galleries,
         ]);
-
 
     }
 
@@ -35,7 +35,7 @@ class GalleriesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreSpesificationRequest $request)
     {
         //
     }
@@ -43,7 +43,7 @@ class GalleriesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Spesification $spesification)
     {
         //
     }
@@ -51,7 +51,7 @@ class GalleriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Spesification $spesification)
     {
         //
     }
@@ -59,7 +59,7 @@ class GalleriesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateSpesificationRequest $request, Spesification $spesification)
     {
         //
     }
@@ -67,7 +67,7 @@ class GalleriesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Spesification $spesification)
     {
         //
     }

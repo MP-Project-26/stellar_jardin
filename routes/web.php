@@ -43,10 +43,10 @@ Route::get('/about', function () {
 Route::get('/type', [GalleriesController::class, 'index']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/admin/blog', [BlogController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('user');
+Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');
+Route::get('/admin/blog', [BlogController::class, 'index'])->middleware(['auth', 'verified'])->name('blog');
+Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['auth', 'verified'])->name('content');
 
 
 

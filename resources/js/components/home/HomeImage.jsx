@@ -6,13 +6,13 @@ export default function HomeImage({ src, bg, children }) {
     return (
         <>
             {bg ? (
-                <div className="flex flex-col md:flex-row items-center justify-around px-[1rem] gap-[3rem]">
+                <div className="flex flex-col lg:flex-row items-center justify-around px-0 lg:px-[1rem] gap-[3rem]">
                     {" "}
-                    <div className="pl-14 w-full md:w-[50%]">
-                        <div className="relative">
+                    <div className="pl-14 w-full lg:w-[50%]">
+                        <div className="relative flex w-full justify-center">
                             <img
                                 src={src}
-                                className=" absolute top-[10%] -left-[10%] z-[20] w-[50rem] rounded-se-[3rem] rounded-bl-[3rem]"
+                                className=" absolute top-[10%] left-[10%] lg:-left-[10%] z-[20] w-[20rem] lg:w-[50rem] rounded-se-[3rem] rounded-bl-[3rem]"
                                 alt=""
                                 data-aos="fade-up-right"
                                 data-aos-easing="ease-out-cubic"
@@ -20,7 +20,7 @@ export default function HomeImage({ src, bg, children }) {
                             />
                             <img
                                 src={BgKanan}
-                                className="w-full"
+                                className="w-[20rem] lg:w-[50rem]"
                                 alt=""
                                 data-aos="fade-up-right"
                                 data-aos-easing="ease-out-cubic"
@@ -31,13 +31,13 @@ export default function HomeImage({ src, bg, children }) {
                     {children}
                 </div>
             ) : (
-                <div className="flex flex-col md:flex-row items-center justify-around px-[1rem] gap-[3rem]">
+                <div className="flex flex-col lg:flex-row items-center justify-around px-0 lg:px-[1rem] gap-[3rem]">
                     {children}
-                    <div className="px-10 w-full md:w-[50%]">
-                        <div className="relative">
+                    <div className="px-10 w-full lg:w-[50%]">
+                        <div className="relative ">
                             <img
                                 src={src}
-                                className=" absolute top-[10%] left-[10%] z-[20] w-[50rem] rounded-br-[3rem] rounded-ss-[3rem] "
+                                className=" absolute top-[10%] left-[10%] z-[20] w-[20rem] lg:w-[50rem] rounded-br-[3rem] rounded-ss-[3rem] "
                                 alt=""
                                 data-aos="fade-up-right"
                                 data-aos-easing="ease-out-cubic"
@@ -45,7 +45,7 @@ export default function HomeImage({ src, bg, children }) {
                             />
                             <img
                                 src={BgKiri}
-                                className="w-full"
+                                className="w-[20rem] lg:w-[50rem]"
                                 alt=""
                                 data-aos="fade-up-right"
                                 data-aos-easing="ease-out-cubic"

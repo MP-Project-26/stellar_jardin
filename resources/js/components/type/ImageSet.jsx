@@ -31,6 +31,12 @@ export const ImageSet = ({ galleries }) => {
         },
     };
 
+    const data = [
+        { label: "Exterior", value: "exterior" },
+        { label: "Interior", value: "interior" },
+        { label: "Potongan", value: "potongan" },
+    ];
+
     return (
         <>
             <div id="gallery" className="lg:px-40 md:px-32 px-2">
@@ -99,3 +105,5 @@ export const ImageSet = ({ galleries }) => {
         </>
     );
 };
+
+export default ImageSet;

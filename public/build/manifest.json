@@ -1,7 +1,9 @@
 {
-  "Layout.css": {
-    "file": "assets/Layout-73168167.css",
-    "src": "Layout.css"
+  "_ApplicationLogo-821c21f8.js": {
+    "file": "assets/ApplicationLogo-821c21f8.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
   },
   "_Layout-ac900af0.js": {
     "assets": [
@@ -90,7 +92,7 @@
       "_about-cf7c96d9.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/About.jsx"
+    "src": "resources/js/Pages/Auth/Login.jsx"
   },
   "resources/js/Pages/Blog.jsx": {
     "file": "assets/Blog-fafdc0bd.js",
@@ -103,7 +105,7 @@
       "_index-387d7a00.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Blog.jsx"
+    "src": "resources/js/Pages/Auth/Register.jsx"
   },
   "resources/js/Pages/Buy.jsx": {
     "file": "assets/Buy-57b34470.js",
@@ -139,7 +141,7 @@
       "_index-387d7a00.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Index.jsx"
+    "src": "resources/js/Pages/Dashboard.jsx"
   },
   "resources/js/Pages/SimulasiKPR.jsx": {
     "file": "assets/SimulasiKPR-2e7a1ac4.js",
@@ -160,7 +162,50 @@
       "_index-387d7a00.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Type.jsx"
+    "src": "resources/js/Pages/Profile/Edit.jsx"
+  },
+  "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx": {
+    "file": "assets/DeleteUserForm-904f8ef5.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-24a6a8db.js",
+      "_InputLabel-09587f7f.js",
+      "_transition-1a198851.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx"
+  },
+  "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx": {
+    "file": "assets/UpdatePasswordForm-8213de61.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-24a6a8db.js",
+      "_InputLabel-09587f7f.js",
+      "_PrimaryButton-229b608e.js",
+      "_transition-1a198851.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx"
+  },
+  "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx": {
+    "file": "assets/UpdateProfileInformationForm-4331d344.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_TextInput-24a6a8db.js",
+      "_InputLabel-09587f7f.js",
+      "_PrimaryButton-229b608e.js",
+      "_transition-1a198851.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx"
+  },
+  "resources/js/Pages/Welcome.jsx": {
+    "file": "assets/Welcome-8f118eb5.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Welcome.jsx"
   },
   "resources/js/Pages/Type_2.jsx": {
     "file": "assets/Type_2-6bb157d4.js",

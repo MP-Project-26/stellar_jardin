@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import Logo from "@/assets/Logo.png";
 
 export default function Navbar() {
+    const [open, setOpen] = React.useState(false);
+
     const location = window.location.pathname;
 
     const [scroll, setScroll] = React.useState(0);
@@ -68,9 +70,11 @@ export default function Navbar() {
                                 </Link>
                             </li>
 
-
                             <li>
-                                <span className=" font-semibold text-xl ">
+                                <span
+                                    className=" font-semibold text-xl "
+                                    onClick={() => setOpen(!open)}
+                                >
                                     Type
                                 </span>
                                 <ul className="p-2">
@@ -151,7 +155,10 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className=" font-semibold text-xl ">
+                                        <Link
+                                            href="/type_2"
+                                            className=" font-semibold text-xl "
+                                        >
                                             Custom
                                         </Link>
                                     </li>

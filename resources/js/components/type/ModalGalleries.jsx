@@ -1,7 +1,6 @@
 import React from "react";
 
 const ModalGalleries = ({ galleries }) => {
-
     const exteriorGallery = galleries.filter(
         (item) => item.category.category_name === "Exterior"
     );
@@ -91,7 +90,7 @@ const ModalGalleries = ({ galleries }) => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex flex-col h-40 lg:h-40 overflow-y-auto">
+                    <div className="flex flex-col h-40 lg:h-40 overflow-y-auto scrollbar-hide">
                         <div className="">
                             <h1 className="text-xl">Exterior</h1>
                         </div>

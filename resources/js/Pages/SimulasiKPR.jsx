@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "@inertiajs/react";
 import axios from "axios";
-import Layout from "@/Layout/Layout";
+import Layout from "@/Layouts/Layout";
+
 
 const SimulasiKPR = ({ title }) => {
     const [isLoading, setIsLoading] = useState(false);

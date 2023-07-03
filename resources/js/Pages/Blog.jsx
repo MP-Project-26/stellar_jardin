@@ -1,4 +1,4 @@
-import Layout from "@/Layout/Layout";
+import Layout from "@/Layouts/Layout";
 import ImageOurBlog1 from "@/assets/ourblog1-1.png";
 import { IconButton, ButtonGroup } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";

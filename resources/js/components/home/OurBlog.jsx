@@ -37,7 +37,7 @@ export default function OurBlog() {
                     <div className="flex flex-col md:flex-row items-center justify-center space-y-10">
                         <HomeImage src={ImageOur1} bg={false}>
                             <div
-                                className="flex flex-col gap-8 relative w-[50%]"
+                                className="flex flex-col gap-8 relative p-10 lg:p-0 w-full lg:w-[50%]"
                                 data-aos="zoom-in-down"
                             >
                                 <img
@@ -48,7 +48,7 @@ export default function OurBlog() {
                                 <div className="text-6xl font-extrabold flex flex-row items-center ">
                                     how to manage house property
                                 </div>
-                                <p className="text-2xl font-medium ">
+                                <p className=" text-md lg:text-2xl font-medium ">
                                     Lorem ipsum dolor sit, amet consectetur
                                     adipisicing elit. Possimus eos provident
                                     unde vitae doloribus ea culpa tenetur, quis
@@ -56,7 +56,7 @@ export default function OurBlog() {
                                     labore explicabo quod vero reprehenderit.
                                     Odio!
                                 </p>
-                                <div className="flex flex-row gap-[1.2rem] text-white">
+                                <div className="flex flex-row gap-[1.2rem] text-white text-sm lg:text-lg">
                                     <span className="px-3 py-1 rounded-xl bg-[#000000a7] text-white font-serif">
                                         #house
                                     </span>
@@ -71,7 +71,7 @@ export default function OurBlog() {
                                 <div className="w-50 flex justify-end">
                                     <Link
                                         href="/buy"
-                                        className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-[3.4rem] py-[1.2rem]"
+                                        className=" font-semibold text-md lg:text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-5 lg:px-[3.4rem] py-3 lg:py-[1.2rem]"
                                     >
                                         MORE
                                     </Link>
@@ -85,7 +85,7 @@ export default function OurBlog() {
                 <div className="flex flex-row items-center justify-center space-y-10">
                     <HomeImage src={ImageOur2} bg={true}>
                         <div
-                            className="flex flex-col gap-8 relative w-[50%]"
+                            className="flex flex-col gap-8 relative p-10 lg:p-0 w-full lg:w-[50%]"
                             data-aos="zoom-in-down"
                         >
                             <img
@@ -96,14 +96,14 @@ export default function OurBlog() {
                             <div className="text-6xl font-extrabold flex flex-row items-center ">
                                 how to manage house property
                             </div>
-                            <p className="text-2xl font-medium ">
+                            <p className=" text-md lg:text-2xl font-medium ">
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Possimus eos provident unde
                                 vitae doloribus ea culpa tenetur, quis aut
                                 corporis. Amet dicta veniam architecto labore
                                 explicabo quod vero reprehenderit. Odio!
                             </p>
-                            <div className="flex flex-row gap-[1.2rem] text-white">
+                            <div className="flex flex-row gap-[1.2rem] text-white text-sm lg:text-lg">
                                 <span className="px-3 py-1 rounded-xl bg-[#000000a7] text-white font-serif">
                                     #house
                                 </span>
@@ -117,7 +117,7 @@ export default function OurBlog() {
                             <div className="w-50 flex justify-end">
                                 <Link
                                     href="/buy"
-                                    className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-[3.4rem] py-[1.2rem]"
+                                    className=" font-semibold text-md lg:text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-5 lg:px-[3.4rem] py-3 lg:py-[1.2rem]"
                                 >
                                     MORE
                                 </Link>
@@ -130,7 +130,7 @@ export default function OurBlog() {
                 <div className="flex flex-row items-center justify-center space-y-10">
                     <HomeImage src={ImageOur3} bg={false}>
                         <div
-                            className="flex flex-col gap-8 relative w-[50%]"
+                            className="flex flex-col gap-8 relative p-10 lg:p-0 w-full lg:w-[50%]"
                             data-aos="zoom-in-down"
                         >
                             <img
@@ -141,14 +141,14 @@ export default function OurBlog() {
                             <div className="text-6xl font-extrabold flex flex-row items-center ">
                                 how to manage house property
                             </div>
-                            <p className="text-2xl font-medium ">
+                            <p className=" text-md lg:text-2xl font-medium ">
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Possimus eos provident unde
                                 vitae doloribus ea culpa tenetur, quis aut
                                 corporis. Amet dicta veniam architecto labore
                                 explicabo quod vero reprehenderit. Odio!
                             </p>
-                            <div className="flex flex-row gap-[1.2rem] text-white">
+                            <div className="flex flex-row gap-[1.2rem] text-white text-sm lg:text-lg">
                                 <span className="px-3 py-1 rounded-xl bg-[#000000a7] text-white font-serif">
                                     #house
                                 </span>
@@ -163,7 +163,7 @@ export default function OurBlog() {
                             <div className="w-50 flex justify-end">
                                 <Link
                                     href="/buy"
-                                    className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-[3.4rem] py-[1.2rem]"
+                                    className=" font-semibold text-md lg:text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-5 lg:px-[3.4rem] py-3 lg:py-[1.2rem]"
                                 >
                                     MORE
                                 </Link>

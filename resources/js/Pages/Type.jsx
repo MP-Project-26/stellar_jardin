@@ -1,6 +1,6 @@
-import Layout from "@/Layout/Layout";
+import Layout from "@/Layouts/Layout";
 import ImageType1 from "@/assets/imageType1.png";
-import { ImageSet } from "@/components/type/ImageSet";
+import ImageSet from "@/components/type/ImageSet";
 import { Specification } from "@/components/type/Specification";
 import React, { useEffect } from "react";
 import NavMid from "@/components/type/NavMid";

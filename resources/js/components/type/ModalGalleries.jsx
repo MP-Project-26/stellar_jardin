@@ -1,6 +1,7 @@
 import React from "react";
 
 const ModalGalleries = ({ galleries }) => {
+
     const exteriorGallery = galleries.filter(
         (item) => item.category.category_name === "Exterior"
     );
@@ -13,6 +14,11 @@ const ModalGalleries = ({ galleries }) => {
 
     // const denahGallery = gallery.filter(
     //     (item) => item.category === "denah");
+
+    if (!exteriorGallery || !interiorGallery || !potonganGallery) {
+        console.log("no item");
+        return;
+    }
 
     const Exterior = exteriorGallery.map((item) => {
 
@@ -27,6 +33,8 @@ const ModalGalleries = ({ galleries }) => {
                 </a>
             </div>
         );
+
+
     });
 
     const Interior = interiorGallery.map((item) => {

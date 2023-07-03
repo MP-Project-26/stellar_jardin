@@ -26,7 +26,7 @@ export default function Login({ status, canResetPassword }) {
     return (
         <>
             <Head title="Login" />
-            <div className="w-full flex flex-row">
+            <div className="w-full flex flex-row p-32">
                 <div className="bg-white w-full h-screen flex flex-col gap-8 p-[2rem] font-roboto">
                     <img
                         src={"/assets/img/footer_stellar.png"}

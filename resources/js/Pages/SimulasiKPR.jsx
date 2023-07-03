@@ -3,7 +3,6 @@ import { useForm } from "@inertiajs/react";
 import axios from "axios";
 import Layout from "@/Layouts/Layouts";
 
-
 const SimulasiKPR = ({ title }) => {
     const [isLoading, setIsLoading] = useState(false);
 
@@ -20,7 +19,7 @@ const SimulasiKPR = ({ title }) => {
     const { data, setData, errors, post } = useForm({
         nilai_properti: "0",
         persentase_uang_muka: "",
-        suku_bunga: "",
+        suku_bunga: "13",
         jangka_waktu: "",
     });
     const [cicilanBulanan, setCicilanBulanan] = useState("");
@@ -155,7 +154,7 @@ const SimulasiKPR = ({ title }) => {
                     className="flex flex-col lg:w-[50%] md:w-[70%] w-full gap-4  md:px-0"
                 >
                     <div className="flex flex-col w-full">
-                        <label>Nilai Properti:</label>
+                        <label>Harga Properti:</label>
 
                         <div className="w-ful flex flex-row">
                             <h1 className="bg-green-custom p-2 text-white">
@@ -189,7 +188,7 @@ const SimulasiKPR = ({ title }) => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label>Persentase Uang Muka:</label>
+                        <label>Persentase Uang Muka (DP):</label>
                         <div className="flex">
                             <input
                                 className="w-full"
@@ -227,10 +226,12 @@ const SimulasiKPR = ({ title }) => {
                         <label>Suku Bunga per Tahun:</label>
                         <div className="flex">
                             <input
-                                className="w-full"
+                                disabled
+                                className="w-full bg-gray-200"
                                 id="suku_bunga"
                                 type="number"
                                 name="suku_bunga"
+                                value={data.suku_bunga}
                                 onChange={(e) => {
                                     const inputValue = e.target.value;
                                     const numericValue = parseInt(
@@ -248,16 +249,16 @@ const SimulasiKPR = ({ title }) => {
                                 %
                             </h1>
                         </div>
-                        {errors.suku_bunga && (
-                            <span style={{ color: "red" }}>
-                                {errors.suku_bunga}
-                            </span>
-                        )}
+                        <span className="text-yellow-700">
+                            *Suku bunga tahunan sudah berdasarkan hasil riset
+                            terbaru
+                        </span>
                     </div>
 
                     <div className="flex flex-col">
-                        <label>Jangka Waktu KPR (Tahun):</label>
-                        <div className="flex">
+                        <label>Jangka Waktu KPR : {data.jangka_waktu} Tahun</label>
+
+                        {/* <div className="flex">
                             <input
                                 className="w-full"
                                 id="jangka_waktu"
@@ -271,7 +272,30 @@ const SimulasiKPR = ({ title }) => {
                             <h1 className="bg-green-custom p-2 w-auto text-center text-white">
                                 Tahun
                             </h1>
+                        </div> */}
+
+                        <div className="flex justify-between text-xs px-2">
+                            <span>|</span>
+                            <span>|</span>
+                            <span>|</span>
+                            <span>|</span>
                         </div>
+                        <input
+                            type="range"
+                            min={5}
+                            max={20}
+                            value={data.jangka_waktu}
+                            className="range range-secondary"
+                            step={0}
+                            onChange={(e) => setData("jangka_waktu", e.target.value)}
+                        />
+                        <div className="flex justify-between text-xs px-2">
+                            <span>5 tahun</span>
+                            <span>10 tahun</span>
+                            <span>15 tahun</span>
+                            <span>20 tahun</span>
+                        </div>
+
                         {errors.jangka_waktu && (
                             <span style={{ color: "red" }}>
                                 {errors.jangka_waktu}
@@ -319,7 +343,8 @@ const SimulasiKPR = ({ title }) => {
                     <div className="w-full flex justify-center mt-3">
                         <button
                             className="w-32 p-2 bg-green-custom text-white rounded-md hover:bg-blue-gray-500"
-                            type="submit" onClick={handleButtonClick}
+                            type="submit"
+                            onClick={handleButtonClick}
                         >
                             Hitung
                         </button>

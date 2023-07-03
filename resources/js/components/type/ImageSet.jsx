@@ -12,6 +12,7 @@ export const ImageSet = ({ galleries }) => {
         setSelectedTitle(title);
     };
 
+
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
@@ -31,11 +32,73 @@ export const ImageSet = ({ galleries }) => {
         },
     };
 
-    const data = [
-        { label: "Exterior", value: "exterior" },
-        { label: "Interior", value: "interior" },
-        { label: "Potongan", value: "potongan" },
-    ];
+    const exteriorGallery = galleries.filter(
+        (item) => item.category.category_name === "Exterior"
+    );
+    const interiorGallery = galleries.filter(
+        (item) => item.category.category_name === "Interior"
+    );
+    const potonganGallery = galleries.filter(
+        (item) => item.category.category_name === "Potongan"
+    );
+
+    // const denahGallery = gallery.filter(
+    //     (item) => item.category === "denah");
+
+    if (!exteriorGallery || !interiorGallery || !potonganGallery) {
+        console.log("no item");
+        return;
+    }
+
+    const buttonGallery = () => {
+
+    }
+
+    const Exterior = exteriorGallery.map((item) => {
+
+        return (
+            <div key={item.id} className="w-16 lg:w-28">
+                <a href={`#${item.id}`}>
+                    <img
+                        src={`/assets/img/gallery/${item.image}`}
+                        alt=""
+                        className="w-full"
+                    />
+                </a>
+            </div>
+        );
+
+
+    });
+
+    const Interior = interiorGallery.map((item) => {
+        return (
+            <div key={item.id} className="w-16 lg:w-28">
+                <a href={`#${item.id}`}>
+                    <img
+                        src={`/assets/img/gallery/${item.image}`}
+                        alt=""
+                        className="w-full"
+                    />
+                </a>
+            </div>
+        );
+    });
+
+    const Potongan = potonganGallery.map((item) => {
+        return (
+            <div key={item.id} className="w-16 lg:w-28">
+                <a href={`#${item.id}`}>
+                    <img
+                        src={`/assets/img/gallery/${item.image}`}
+                        alt=""
+                        className="w-full"
+                    />
+                </a>
+            </div>
+        );
+    });
+
 
     return (
         <>
@@ -51,7 +114,7 @@ export const ImageSet = ({ galleries }) => {
                         src={
                             selectedImage
                                 ? `/assets/img/gallery/${selectedImage}`
-                                : "/assets/img/gallery/eksterior_1.png"
+                                : "/assets/img/gallery/eksterior_1.jpg"
                         }
                         alt="image1"
                         className="h-full w-full lg:rounded-bl-[4rem] lg:rounded-tr-[4rem] z-0 lg:object-cover "
@@ -64,6 +127,16 @@ export const ImageSet = ({ galleries }) => {
                         </div>
                     </div>
                 </div>
+
+                <div className="w-full h-10 mt-5">
+                    <ul className="ml-7 flex gap-4">
+                        <li><button>Exterior</button></li>
+                        <li><button>Interior</button></li>
+                        <li><button>Potongan</button></li>
+                        <li><button>Denah</button></li>
+                    </ul>
+                </div>
+
                 <Carousel
                     responsive={responsive}
                     infinite={true}
@@ -85,11 +158,13 @@ export const ImageSet = ({ galleries }) => {
                                             className="lg:h-[9rem] lg:w-[16rem] md:h-[7rem] md:w-[11rem] w-[8rem] h-[5rem] object-cover"
                                         />
                                     </div>
-                                </div>
+                             </div>
                             </div>
                         </div>
                     ))}
                 </Carousel>
+
+
                 <div className="w-full flex justify-end">
                     <div
                         className="bg-green-custom p-2 cursor-pointer hover:bg-blue-gray-400  rounded-md lg:mr-4 md:mr-4"

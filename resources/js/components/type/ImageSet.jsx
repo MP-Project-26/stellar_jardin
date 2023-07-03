@@ -114,7 +114,7 @@ export const ImageSet = ({ galleries }) => {
                         src={
                             selectedImage
                                 ? `/assets/img/gallery/${selectedImage}`
-                                : "/assets/img/gallery/eksterior_1.png"
+                                : "/assets/img/gallery/eksterior_1.jpg"
                         }
                         alt="image1"
                         className="h-full w-full lg:rounded-bl-[4rem] lg:rounded-tr-[4rem] z-0 lg:object-cover "

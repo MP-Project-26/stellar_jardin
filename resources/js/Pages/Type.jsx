@@ -1,4 +1,4 @@
-import Layout from "@/Layouts/Layout";
+import Layout from "@/Layouts/Layouts";
 import ImageType1 from "@/assets/imageType1.png";
 import ImageSet from "@/components/type/ImageSet";
 import { Specification } from "@/components/type/Specification";

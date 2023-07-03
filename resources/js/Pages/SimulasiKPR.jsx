@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "@inertiajs/react";
 import axios from "axios";
-import Layout from "@/Layouts/Layout";
+import Layout from "@/Layouts/Layouts";
 
 
 const SimulasiKPR = ({ title }) => {

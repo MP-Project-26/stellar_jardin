@@ -10,6 +10,7 @@
     body {
         font-family: 'Saira Condensed', sans-serif;
     }
+
 }
 
 
@@ -39,7 +40,7 @@
     .border-green-custom {
         @apply border-[#0D7377]
     }
-
+/* 
     .paragraph-Blog {
         overflow          : hidden;
         display           : -webkit-box;
@@ -53,7 +54,7 @@
         @media (max-width: 968px) {
             width: 30rem;
         }
-    }
+    } */
 
     .paragraph-popular {
         overflow          : hidden;
@@ -68,6 +69,24 @@
         @media (max-width: 968px) {
             width: 30rem;
         } */
+    }
+
+
+    .scrollModal::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .scrollModal_type::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollModal_type::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .scrollModal_type::-webkit-scrollbar-thumb {
+        background   : #FFDE59;
+        border-radius: 10px;
     }
 
 

@@ -1,4 +1,4 @@
-import Layout from "@/Layouts/Layout";
+import Layout from "@/Layouts/Layouts";
 import AboutUs from "@/components/home/About";
 import CarouselHeader from "@/components/home/Carousal";
 import OurBlog from "@/components/home/OurBlog";
@@ -6,13 +6,13 @@ import ImageMap1 from "@/assets/map1.png";
 import ImageMap2 from "@/assets/map2.png";
 import ImageMap3 from "@/assets/map3.png";
 import React from "react";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ImageType1 from "@/assets/imageType2.png";
 import ImageType2 from "@/assets/imageType4.png";
 import ImageType3 from "@/assets/imageType5.png";
 import ImageType4 from "@/assets/imageType6.png";
 import ModalLocation from "@/components/utils/modal/modalLocation";
+import SliderImage from "@/components/home/SliderImage";
 
 const image = [
     {
@@ -33,56 +33,13 @@ const image = [
     },
 ];
 
-const responsive = {
-    superLargeDesktop: {
-        breakpoint: { max: 4000, min: 1750 },
-        items: 3,
-    },
-    desktop: {
-        breakpoint: { max: 1750, min: 1024 },
-        items: 3,
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-    },
-};
 
 const Index = () => {
     return (
         <Layout title="index">
             <CarouselHeader />
             <AboutUs />
-
-            <Carousel
-                responsive={responsive}
-                infinite={true}
-                className="image-slider"
-            >
-                {image.map((item, index) => (
-                    <div
-                        className="flex lg:gap-[3rem] py-[6rem] justify-center item-img"
-                        key={index}
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-easing="ease-in-out"
-                    >
-                        <div>
-                            <div className=" flex bg-white select-none cursor-pointer">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="lg:w-[27rem] lg:h-full object-contain md:h-[7rem] md:w-[11rem]"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </Carousel>
+            <SliderImage/>
             <OurBlog />
             <div className="py-[12rem] px-[6rem] bg-white ">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">

@@ -14,6 +14,11 @@ const ModalGalleries = ({ galleries }) => {
     // const denahGallery = gallery.filter(
     //     (item) => item.category === "denah");
 
+    if (!exteriorGallery || !interiorGallery || !potonganGallery) {
+        console.log("no item");
+        return;
+    }
+
     const Exterior = exteriorGallery.map((item) => {
 
         return (
@@ -27,6 +32,8 @@ const ModalGalleries = ({ galleries }) => {
                 </a>
             </div>
         );
+
+
     });
 
     const Interior = interiorGallery.map((item) => {
@@ -83,7 +90,7 @@ const ModalGalleries = ({ galleries }) => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex flex-col h-40 lg:h-40 overflow-y-auto">
+                    <div className="flex flex-col h-40 lg:h-40 overflow-y-auto scrollbar-hide">
                         <div className="">
                             <h1 className="text-xl">Exterior</h1>
                         </div>

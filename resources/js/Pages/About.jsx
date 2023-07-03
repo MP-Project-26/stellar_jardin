@@ -1,4 +1,4 @@
-import Layout from "@/Layouts/Layout";
+import Layout from "@/Layouts/Layouts";
 import React from "react";
 import Section1 from "@/components/about/Section1";
 import Section2 from "@/components/about/Section2";

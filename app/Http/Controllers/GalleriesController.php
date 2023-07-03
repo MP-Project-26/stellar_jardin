@@ -20,6 +20,8 @@ class GalleriesController extends Controller
             'title' => 'Galleries',
             'galleries' => $galleries,
         ]);
+
+
     }
 
     /**

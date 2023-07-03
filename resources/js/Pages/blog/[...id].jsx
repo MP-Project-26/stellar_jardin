@@ -1,4 +1,4 @@
-import Layout from "@/Layouts/Layout";
+import Layout from "@/Layouts/Layouts";
 import ImageOurBlog1 from "@/assets/ourblog1-1.png";
 import { Link } from "@inertiajs/react";
 import ImageUser from "@/assets/user.png";

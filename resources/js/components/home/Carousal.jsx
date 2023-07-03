@@ -8,7 +8,7 @@ export default function Carousel() {
         <DCarousel
             loop
             autoplay
-            autoplayDelay={4000}
+            autoplayDelay={1114000}
             // className="h-[40rem]"
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
@@ -26,56 +26,38 @@ export default function Carousel() {
                 </div>
             )}
         >
-            <div className="relative h-[40rem]">
+            <div className="flex relative w-full lg:h-[40rem] md:h-[30rem] h-[17rem]">
                 <img
                     src={ImageCarousel1}
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-                    <div className="w-[50rem] space-y-5 -ml-[15rem]">
-                        <h1 className="text-white text-7xl font-bold max-w-[25rem]">
-                            BUILD HOUSE WITH PASSION
+                <div className="absolute flex items-center w-full h-full  ">
+                    <div className="md:ml-40 ml-14 mt-6 md:mt-0">
+                        <h1 className="text-white lg:text-7xl md:text-5xl text-xl font-bold max-w-[30rem]">
+                        STELLAR JARDIN RESIDENCE
                         </h1>
-                        <p className="text-white max-w-[25rem]">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. In pariatur eius esse modi voluptates earum
-                            praesentium ab dolorem nam veritatis quos dicta
-                            eaque, quaerat explicabo similique laboriosam
-                            incidunt nostrum placeat?
+                        <p className="text-white lg:text-2xl md:text-md text-[0.7rem] lg:max-w-[40rem] md:max-w-[20rem] max-w-[15rem]">
+                        Keanggunan Skandinavia, Hunian Damai, Kemewahan Memukau. Wujudkan Impian Rumah Anda di Sini, Tempat Realisasi Impian Terbaik.
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="relative h-[40rem]">
+            <div className="relative h-[17rem] lg:h-[40rem] md:h-[30rem]">
                 <img
                     src={ImageCarousel2}
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
-                {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-                    <div className="bg-cyan-200 w-full ">
-                        <h1 className="text-white text-4xl font-bold">
-                            We are here to help you
-                        </h1>
-                    </div>
-                </div> */}
             </div>
-            <div className="relative h-[40rem]">
+            <div className="relative h-[17rem]  lg:h-[40rem] md:h-[30rem]">
                 <img
                     src={ImageCarousel3}
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
-                {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-                    <div className="bg-cyan-200 w-full ">
-                        <h1 className="text-white text-4xl font-bold">
-                            We are here to help you
-                        </h1>
-                    </div>
-                </div> */}
             </div>
-           
+
         </DCarousel>
     );
 }

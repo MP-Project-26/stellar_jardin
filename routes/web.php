@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SimulasiKPRController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GalleriesController;
+use App\Http\Controllers\SpesificationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 
@@ -41,7 +43,8 @@ Route::get('/about', function () {
 
 
 Route::get('/type', [GalleriesController::class, 'index']);
-
+Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
+Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('user');
 Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');
@@ -61,6 +64,11 @@ Route::get('/buy', function () {
 });
 
 
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 Route::middleware('auth')->group(function () {
     Route::get('admin/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('admin/profile', [ProfileController::class, 'update'])->name('profile.update');

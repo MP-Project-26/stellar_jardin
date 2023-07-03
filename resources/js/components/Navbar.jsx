@@ -76,26 +76,21 @@ export default function Navbar() {
                                 >
                                     Type
                                 </span>
-                                {open && (
-                                    <ul className="p-2">
-                                        <li>
-                                            <Link
-                                                href="/type"
-                                                className=" font-semibold text-xl "
-                                            >
-                                                Type
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href="/type_2"
-                                                className=" font-semibold text-xl "
-                                            >
-                                                Custom
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                )}
+                                <ul className="p-2">
+                                    <li>
+                                        <Link
+                                            href="/type"
+                                            className=" font-semibold text-xl "
+                                        >
+                                            Standart
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className=" font-semibold text-xl ">
+                                            Custom
+                                        </Link>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <Link

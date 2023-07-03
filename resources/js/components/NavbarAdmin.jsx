@@ -28,13 +28,11 @@ const NavbarAdmin = () => {
             name: "Contact Management",
             link: "/admin/contact",
             icon: BiSolidContact,
-        },
-        { name: "Settings", link: "/", icon: AiFillSetting, margin: true },
-        { name: "Logout", link: "/", icon: BiLogOut },
+        }
     ];
     const [open, setOpen] = useState(true);
     return (
-        <div className="px-0 mt-0 h-screen select-none top-0 sticky z-[20000] ">
+        <div className="px-0 mt-0 h-screen select-none top-0 sticky z-[200] ">
             <div className="flex h-full top gap-6">
                 <div
                     className={` ${
@@ -61,7 +59,7 @@ const NavbarAdmin = () => {
                                 <img
                                     src={Logo}
                                     alt="Logo"
-                                    className="w-[4rem] lg:w-[6rem] cursor-pointer"
+                                    className="w-[4rem] lg:w-[8rem] cursor-pointer invert"
                                 />
                             </Link>
                         </div>

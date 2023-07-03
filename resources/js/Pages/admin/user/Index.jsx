@@ -64,11 +64,11 @@ export default function Index({ auth }) {
                 <h1 className="font-sans font-bold text-black text-2xl md:text-3xl">
                     USER MANAGEMENT
                 </h1>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto mt-5">
                     <table className="table">
                         {/* head */}
                         <thead>
-                            <tr>
+                            <tr className="bg-green-custom">
                                 <th></th>
                                 <th>Name</th>
                                 <th>Job</th>

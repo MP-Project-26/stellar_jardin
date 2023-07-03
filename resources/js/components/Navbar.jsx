@@ -21,7 +21,6 @@ export default function Navbar() {
         };
     }, []);
 
-
     return (
         <nav
             className={`w-full ${
@@ -106,7 +105,6 @@ export default function Navbar() {
                                     Blog
                                 </Link>
                             </li>
-
                         </ul>
                     </div>
                     <Link href="/">

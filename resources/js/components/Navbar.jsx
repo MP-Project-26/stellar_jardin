@@ -76,21 +76,23 @@ export default function Navbar() {
                                 >
                                     Type
                                 </span>
-                                <ul className="p-2">
-                                    <li>
-                                        <Link
-                                            href="/type"
-                                            className=" font-semibold text-xl "
-                                        >
-                                            Standart
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className=" font-semibold text-xl ">
-                                            Custom
-                                        </Link>
-                                    </li>
-                                </ul>
+                                {open && (
+                                    <ul className="p-2">
+                                        <li>
+                                            <Link
+                                                href="/type"
+                                                className=" font-semibold text-xl "
+                                            >
+                                                Standart
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/type_2" className=" font-semibold text-xl ">
+                                                Custom
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                )}
                             </li>
                             <li>
                                 <Link

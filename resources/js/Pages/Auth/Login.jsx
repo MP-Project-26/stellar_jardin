@@ -29,7 +29,7 @@ export default function Login({ status, canResetPassword }) {
             <div className="w-full flex flex-row">
                 <div className="bg-white w-full h-screen flex flex-col gap-8 p-[2rem] font-roboto">
                     <img
-                        src={FooterStelar}
+                        src={"/assets/img/footer_stellar.png"}
                         alt=""
                         className="w-[9rem] h-[9rem] invert"
                     />
@@ -138,13 +138,15 @@ export default function Login({ status, canResetPassword }) {
                 </div>
                 <div className="bg-gray-300 w-full h-screen flex flex-row relative ">
                     <img
-                        src={BGGAMBAR}
+                        src={"/assets/img/BGGAMBAR.png"}
                         alt=""
                         className="w-full object-cover"
                     />
                     <div className="absolute bottom-3 w-full flex justify-center">
                         <span className=" text-md font-roboto text-gray-300 flex flex-row items-center gap-3">
-                            Powered by <img src={MPFOOTER} alt="" /> PROJECT
+                            Powered by{" "}
+                            <img src={"/assets/img/mp-footer.png"} alt="" />{" "}
+                            PROJECT
                         </span>
                     </div>
                 </div>

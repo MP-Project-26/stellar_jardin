@@ -40,25 +40,15 @@
     .border-green-custom {
         @apply border-[#0D7377]
     }
-/* 
+
     .paragraph-Blog {
         overflow          : hidden;
         display           : -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
-<<<<<<< HEAD
+
+        
     }
-=======
-
-        @media (max-width: 768px) {
-            width: 40rem;
-        }
-
-        @media (max-width: 968px) {
-            width: 30rem;
-        }
-    } */
->>>>>>> main
 
     .paragraph-popular {
         overflow          : hidden;

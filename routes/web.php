@@ -47,6 +47,7 @@ Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
 Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('user');
+Route::post('/admin/user', [UserController::class, 'store'])->name('createUser');
 Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');
 Route::get('/admin/blog', [BlogController::class, 'index'])->middleware(['auth', 'verified'])->name('blog');
 Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['auth', 'verified'])->name('content');

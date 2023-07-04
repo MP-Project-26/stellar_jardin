@@ -1,14 +1,11 @@
 import { Carousel as DCarousel } from "@material-tailwind/react";
-import ImageCarousel1 from "@/assets/carousal1.png";
-import ImageCarousel2 from "@/assets/carousal2.png";
-import ImageCarousel3 from "@/assets/carousal3.png";
 
 export default function Carousel() {
     return (
         <DCarousel
             loop
             autoplay
-            autoplayDelay={1114000}
+            autoplayDelay={6000}
             // className="h-[40rem]"
             navigation={({ setActiveIndex, activeIndex, length }) => (
                 <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
@@ -28,36 +25,37 @@ export default function Carousel() {
         >
             <div className="flex relative w-full lg:h-[40rem] md:h-[30rem] h-[17rem]">
                 <img
-                    src={ImageCarousel1}
+                    src={"./assets/img/carousal/carousal1.png"}
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
                 <div className="absolute flex items-center w-full h-full  ">
                     <div className="md:ml-40 ml-14 mt-6 md:mt-0">
                         <h1 className="text-white lg:text-7xl md:text-5xl text-xl font-bold max-w-[30rem]">
-                        STELLAR JARDIN RESIDENCE
+                            STELLAR JARDIN RESIDENCE
                         </h1>
                         <p className="text-white lg:text-2xl md:text-md text-[0.7rem] lg:max-w-[40rem] md:max-w-[20rem] max-w-[15rem]">
-                        Keanggunan Skandinavia, Hunian Damai, Kemewahan Memukau. Wujudkan Impian Rumah Anda di Sini, Tempat Realisasi Impian Terbaik.
+                            Keanggunan Skandinavia, Hunian Damai, Kemewahan
+                            Memukau. Wujudkan Impian Rumah Anda di Sini, Tempat
+                            Realisasi Impian Terbaik.
                         </p>
                     </div>
                 </div>
             </div>
             <div className="relative h-[17rem] lg:h-[40rem] md:h-[30rem]">
                 <img
-                    src={ImageCarousel2}
+                    src={"./assets/img/carousal/carousal2.png"}
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
             </div>
             <div className="relative h-[17rem]  lg:h-[40rem] md:h-[30rem]">
                 <img
-                    src={ImageCarousel3}
+                    src={"./assets/img/carousal/carousal3.png"}
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
             </div>
-
         </DCarousel>
     );
 }

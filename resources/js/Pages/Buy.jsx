@@ -1,4 +1,4 @@
-import Layout from "@/Layouts/Layouts";
+import Layout from "@/Layouts/Layout";
 import React from "react";
 
 export default function Buy() {

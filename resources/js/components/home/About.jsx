@@ -22,7 +22,7 @@ const AboutUs = () => {
                         data-aos-duration="1000"
                     />
                 </div>
-                <div class="flex w-full h-full items-end lg:px-8 md:px-0">
+                <div className="flex w-full h-full items-end lg:px-8 md:px-0">
                     <div className="bg-green-custom lg:w-[40%] lg:h-[30%] md:w-[35%] md:h-[25%] w-[40%] h-[40%] absolute z-10 rounded-tl-3xl rounded-br-3xl"></div>
                 </div>
             </div>

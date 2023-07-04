@@ -11,8 +11,6 @@ const Section1 = () => {
                     src={aboutIMG}
                     alt=""
                     data-aos="fade-down-right"
-                    data-aos-easing="ease-out-cubic"
-                    data-aos-duration="1000"
                 />
             </div>
             {/* Text */}

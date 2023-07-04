@@ -1,7 +1,8 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { Head } from "@inertiajs/react";
 import Aos from "aos";
+import { Head } from "@inertiajs/react";
+
 import "aos/dist/aos.css";
 import React from "react";
 import { useEffect } from "react";

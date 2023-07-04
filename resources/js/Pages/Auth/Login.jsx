@@ -4,6 +4,7 @@ import BGGAMBAR from "@/assets/login/BGGAMBAR.png";
 import MPFOOTER from "@/assets/login/mp-footer.png";
 import { Head, Link, useForm } from "@inertiajs/react";
 import React, { useEffect } from "react";
+import InputError from "@/Components/login/InputError";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -56,11 +57,7 @@ export default function Login({ status, canResetPassword }) {
                                             *
                                         </span>
                                     </label>{" "}
-                                    {errors.email && (
-                                        <span className="text-red-800 text-xs font-semibold">
-                                            {errors.email}
-                                        </span>
-                                    )}
+                                    <InputError message={errors.email} className="mt-2" />
                                     <TextInput
                                         type="email"
                                         name="email"
@@ -84,11 +81,7 @@ export default function Login({ status, canResetPassword }) {
                                             *
                                         </span>
                                     </label>
-                                    {errors.password && (
-                                        <span className="text-red-800 text-xs font-semibold">
-                                            {errors.password}
-                                        </span>
-                                    )}
+                                    <InputError message={errors.password} className="mt-2"/>
                                     <TextInput
                                         type="password"
                                         name="password"

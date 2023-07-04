@@ -41,9 +41,9 @@ export default function Index({ auth, dataUser }) {
                         <tbody>
                             {dataUser.map((res, i) => (
                                 <tr key={i}>
-                                    <th>{i}</th>
-                                    <th>{res.name}</th>
-                                    <th>{res.email}</th>
+                                    <th>{i + 1}</th>
+                                    <td>{res.name}</td>
+                                    <td>{res.email}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -70,15 +70,21 @@ const ModalNewUser = () => {
 
     const submit = (e) => {
         e.preventDefault();
-        post(route("register"));
+
+        post(route("createUser"));
+        window.my_modal_1.close();
     };
 
     return (
         <>
             {processing && (
-                <div className="toast">
-                    <div className="alert alert-info">
-                        <span>Berhasil</span>
+                <div className="fixed z-[100] inset-0 overflow-y-auto">
+                    <div className="toast toast-center toast-top">
+                        <div className="alert alert-success mt-[5rem]">
+                            <span className="text-2xl text-white font-extrabold">
+                                Berhasil membuat akun
+                            </span>
+                        </div>
                     </div>
                 </div>
             )}

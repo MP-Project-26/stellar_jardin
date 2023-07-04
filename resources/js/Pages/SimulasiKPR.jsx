@@ -235,6 +235,7 @@ const SimulasiKPR = ({ title }) => {
                                 id="suku_bunga"
                                 type="number"
                                 name="suku_bunga"
+
                                 value={data.suku_bunga}
                                 onChange={(e) => {
                                     const inputValue = e.target.value;
@@ -292,7 +293,7 @@ const SimulasiKPR = ({ title }) => {
                             max={20}
                             value={data.jangka_waktu}
                             className="range range-secondary"
-                            defaultValue={5}
+
                             onChange={(e) =>
                                 setData("jangka_waktu", e.target.value)
                             }

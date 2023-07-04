@@ -1,5 +1,4 @@
 import Layout from "@/Layouts/Layouts";
-import ImageType1 from "@/assets/imageType1.png";
 import ImageSet from "@/components/type/ImageSet";
 import { Specification } from "@/components/type/Specification";
 import React, { useEffect } from "react";
@@ -22,7 +21,7 @@ export default function Type({ title, galleries }) {
         <Layout title={title}>
             <div className="mt-32 my-10">
                 <ImageSet galleries={galleries} />
-                <NavMid /> 
+                <NavMid />
                 <div className="bg-white lg:mx-40 md:mx-32 mx-4">
                     <div>
                         <div

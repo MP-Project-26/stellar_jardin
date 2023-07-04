@@ -69,19 +69,38 @@ export default function Index({ auth }) {
                         {/* head */}
                         <thead>
                             <tr className="bg-green-custom">
-                                <th></th>
-                                <th>Name</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
+                                <th className="text-xl font-extrabold text-white">
+                                    No
+                                </th>
+                                <th className="text-xl font-extrabold text-white">
+                                    Name
+                                </th>
+                                <th className="text-xl font-extrabold text-white">
+                                    Job
+                                </th>
+                                <th className="text-xl font-extrabold text-white">
+                                    Favorite Color
+                                </th>
+                                <th className="text-xl font-extrabold text-white">
+                                    action
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((res, i) => (
                                 <tr key={i}>
-                                    <th>{res.i}</th>
+                                    <th>{i + 1}</th>
                                     <td>{res.name}</td>
                                     <td>{res.job}</td>
                                     <td>{res.color}</td>
+                                    <td className="flex flex-row gap-2">
+                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                            Edit
+                                        </button>
+                                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                            Delete
+                                        </button>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

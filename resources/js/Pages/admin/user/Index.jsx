@@ -5,8 +5,13 @@ import PrimaryButton from "@/Components/login/PrimaryButton";
 import LayoutAdmin from "@/Layouts/LayoutAdmin";
 import { useForm, Link } from "@inertiajs/react";
 import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Index({ auth, dataUser }) {
+    const [data,setData]=useState([])
+    useEffect(() => {
+        setData(dataUser)
+    }, [dataUser])
     return (
         <LayoutAdmin title="Dashboard" auth={auth}>
             <ModalNewUser />
@@ -39,7 +44,7 @@ export default function Index({ auth, dataUser }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {dataUser.map((res, i) => (
+                            {data.map((res, i) => (
                                 <tr key={i}>
                                     <th>{i + 1}</th>
                                     <td>{res.name}</td>

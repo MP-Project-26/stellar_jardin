@@ -69,16 +69,24 @@ export default function Index({ auth }) {
                         {/* head */}
                         <thead>
                             <tr className="bg-green-custom">
-                                <th></th>
-                                <th>Name</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
+                                <th className="text-xl font-extrabold text-white">
+                                    No
+                                </th>
+                                <th className="text-xl font-extrabold text-white">
+                                    Name
+                                </th>
+                                <th className="text-xl font-extrabold text-white">
+                                    Job
+                                </th>
+                                <th className="text-xl font-extrabold text-white">
+                                    Favorite Color
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((res, i) => (
                                 <tr key={i}>
-                                    <th>{res.i}</th>
+                                    <th>{i+1}</th>
                                     <td>{res.name}</td>
                                     <td>{res.job}</td>
                                     <td>{res.color}</td>

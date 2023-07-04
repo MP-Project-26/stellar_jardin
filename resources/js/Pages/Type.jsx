@@ -22,8 +22,8 @@ export default function Type({ title, galleries }) {
         <Layout title={title}>
             <div className="mt-32 my-10">
                 <ImageSet galleries={galleries} />
-                <NavMid />
-                <div className="bg-white lg:mx-40 md:mx-32 mx-2">
+                <NavMid /> 
+                <div className="bg-white lg:mx-40 md:mx-32 mx-4">
                     <div>
                         <div
                             className="font-extrabold flex flex-col"

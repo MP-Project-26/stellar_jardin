@@ -28,7 +28,7 @@ export default function Navbar() {
                 location === "/" && scroll <= 1.5
                     ? " bg-transparent text-white"
                     : "bg-green-custom shadow-lg text-white"
-            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-[20000] transition-all duration-180 ease-in-out `}
+            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-40 transition-all duration-180 ease-in-out `}
         >
             <div className="navbar">
                 <div className="navbar-start">

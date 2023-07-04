@@ -22,8 +22,13 @@ const Section2 = () => {
                                 src={houseIcon}
                                 alt=""
                             />
-                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">MODERN HOUSE</h2>
-                            <p className="text-xl font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente maxime quisquam tempore.</p>
+                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">
+                                Desain Skandinavia yang Memukau
+                            </h2>
+                            <p className="text-xl font-medium">
+                                Stellar Jardin Residence memiliki desain yang
+                                menakjubkan dengan sentuhan Skandinavia
+                            </p>
                         </div>
                     </div>
 
@@ -39,8 +44,16 @@ const Section2 = () => {
                                 src={houseIcon}
                                 alt=""
                             />
-                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">MODERN HOUSE</h2>
-                            <p className="text-xl font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente maxime quisquam tempore.</p>
+                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">
+                                Lokasi Strategis
+                            </h2>
+                            <p className="text-xl font-medium">
+                                {" "}
+                                Stellar Jardin Residence memiliki lokasi yang
+                                strategis di pusat kota. Anda akan dengan mudah
+                                mengakses pusat perbelanjaan, restoran, sekolah,
+                                dan fasilitas umum lainnya.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -77,8 +90,14 @@ const Section2 = () => {
                                 src={houseIcon}
                                 alt=""
                             />
-                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">MODERN HOUSE</h2>
-                            <p className="text-xl font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente maxime quisquam tempore.</p>
+                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">
+                                Kenyamanan Luar Biasa
+                            </h2>
+                            <p className="text-xl font-medium">
+                                Di Stellar Jardin, kami memberikan prioritas
+                                pada kesejahteraan Anda dan menyediakan
+                                pengalaman hidup yang luar biasa.
+                            </p>
                         </div>
                     </div>
 
@@ -94,8 +113,14 @@ const Section2 = () => {
                                 src={houseIcon}
                                 alt=""
                             />
-                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">MODERN HOUSE</h2>
-                            <p className="text-xl font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente maxime quisquam tempore.</p>
+                            <h2 className="card-title text-3xl font-semibold text-[#0D7377]">
+                                Fasilitas Lengkap dan Mewah
+                            </h2>
+                            <p className="text-xl font-medium">
+                                Stellar Jardin Residence dilengkapi dengan
+                                fasilitas yang lengkap untuk memenuhi kebutuhan
+                                dan gaya hidup Anda
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -114,10 +139,12 @@ const Section2 = () => {
                             src={houseIcon}
                             alt=""
                         />
-                        <h2 className="card-title text-3xl font-semibold text-[#0D7377]">MODERN HOUSE</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Rerum nostrum laborum molestiae!
+                        <h2 className="card-title text-3xl font-semibold text-[#0D7377]">
+                            Kualitas dan Layanan Terbaik
+                        </h2>
+                        <p className="text-xl font-medium">
+                            Kami berkomitmen untuk memberikan kualitas terbaik
+                            dalam setiap aspek pengembangan properti kami.
                         </p>
                     </div>
                 </div>

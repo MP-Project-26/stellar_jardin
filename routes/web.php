@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SimulasiKPRController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
@@ -45,6 +46,9 @@ Route::get('/about', function () {
 Route::get('/type', [GalleriesController::class, 'index']);
 Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
 Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
+Route::get('/', [HomeController::class, 'index']);
+
+
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('user');
 Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');

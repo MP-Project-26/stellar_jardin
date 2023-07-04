@@ -40,7 +40,7 @@
     .border-green-custom {
         @apply border-[#0D7377]
     }
-/* 
+/*
     .paragraph-Blog {
         overflow          : hidden;
         display           : -webkit-box;
@@ -91,3 +91,36 @@
 
 
 }
+
+/* @keyframes image-animation {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .selected-image-animation {
+    animation: image-animation 0.5s ease-in-out;
+    transform-origin: center center;
+  } */
+
+  .transitioning {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  img:not(.transitioning) {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  img:not(.transitioning):not(:first-child) {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+

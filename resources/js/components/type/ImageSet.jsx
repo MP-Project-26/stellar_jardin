@@ -1,17 +1,110 @@
+import { CardImage } from "./CardImage";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ModalGalleries from "@/components/type/ModalGalleries";
+import {
+    Tabs,
+    TabsHeader,
+    TabsBody,
+    Tab,
+    TabPanel,
+} from "@material-tailwind/react";
+import React, { useEffect, useState } from "react";
 
-import { useState } from "react";
-
-export const ImageSet = ({ galleries }) => {
+const ImageSet = ({ galleries }) => {
     const [selectedImage, setSelectedImage] = useState(null);
-    const [selectedTitle, setSelectedTitle] = useState(null);
-    const handleImageClick = (image, title) => {
-        setSelectedImage(image);
-        setSelectedTitle(title);
-    };
+    const [activeTab, setActiveTab] = useState("Exterior");
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
+    const exteriorGallery = galleries.filter(
+        (item) => item.category.category_name === "Exterior"
+    );
+    const interiorGallery = galleries.filter(
+        (item) => item.category.category_name === "Interior"
+    );
+    const potonganGallery = galleries.filter(
+        (item) => item.category.category_name === "Potongan"
+    );
+    const denahGallery = galleries.filter(
+        (item) => item.category.category_name === "Denah"
+    );
+
+    const Exterior = exteriorGallery.map((item, index) => {
+        return (
+            <TabPanel key={item.id} value={item.category.category_name}>
+                <div
+                    className="flex  justify-center item-img  hover:scale-110 transform transition-all duration-500 ease-in-out"
+                    key={index}
+                    onClick={(event) => handleImageClick(event,item.image)}
+                >
+                    <a href={`#${item.id}`}>
+                        <CardImage
+                            image={`/assets/img/gallery/${item.image}`}
+                            title={item.id}
+                        />
+                    </a>
+                </div>
+            </TabPanel>
+        );
+    });
+
+    const Interior = interiorGallery.map((item, index) => {
+        return (
+            <TabPanel key={item.id} value={item.category.category_name}>
+                <div
+                    className="flex lg:gap-[3rem] justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
+                    key={index}
+                    onClick={(event) => handleImageClick(event,item.image)}
+                >
+                    <a href={`#${item.id}`}>
+                        <CardImage
+                            image={`/assets/img/gallery/${item.image}`}
+                            title={item.id}
+                        />
+                    </a>
+                </div>
+            </TabPanel>
+        );
+    });
+
+    const Potongan = potonganGallery.map((item, index) => {
+        return (
+            <TabPanel key={item.id} value={item.category.category_name}>
+                <div
+                    className="flex  justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
+                    key={index}
+                    onClick={(event) => handleImageClick(event,item.image)}
+                >
+                    <a href={`#${item.id}`}>
+                        <CardImage
+                            className="h-full w-auto"
+                            image={`/assets/img/gallery/${item.image}`}
+                            title={item.id}
+                        />
+                    </a>
+                </div>
+            </TabPanel>
+        );
+    });
+
+    const Denah = denahGallery.map((item, index) => {
+        return (
+            <TabPanel key={item.id} value={item.category.category_name}>
+                <div
+                    className="flex  justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
+                    key={index}
+                    onClick={(event) => handleImageClick(event,item.image)}
+                >
+                    <a href={`#${item.id}`}>
+                        <CardImage
+                            className="h-full w-auto"
+                            image={`/assets/img/gallery/${item.image}`}
+                            title={item.id}
+                        />
+                    </a>
+                </div>
+            </TabPanel>
+        );
+    });
 
     const responsive = {
         superLargeDesktop: {
@@ -28,153 +121,146 @@ export const ImageSet = ({ galleries }) => {
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 3,
+            items: 2,
         },
     };
 
-    const exteriorGallery = galleries.filter(
-        (item) => item.category.category_name === "Exterior"
-    );
-    const interiorGallery = galleries.filter(
-        (item) => item.category.category_name === "Interior"
-    );
-    const potonganGallery = galleries.filter(
-        (item) => item.category.category_name === "Potongan"
-    );
+    const data = [
+        { label: "Exterior", value: "Exterior" },
+        { label: "Interior", value: "Interior" },
+        { label: "Potongan", value: "Potongan" },
+        { label: "Denah", value: "Denah" },
+    ];
 
-    // const denahGallery = gallery.filter(
-    //     (item) => item.category === "denah");
+    const handleImageClick = (event,image) => {
+        event.preventDefault();
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setSelectedImage(image);
+            setIsTransitioning(false);
+        }, 500);
+    };
 
-    if (!exteriorGallery || !interiorGallery || !potonganGallery) {
-        console.log("no item");
-        return;
-    }
-
-    const buttonGallery = () => {
-
-    }
-
-    const Exterior = exteriorGallery.map((item) => {
-
-        return (
-            <div key={item.id} className="w-16 lg:w-28">
-                <a href={`#${item.id}`}>
-                    <img
-                        src={`/assets/img/gallery/${item.image}`}
-                        alt=""
-                        className="w-full"
-                    />
-                </a>
-            </div>
-        );
-
-
-    });
-
-    const Interior = interiorGallery.map((item) => {
-        return (
-            <div key={item.id} className="w-16 lg:w-28">
-                <a href={`#${item.id}`}>
-                    <img
-                        src={`/assets/img/gallery/${item.image}`}
-                        alt=""
-                        className="w-full"
-                    />
-                </a>
-            </div>
-        );
-    });
-
-    const Potongan = potonganGallery.map((item) => {
-        return (
-            <div key={item.id} className="w-16 lg:w-28">
-                <a href={`#${item.id}`}>
-                    <img
-                        src={`/assets/img/gallery/${item.image}`}
-                        alt=""
-                        className="w-full"
-                    />
-                </a>
-            </div>
-        );
-    });
-
+    useEffect(() => {
+        const imageElement = document.querySelector(".selected-image");
+        if (imageElement) {
+            imageElement.classList.remove("selected-image");
+            setTimeout(() => {
+                imageElement.classList.add("selected-image");
+            }, 0);
+        }
+    }, [selectedImage]);
 
     return (
         <>
-            <div id="gallery" className="lg:px-40 md:px-32 px-2">
-                <div className="flex w-full justify-start h-auto mb-2 lg:px-0 lg:mb-2">
-                    <div className="w-[6px] bg-[#0D7377] mr-3"></div>
-                    <h1 className="font-sans font-bold text-[#0D7377] text-2xl md:text-4xl lg:text-5xl">
-                        GA<span className="text-black">LLERY</span>
+            <div className="w-full  h-auto flex mb-3 lg:px-40 md:px-20 px-4">
+                    <div className="w-2 bg-green-custom mr-2 lg:mr-5 md:mr-3"></div>
+                    <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold text-green-custom">
+                        GAL
+                        <span className="text-black">ERI</span>
                     </h1>
                 </div>
-                <div className="flex flex-col relative w-auto lg:h-[35rem]">
-                    <img
-                        src={
-                            selectedImage
-                                ? `/assets/img/gallery/${selectedImage}`
-                                : "/assets/img/gallery/eksterior_1.png"
-                        }
-                        alt="image1"
-                        className="h-full w-full lg:rounded-bl-[4rem] lg:rounded-tr-[4rem] z-0 lg:object-cover "
-                    />
-                    <div className="flex justify-end items-end  pb-7 w-full absolute z-10 h-full lg:rounded-[2rem]  rounded-[1rem]">
-                        <div className="w-auto bg-black p-2 bg-opacity-50">
-                            <h1 className="text-center text-white text-xl font-medium">
-                                {selectedTitle ? selectedTitle : "Eksterior 1"}
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="w-full h-10 mt-5">
-                    <ul className="ml-7 flex gap-4">
-                        <li><button>Exterior</button></li>
-                        <li><button>Interior</button></li>
-                        <li><button>Potongan</button></li>
-                        <li><button>Denah</button></li>
-                    </ul>
-                </div>
-
-                <Carousel
-                    responsive={responsive}
-                    infinite={true}
-                    className="image-slider"
-                >
-                    {galleries.slice(0, 10).map((item, index) => (
-                        <div className="lg:mt-6 mt-2 mb-2" key={item.id}>
-                            <div className="flex   px-0 justify-center items-center w-full">
-                                <div
-                                    onClick={() =>
-                                        handleImageClick(item.image, item.title)
+            <div id="gallery" className="lg:px-40 md:px-20 px-4">
+                <img
+                    src={
+                        selectedImage
+                            ? `/assets/img/gallery/${selectedImage}`
+                            : "/assets/img/gallery/eksterior_2.jpg"
+                    }
+                    alt="image1"
+                    className={`w-auto h-full md:rounded-3xl object-cover  ${
+                        isTransitioning ? "transitioning" : ""
+                    }`}
+                    style={{ zIndex: selectedImage ? 2 : 1 }}
+                />
+                <div className="py-5">
+                    <Tabs value={activeTab}>
+                        <TabsHeader
+                            className="rounded-none border-b border-blue-gray-50 bg-transparent p-0 w-2/4"
+                            indicatorProps={{
+                                className:
+                                    "bg-transparent border-b-2 border-blue-500 shadow-none rounded-none",
+                            }}
+                        >
+                            {data.map(({ label, value }) => (
+                                <Tab
+                                    key={value}
+                                    value={value}
+                                    onClick={() => setActiveTab(value)}
+                                    className={
+                                        activeTab === value
+                                            ? "text-blue-500"
+                                            : ""
                                     }
-                                    className="flex  bg-white select-none cursor-pointer gap-10"
                                 >
-                                    <div className="w-auto px-1 lg:px-0">
-                                        <img
-                                            src={`/assets/img/gallery/${item.image}`}
-                                            alt={item.title}
-                                            className="lg:h-[9rem] lg:w-[16rem] md:h-[7rem] md:w-[11rem] w-[8rem] h-[5rem] object-cover"
-                                        />
-                                    </div>
-                             </div>
-                            </div>
-                        </div>
-                    ))}
-                </Carousel>
-
-
-                <div className="w-full flex justify-end">
-                    <div
-                        className="bg-green-custom p-2 cursor-pointer hover:bg-blue-gray-400  rounded-md lg:mr-4 md:mr-4"
-                        onClick={() => window.my_modal_3.showModal()}
-                    >
-                        <h1 className="text-xl font-normal text-white hover:text-black">
-                            Lihat Semua Foto
-                        </h1>
-                    </div>
-                    <ModalGalleries galleries={galleries} />
+                                    {label}
+                                </Tab>
+                            ))}
+                        </TabsHeader>
+                        <TabsBody>
+                            {activeTab === "Exterior" ? (
+                                <div>
+                                    <Carousel
+                                        responsive={responsive}
+                                        infinite={true}
+                                        className="image-slider"
+                                        renderButtonGroupOutside={true}
+                                        centerMode={true}
+                                        centerSlidePercentage={75}
+                                        partialVisible={false}
+                                        itemClass="carousel-item"
+                                    >
+                                        {Exterior}
+                                    </Carousel>
+                                </div>
+                            ) : activeTab === "Interior" ? (
+                                <div>
+                                    <Carousel
+                                        responsive={responsive}
+                                        infinite={true}
+                                        className="image-slider"
+                                        renderButtonGroupOutside={true}
+                                        centerMode={true}
+                                        centerSlidePercentage={75}
+                                        partialVisible={false}
+                                        itemClass="carousel-item"
+                                    >
+                                        {Interior}
+                                    </Carousel>
+                                </div>
+                            ) : activeTab === "Potongan" ? (
+                                <div>
+                                    <Carousel
+                                        responsive={responsive}
+                                        infinite={true}
+                                        className="image-slider"
+                                        renderButtonGroupOutside={true}
+                                        centerMode={true}
+                                        centerSlidePercentage={75}
+                                        partialVisible={false}
+                                        itemClass="carousel-item"
+                                    >
+                                        {Potongan}
+                                    </Carousel>
+                                </div>
+                            ):(
+                                <div>
+                                    <Carousel
+                                        responsive={responsive}
+                                        infinite={true}
+                                        className="image-slider"
+                                        renderButtonGroupOutside={true}
+                                        centerMode={true}
+                                        centerSlidePercentage={75}
+                                        partialVisible={false}
+                                        itemClass="carousel-item"
+                                    >
+                                        {Denah}
+                                    </Carousel>
+                                </div>
+                            )}
+                        </TabsBody>
+                    </Tabs>
                 </div>
             </div>
         </>

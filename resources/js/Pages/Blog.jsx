@@ -1,10 +1,7 @@
 import Layout from "@/Layouts/Layouts";
 import ImageOurBlog1 from "@/assets/ourblog1-1.png";
-import { IconButton, ButtonGroup } from "@material-tailwind/react";
-import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
 import React from "react";
-import moment from "moment/moment";
 import ContentBlog from "@/components/blog/ContentBlog";
 import PopularBlog from "@/components/blog/PopularBlog";
 

@@ -1,17 +1,25 @@
 import { Carousel as DCarousel } from "@material-tailwind/react";
-import ImageCarousel1 from "@/assets/carousal1.png";
-import ImageCarousel2 from "@/assets/carousal2.png";
-import ImageCarousel3 from "@/assets/carousal3.png";
 
 export default function Carousel() {
+
+    const carouselImages = [
+        {
+            id: 1,
+            image: '/assets/img/carousal2.png',
+        },
+        {
+            id: 2,
+            image: '/assets/img/carousal3.png',
+        },
+    ]
     return (
         <DCarousel
             loop
             autoplay
-            autoplayDelay={1114000}
+            autoplayDelay={4000}
             // className="h-[40rem]"
             navigation={({ setActiveIndex, activeIndex, length }) => (
-                <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                <div className="absolute bottom-4 left-2/4 z-30 flex -translate-x-2/4 gap-2">
                     {new Array(length).fill("").map((_, i) => (
                         <span
                             key={i}
@@ -28,7 +36,7 @@ export default function Carousel() {
         >
             <div className="flex relative w-full lg:h-[40rem] md:h-[30rem] h-[17rem]">
                 <img
-                    src={ImageCarousel1}
+                    src='/assets/img/carousal1.png'
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
@@ -43,20 +51,17 @@ export default function Carousel() {
                     </div>
                 </div>
             </div>
-            <div className="relative h-[17rem] lg:h-[40rem] md:h-[30rem]">
+            {carouselImages.map((image, index) => (
+            <div
+            key={index}
+             className="relative h-[17rem] lg:h-[40rem] md:h-[30rem]">
                 <img
-                    src={ImageCarousel2}
+                    src={image.image}
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
             </div>
-            <div className="relative h-[17rem]  lg:h-[40rem] md:h-[30rem]">
-                <img
-                    src={ImageCarousel3}
-                    alt="image 1"
-                    className="h-full w-full object-cover"
-                />
-            </div>
+            ))}
 
         </DCarousel>
     );

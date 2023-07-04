@@ -40,14 +40,17 @@ const Section1 = () => {
                     kenyamanan luar biasa untuk para penghuni. Dalam Stellar
                     Jardin, kami menciptakan harmoni sempurna antara desain
                     modern yang elegan dan suasana yang memanjakan.
-                    <p>
+
+                    {/* Dengan kemewahan alami dan desain minimalis yang memukau, kami menghadirkan pengalaman hidup tenang. Setiap rumah di Stellar Jardin dirancang dengan cermat untuk menciptakan lingkungan yang memikat dan memenuhi impian hidup para penghuninya. Stellar Jardin Recidense adalah takdir rumah impian Anda yang menawarkan gaya hidup yang unik dan prestisius. */}
+                </p>
+                <p className="text-justify indent-12 font-medium lg:text-xl md:text-lg ">
                         Dilengkapi dengan fasilitas yang lengkap, Stellar Jardin
                         Residence menawarkan gaya hidup yang mewah dan nyaman
                         bagi para penghuninya. Dalam kompleks perumahan ini,
                         Anda akan menemukan taman-taman yang indah dengan
                         pemandangan yang menakjubkan, ruang hijau yang luas, dan
                         area rekreasi yang dirancang dengan baik.
-                    </p>
+
                     {/* Dengan kemewahan alami dan desain minimalis yang memukau, kami menghadirkan pengalaman hidup tenang. Setiap rumah di Stellar Jardin dirancang dengan cermat untuk menciptakan lingkungan yang memikat dan memenuhi impian hidup para penghuninya. Stellar Jardin Recidense adalah takdir rumah impian Anda yang menawarkan gaya hidup yang unik dan prestisius. */}
                 </p>
             </div>

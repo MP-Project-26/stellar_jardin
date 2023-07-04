@@ -44,7 +44,6 @@ const image = [
 ];
 
 const Index = ({ title, galleries }) => {
-    console.log(galleries);
     return (
         <Layout title={title}>
             <CarouselHeader />
@@ -86,7 +85,7 @@ const Index = ({ title, galleries }) => {
                                     className="text-blue-700 cursor-pointer"
                                 >
                                     <h1>Lihat Selengkapnya</h1>
-                                </Link>     
+                                </Link>
                             </div>
                         </div>
                     </div>

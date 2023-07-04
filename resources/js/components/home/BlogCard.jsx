@@ -36,8 +36,9 @@ const BlogCard = () => {
 
             <div className="flex w-full justify-center gap-4 flex-wrap md:h-auto">
                 {Posts.map((item, index) => (
-                    <div className="card lg:w-[30%] md:w-[30%] w-full shadow-xl rounded-none md:h-full"
-                    data-aos="zoom-in-down">
+                    <div key={index} className="card lg:w-[30%] md:w-[30%] w-full shadow-xl rounded-none md:h-full"
+                    data-aos="zoom-in-down
+                    ">
                         <figure>
                             <img src={item.img} alt={item.title} />
                         </figure>

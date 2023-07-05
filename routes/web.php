@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\admin\BlogAdminController;
+use App\Http\Controllers\BlogAdminController;
 use App\Http\Controllers\BlogContoller;
 use App\Http\Controllers\SimulasiKPRController;
 use App\Http\Controllers\ContactController;
@@ -52,7 +52,7 @@ Route::post('/admin/user', [UserController::class, 'store'])->name('createUser')
 Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');
 
 Route::get('/admin/blog', [BlogAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('blog');
-Route::post('/admin/blog', [BlogAdminController::class, 'store'])->name('createBlog');
+Route::post('/createBlog', [BlogAdminController::class, 'store']);
 
 Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['auth', 'verified'])->name('content');
 

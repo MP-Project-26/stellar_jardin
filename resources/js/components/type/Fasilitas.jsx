@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRoad } from "react-icons/fa6";
 import { FaVideo } from "react-icons/fa6";
 import { FaBuildingShield } from "react-icons/fa6";
@@ -16,12 +16,21 @@ import { FaBus } from "react-icons/fa6";
 import { FaPlaneDeparture } from "react-icons/fa6";
 
 
-const Fasilitas = () => {
+const Fasilitas = ({idElement}) => {
     const [showMoreFasilitas, setShowMoreFasilitas] = useState(false);
 
     const toggleShowMoreFasilitas = () => {
         setShowMoreFasilitas(!showMoreFasilitas);
     };
+
+    useEffect(() => {
+        const sectionElement = document.getElementById(idElement);
+        if (sectionElement) {
+          sectionElement.scrollIntoView();
+          setShowMoreFasilitas(true);
+        }
+      }, [idElement]);
+
     return (
         <div id="fasilitas" className="flex flex-col">
             <h1 className="font-extrabold lg:text-5xl pt-[2rem] md:text-3xl text-2xl">

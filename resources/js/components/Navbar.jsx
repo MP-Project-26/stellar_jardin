@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 import React from "react";
 import { useEffect } from "react";
-import Logo from "@/assets/Logo.png";
+
 
 export default function Navbar() {
     const [open, setOpen] = React.useState(false);
@@ -106,7 +106,7 @@ export default function Navbar() {
                     </div>
                     <Link href="/">
                         <img
-                            src={Logo}
+                            src='/assets/img/Logo.png'
                             alt="Logo"
                             className="w-[4rem] lg:w-[6rem] cursor-pointer"
                         />

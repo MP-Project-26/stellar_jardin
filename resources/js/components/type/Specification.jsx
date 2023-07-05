@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FaBed } from "react-icons/fa6";
 import { FaBath } from "react-icons/fa6";
 import { FaCar } from "react-icons/fa6";
@@ -7,7 +8,14 @@ import { FaBoltLightning } from "react-icons/fa6";
 import { FaHouseCircleCheck } from "react-icons/fa6";
 
 
-export const Specification = () => {
+export const Specification = ({idElement}) => {
+    useEffect(() => {
+        const sectionElement = document.getElementById(idElement);
+        if (sectionElement) {
+          sectionElement.scrollIntoView();
+        }
+      }, [idElement]);
+
     return (
         <div id="spesifikasi" className="flex flex-col border-b-2 ">
             <h1 className="font-extrabold lg:text-5xl py-[2rem] md:text-3xl text-2xl">

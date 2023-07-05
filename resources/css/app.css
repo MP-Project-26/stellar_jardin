@@ -92,7 +92,7 @@
 
 }
 
-/* @keyframes image-animation {
+@keyframes image-animation {
     from {
       transform: scale(0.8);
       opacity: 0;
@@ -106,9 +106,9 @@
   .selected-image-animation {
     animation: image-animation 0.5s ease-in-out;
     transform-origin: center center;
-  } */
+  }
 
-  /* .transitioning {
+   .transitioning {
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -121,6 +121,10 @@
   img:not(.transitioning):not(:first-child) {
     opacity: 0;
     transform: scale(1.2);
-  } */
+  }
 
 
+select option {
+    max-width: 5rem;
+    overflow-y: auto;
+}

@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="footer px-0 md:px-[10rem] py-[5rem] bg-green-custom text-neutral-content flex flex-col gap-5  ">
             <div className="flex flex-col lg:flex-row w-full justify-center">
                 <img
-                    src={"./assets/img/footer_stellar.png"}
+                    src={"/assets/img/footer_stellar.png"}
                     alt="Logo"
                     className="w-[17rem] lg:w-[20rem]  cursor-pointer m-0 lg:-mt-[5rem] lg:-ml-[5rem]"
                 />
@@ -172,7 +172,7 @@ export default function Footer() {
                         className="text-xs lg:text-lg text-gray-300 font-roboto text-center flex flex-row items-center  cursor-pointer"
                     >
                         Powered by{" "}
-                        <img src="./assets/img/mp-footer.png" alt="" /> PROJECT
+                        <img src="/assets/img/mp-footer.png" alt="" /> PROJECT
                     </Link>
                     <div className="text-xs lg:text-lg text-gray-300 font-roboto text-center flex flex-row gap-4">
                         <Link>Privacy policy</Link>

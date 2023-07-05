@@ -57,7 +57,7 @@ const Index = ({ title, galleries }) => {
                                 </div>
 
                                 <Link
-                                    href="/type"
+                                    href='type/fasilitas'
                                     className="text-blue-700 cursor-pointer"
                                 >
                                     <h1>Lihat Selengkapnya</h1>
@@ -99,7 +99,7 @@ const Index = ({ title, galleries }) => {
                                 </div>
 
                                 <Link
-                                    href="/type"
+                                     href='type/fasilitas'
                                     className="text-blue-700 cursor-pointer"
                                 >
                                     <h1>Lihat Selengkapnya</h1>

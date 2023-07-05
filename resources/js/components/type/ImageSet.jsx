@@ -138,7 +138,7 @@ const ImageSet = ({ galleries }) => {
         setTimeout(() => {
             setSelectedImage(image);
             setIsTransitioning(false);
-        }, 100);
+        }, 500);
     };
 
     useEffect(() => {
@@ -169,7 +169,7 @@ const ImageSet = ({ galleries }) => {
                     }
                     alt="image1"
                     className={`w-auto h-full md:rounded-3xl object-cover  ${
-                        isTransitioning ? "" : ""
+                        isTransitioning ? "transitioning" : ""
                     }`}
                     style={{ zIndex: selectedImage ? 2 : 1 }}
                 />

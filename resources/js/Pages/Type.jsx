@@ -8,15 +8,7 @@ import { Link } from "@inertiajs/react";
 
 
 
-export default function Type({ title, galleries }) {
-    // console.log(galleries);
-    // useEffect(() => {
-    //     console.log(galleries);
-    // }, [galleries]);
-
-    // const image1 = galleries.filter((item) => item.id === 1);
-    // console.log(image1);
-
+export default function Type({ title, galleries, idElement }) {
     return (
         <Layout title={title}>
             <div className="mt-32 my-10">
@@ -42,11 +34,11 @@ export default function Type({ title, galleries }) {
                                 </div>
 
                                 <div className=" bg-green-custom py-2 px-6 text-white font-medium rounded-md cursor-pointer hover:bg-gray-500">
-                                    <Link href="/pengajuan_srs" className="text-center ">Ajukan SRS</Link>
+                                    <Link href="/pengajuan_srs" className="text-center ">Pengajuan SRS</Link>
                                 </div>
                             </div>
-                            <Specification />
-                            <Fasilitas/>
+                            <Specification idElement={idElement}/>
+                            <Fasilitas idElement={idElement}/>
                         </div>
                     </div>
                 </div>

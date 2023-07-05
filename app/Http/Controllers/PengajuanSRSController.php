@@ -2,34 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Galleries;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class GalleriesController extends Controller
+class PengajuanSRSController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index($section)
+    public function index()
     {
-
-        $galleries = Galleries::with('category')->get();
-
-        $idElement ='';
-        if ($section){
-            $idElement = $section;
-        }else{
-            $idElement = null;
-        }
-
-        return Inertia::render('Type', [
-            'title' => 'Galleries',
-            'galleries' => $galleries,
-            'idElement' => $idElement,
+        return Inertia::render('PengajuanSRS', [
+            'title' => 'Pemesanan Unit'
         ]);
-
-
     }
 
     /**

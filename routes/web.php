@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PengajuanSRSController;
 use App\Http\Controllers\SimulasiKPRController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
@@ -44,9 +45,11 @@ Route::get('/about', function () {
 
 
 Route::get('/type', [GalleriesController::class, 'index']);
+Route::get('/type/{section}', [GalleriesController::class, 'index']);
 Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
 Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/pengajuan_srs', [PengajuanSRSController::class, 'index']);
 
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

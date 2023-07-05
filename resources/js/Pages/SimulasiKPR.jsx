@@ -57,10 +57,10 @@ const SimulasiKPR = ({ title }) => {
                     jangka_waktu: numberJangkaWaktu,
                 });
 
-                const { cicilan_bulanan, total_pembayaran, uang_muka } =
+                const { cicilan_bulanan, jumlah_pengajuan, uang_muka } =
                     response.data;
                 setCicilanBulanan(cicilan_bulanan);
-                setTotalPembayaran(total_pembayaran);
+                setTotalPembayaran(jumlah_pengajuan);
                 setUangMuka(uang_muka);
             } catch (error) {
                 console.log(error);
@@ -342,7 +342,7 @@ const SimulasiKPR = ({ title }) => {
                                                 <th>{cicilanBulanan}</th>
                                             </tr>
                                             <tr>
-                                                <th>Total Pokok Pinjaman : </th>
+                                                <th>Jumlah Pengajuan Pinjaman : </th>
                                                 <th>{totalPembayaran}</th>
                                             </tr>
                                         </tbody>

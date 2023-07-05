@@ -48,12 +48,12 @@ class SimulasiKPRController extends Controller
 
 
     $cicilanBulananFormatted = 'Rp ' . number_format($cicilanBulanan, 0, ',', '.');
-    $totalPembayaranFormatted = 'Rp ' . number_format($totalPembayaran, 0, ',', '.');
+    $totalPinjaman = 'Rp ' . number_format($pinjaman, 0, ',', '.');
     $uangMuka = 'Rp ' . number_format($uangMuka, 0, ',', '.');
 
     return response()->json([
         'cicilan_bulanan' => $cicilanBulananFormatted,
-        'total_pembayaran' => $totalPembayaranFormatted,
+        'jumlah_pengajuan' => $totalPinjaman,
         'uang_muka' => $uangMuka,
     ]);
 

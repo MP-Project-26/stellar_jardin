@@ -256,7 +256,9 @@ const SimulasiKPR = ({ title }) => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label>Jangka Waktu KPR : {data.jangka_waktu} Tahun</label>
+                        <label>
+                            Jangka Waktu KPR : {data.jangka_waktu} Tahun
+                        </label>
 
                         {/* <div className="flex">
                             <input
@@ -287,7 +289,9 @@ const SimulasiKPR = ({ title }) => {
                             value={data.jangka_waktu}
                             className="range range-secondary"
                             step={0}
-                            onChange={(e) => setData("jangka_waktu", e.target.value)}
+                            onChange={(e) =>
+                                setData("jangka_waktu", e.target.value)
+                            }
                         />
                         <div className="flex justify-between text-xs px-2">
                             <span>5 tahun</span>

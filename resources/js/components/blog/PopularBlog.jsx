@@ -5,7 +5,7 @@ import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
 import moment from "moment/moment";
 
-export default function PopularBlog({data}) {
+export default function PopularBlog({ data }) {
     return (
         <div className=" w-full border-green-custom border-[2px] flex flex-col gap-4 bg-white">
             <p className="bg-green-custom w-full text-center font-medium text-2xl text-white p-2 font-roboto">
@@ -16,7 +16,7 @@ export default function PopularBlog({data}) {
                     key={index}
                     className="p-5 flex flex-row gap-6 lg:gap-2 justify-center items-center"
                 >
-                    <img src={ImageOurBlog1} alt="" className="w-[45%]" />
+                    <img src={item.image} alt="" className="w-[45%]" />
                     <div className="flex flex-col gap-1">
                         <p className="font-roboto text-xl font-medium paragraph-popular">
                             {item.title}

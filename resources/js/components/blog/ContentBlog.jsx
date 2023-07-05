@@ -1,5 +1,4 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1-1.png";
 import { IconButton, ButtonGroup } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
@@ -41,21 +40,21 @@ export default function ContentBlog({ data }) {
                             {item.date} - {item.author} - {"Property"}
                         </p>
                         <img
-                            src={ImageOurBlog1}
+                            src={item.image}
                             alt=""
                             className="w-full"
                             data-aos="fade-right"
                         />
-                        <div
-                            className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl"
-                        >
+                        <div className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl">
                             <p>Tags</p> <p> : </p>
-                            <span className="rounded-md px-4 py-1 bg-green-custom text-white">
-                                {item.tags[0]}
-                            </span>{" "}
-                            <span className="rounded-md px-4 py-1 bg-green-custom text-white">
-                                {item.tags[1]}
-                            </span>
+                            {item.tags.map((tag, index) => (
+                                <span
+                                    key={index}
+                                    className="rounded-md px-4 py-1 bg-green-custom text-white"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
                         </div>
                         <p className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
                             {item.content}
@@ -139,7 +138,7 @@ export default function ContentBlog({ data }) {
                                 <div className="w-50 flex justify-end">
                                     <Link
                                         href={item.link}
-                                        className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-[3.4rem] py-[1.2rem]"
+                                        className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-3 py-2 lg:px-[3.4rem] lg:py-[1.2rem]"
                                     >
                                         MORE
                                     </Link>

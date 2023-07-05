@@ -10,14 +10,26 @@ class Blog extends Model
     use HasFactory;
     protected $table = 'blogs';
     protected $fillable = [
-        'category_blog_id',
-        'image',
         'title',
+        'author',
+        'image',
         'content',
+        'tags',
+        'comments',
+        'views',
     ];
 
-    public function category_blog()
-    {
-        return $this->belongsTo(Category_blog::class, 'category_blog_id');
-    }
+    protected $casts = [
+        'tags' => 'array',
+        'comments' => 'array',
+    ];
+
+    
+
+
+
+    // public function category_blog()
+    // {
+    //     return $this->belongsTo(Category_blog::class, 'category_blog_id');
+    // }
 }

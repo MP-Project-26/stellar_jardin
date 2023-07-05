@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\admin\BlogAdminController;
+use App\Http\Controllers\BlogContoller;
 use App\Http\Controllers\SimulasiKPRController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DashboardController;
@@ -49,14 +50,15 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middlewar
 Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('user');
 Route::post('/admin/user', [UserController::class, 'store'])->name('createUser');
 Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');
-Route::get('/admin/blog', [BlogController::class, 'index'])->middleware(['auth', 'verified'])->name('blog');
+
+Route::get('/admin/blog', [BlogAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('blog');
+Route::post('/admin/blog', [BlogAdminController::class, 'store'])->name('createBlog');
+
 Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['auth', 'verified'])->name('content');
 
 
 
-Route::get('/blog', function () {
-    return Inertia::render('Blog');
-});
+Route::get('/blog', [BlogContoller::class, 'index']);
 Route::get('/blog/spesifik/{id}', function () {
     return Inertia::render('blog/[...id]');
 });

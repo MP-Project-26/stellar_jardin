@@ -45,9 +45,13 @@
         overflow          : hidden;
         display           : -webkit-box;
         -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-
-        
+        -webkit-box-orient: vertical;   
+    }
+    .paragraph-table-Blog {
+        overflow          : hidden;
+        display           : -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;   
     }
 
     .paragraph-popular {
@@ -79,7 +83,7 @@
     }
 
     .scrollModal_type::-webkit-scrollbar-thumb {
-        background   : #FFDE59;
+        background   : #0D7377;
         border-radius: 10px;
     }
 

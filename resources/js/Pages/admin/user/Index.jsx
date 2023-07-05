@@ -99,7 +99,7 @@ const ModalNewUser = () => {
             >
                 <div className="lg:w-[60rem] lg:h-[43rem] h-[20rem] relative rounded-xl bg-transparant">
                     <button
-                        className=" btn btn-sm btn-circle btn-ghost absolute right-5 top-5 bg-white shadow-xl border border-gray-500 z-[100] select-none"
+                        className=" btn btn-sm btn-circle btn-ghost absolute right-5 top-5 bg-white shadow-xl border border-gray-500 z-[10000] select-none"
                         onClick={() => window.my_modal_1.close()}
                     >
                         ✕

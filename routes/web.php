@@ -52,7 +52,10 @@ Route::post('/admin/user', [UserController::class, 'store'])->name('createUser')
 Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');
 
 Route::get('/admin/blog', [BlogAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('blog');
-Route::post('/createBlog', [BlogAdminController::class, 'store']);
+Route::post('/admin/blog', [BlogAdminController::class, 'store'])->middleware(['auth', 'verified'])->name('createBlog');
+Route::get('/admin/blog/{id}', [BlogAdminController::class, 'show'])->middleware(['auth', 'verified'])->name('showBlog');
+Route::put('/admin/blog/edit/{id}', [BlogAdminController::class, 'update'])->middleware(['auth', 'verified'])->name('updateBlog');
+Route::delete('/admin/blog/delete/{id}', [BlogAdminController::class, 'destroy'])->middleware(['auth', 'verified'])->name('deleteBlog');
 
 Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['auth', 'verified'])->name('content');
 

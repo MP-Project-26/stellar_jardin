@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BlogStoreRequest;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
@@ -48,7 +49,8 @@ class BlogAdminController extends Controller
                 "views" => 0,
             ]);
 
-            $request->image->move(public_path('images'), $imageName);
+            // $request->image->move(public_path('assets/img/blog'), $imageName);
+            Storage::disk('public')->put('assets/img/blog/' . $imageName, file_get_contents($request->image));
 
             return response()->json([
                 'message' => "success",
@@ -66,7 +68,18 @@ class BlogAdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // blog Detail 
+        $blog = Blog::find($id);
+        if (!$blog) {
+            return response()->json([
+                'message' => 'Blog Not Found.'
+            ], 404);
+        }
+
+        // Return Json Response
+        return response()->json([
+            'Blog' => $blog
+        ], 200);
     }
 
     /**
@@ -80,16 +93,81 @@ class BlogAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(BlogStoreRequest $request, $id)
     {
-        //
+        try {
+            $blog = Blog::find($id);
+            if (!$blog) {
+                return response()->json([
+                    'message' => 'Blog Not Found.'
+                ], 404);
+            }
+
+            $tagsToArray = explode(',', $request->tags);
+            if ($request->image) {
+                $imageName = Str::random(32) . '.' . $request->image->getClientOriginalExtension();
+                $blog->update([
+                    "title" => $request->title,
+                    "author" => $request->author,
+                    "image" => "/storage/assets/img/blog/" . $imageName,
+                    "content" => $request->content,
+                    "tags" => $tagsToArray,
+                ]);
+
+                // remove old image
+                if (Storage::disk('public')->exists('assets/img/blog/' . $blog->image)) {
+                    Storage::disk('public')->delete('assets/img/blog/' . $blog->image);
+                }
+                // $request->image->move(public_path('assets/img/blog'), $imageName);
+                Storage::disk('public')->put('assets/img/blog/' . $imageName, file_get_contents($request->image));
+            } else {
+                $blog->update([
+                    "title" => $request->title,
+                    "author" => $request->author,
+                    "content" => $request->content,
+                    "tags" => $tagsToArray,
+                ]);
+            }
+            return response()->json([
+                'message' => "success",
+                'status' => true
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => "Terjadi kesalahan",
+                "error" => $e->getMessage()
+            ], 500);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        try {
+            $blog = Blog::find($id);
+            if (!$blog) {
+                return response()->json([
+                    'message' => 'Blog Not Found.'
+                ], 404);
+            }
+
+            // remove old image
+            if (Storage::disk('public')->exists('assets/img/blog/' . $blog->image)) {
+                Storage::disk('public')->delete('assets/img/blog/' . $blog->image);
+            }
+
+            $blog->delete();
+
+            return response()->json([
+                'message' => "success",
+                'status' => true
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => "Terjadi kesalahan"
+            ], 500);
+        }
     }
 }

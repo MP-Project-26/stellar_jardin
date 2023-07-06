@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\admin\BlogAdminController;
+use App\Http\Controllers\BlogAdminController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
 use App\Models\Blog;
@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+// Route::get('blog/{id}', [BlogAdminController::class, 'show']);
+// Route::put('blogupdate/{id}', [BlogAdminController::class, 'update']);
+
 Route::post('blog', function (Request $request) {
     $blog = Blog::first();
     $data = $request->all();
@@ -40,40 +43,4 @@ Route::post('blog', function (Request $request) {
         }
     }
     return $blog;
-});
-
-Route::get('products', [ProductController::class, 'index']);
-Route::post('products', [BlogAdminController::class, 'store']);
-
-Route::post('blogs', function (Request $request) {
-    $data = $request->all();
-    try {
-        if ($data) {
-
-            Blog::create([
-                'title' => $data['title'],
-                'author' => $data['author'],
-                'image' => $data['image'],
-                'content' => $data['content'],
-                'tags' => $data['tags'],
-                'comments' => [],
-                'views' => 0,
-            ]);
-        }
-
-        return response()->json(
-            [
-                'message' => 'Success',
-                'status' => 200,
-                'data' => $data
-            ],
-            200
-        );
-    } catch (\Exception $e) {
-        return response()->json([
-            'message' => 'Error',
-            'status' => 500,
-            'data' => $e->getMessage()
-        ], 500);
-    }
 });

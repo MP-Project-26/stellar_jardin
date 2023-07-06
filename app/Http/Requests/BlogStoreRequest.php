@@ -34,13 +34,13 @@ class BlogStoreRequest extends FormRequest
             ];
         } else {
             return [
-                'title' => 'required|string|max:258',
-                'author' => 'required|string|max:258',
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'content' => 'required|string|max:258',
-                'tags' => 'string|max:258',
-                'comments' => 'string|max:258',
-                'views' => 'string|max:258',
+                'title' => 'nullable|string|max:258',
+                'author' => 'nullable|string',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'content' => 'nullable|string',
+                'tags' => 'nullable|string|max:258',
+                'comments' => 'nullable|string',
+                'views' => 'nullable|string|max:258',
             ];
         }
     }
@@ -57,7 +57,6 @@ class BlogStoreRequest extends FormRequest
             return [
                 'title.required' => "title is required!",
                 'author.required' => "author is required!",
-                'image.required' => "image is required!",
                 'content.required' => "content is required!",
             ];
         }

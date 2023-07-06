@@ -1,10 +1,6 @@
-import InputLabel from "@/Components/login/InputLabel";
-import PrimaryButton from "@/Components/login/PrimaryButton";
-import TextInput from "@/Components/login/TextInput";
+import EditModalBlog from "@/Components/utils/modal_admin/EditModalBlog";
 import NewModalBlog from "@/Components/utils/modal_admin/newModalBlog";
 import LayoutAdmin from "@/Layouts/LayoutAdmin";
-import { useForm } from "@inertiajs/react";
-import { Textarea } from "@material-tailwind/react";
 import axios from "axios";
 import moment from "moment/moment";
 import { useState } from "react";
@@ -12,14 +8,17 @@ import { useEffect } from "react";
 
 export default function Index({ auth, dataBlog }) {
     const [data, setData] = useState(dataBlog);
-    const [modalData, setModalData] = useState([]);
+    const [modalDataEdit, setModalDataEdit] = useState([]);
+    const [modalDataDelete, setModalDataDelete] = useState([]);
     useEffect(() => {
         setData(dataBlog);
     }, [dataBlog]);
+
     return (
         <LayoutAdmin title="Dashboard" auth={auth}>
             <NewModalBlog />
-            <EditModalBlog dataBlog={modalData} />
+            <EditModalBlog dataBlog={modalDataEdit} />
+            <DeleteModalBlog data={modalDataDelete} />
             <div className="w-full pt-10 justify-center items-center">
                 <h1 className="font-sans font-bold text-black text-2xl md:text-3xl">
                     BLOG MANAGEMENT
@@ -74,8 +73,14 @@ export default function Index({ auth, dataBlog }) {
                                 <tr key={i}>
                                     <th className=" border-r">{i + 1}</th>
                                     <td className=" border-r">{res?.author}</td>
-                                    <td className=" border-r">{res?.title}</td>
-                                    <td className=" border-r">{res?.image}</td>
+                                    <td className=" border-r w-[7rem]">{res?.title}</td>
+                                    <td className=" border-r w-[16rem]">
+                                        <img
+                                            src={res?.image}
+                                            className="w-[16rem]"
+                                            alt=""
+                                        />
+                                    </td>
                                     <td className=" border-r">
                                         {res?.tags?.length}
                                     </td>
@@ -95,14 +100,20 @@ export default function Index({ auth, dataBlog }) {
                                         <div className="flex flex-row gap-2 ">
                                             <button
                                                 onClick={() => {
-                                                    setModalData(res);
+                                                    setModalDataEdit(res);
                                                     window.my_modal_2.show();
                                                 }}
                                                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                                             >
                                                 Edit
                                             </button>
-                                            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                            <button
+                                                onClick={() => {
+                                                    setModalDataDelete(res);
+                                                    window.my_modal_3.show();
+                                                }}
+                                                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                            >
                                                 Delete
                                             </button>
                                         </div>
@@ -117,164 +128,158 @@ export default function Index({ auth, dataBlog }) {
     );
 }
 
-const EditModalBlog = ({ dataBlog }) => {
-    const dataSearch = ["Home", "Forniture", "Office", "Kitchen"];
-    const [searchTags, setSearchTags] = useState("");
-    const [dataBlg, setDataBlg] = useState([]);
-    const [dataTags, setDataTags] = useState([]);
-
-    const { data, setData, post, processing, errors, reset } = useForm({
-        title: "",
-        author: "",
-        image: "",
-        content: "",
-        tags: [],
-        views: "",
-        link: "",
-    });
-    useEffect(() => {
-        setDataBlg(dataBlog);
-        setDataTags(dataBlog.tags);
-    }, [dataBlog]);
-
-    const removeTags = (indexToRemove) => {
-        setDataTags([
-            ...dataTags.filter((_, index) => index !== indexToRemove),
-        ]);
-    };
-
-    useEffect(() => {
-        setData("tags", dataTags);
-    }, [dataTags]);
-
+const DeleteModalBlog = ({ data }) => {
+    const [loading, setLoading] = useState(false);
+    const [gagal, setGagal] = useState(false);
     useEffect(() => {
         console.log(data);
     }, [data]);
+    const onDelete = () => {
+        axios
+            .delete(`/admin/blog/delete/${data.id}`)
+            .then((res) => {
+                setLoading(true);
+                window.my_modal_3.close();
+                setTimeout(() => {
+                    window.location.reload();
+                    setLoading(false);
+                }, 1000);
+            })
+            .catch((err) => {
+                window.my_modal_3.close();
+                setGagal(true);
+                setTimeout(() => {
+                    window.location.reload();
 
-    const submit = (e) => {
-        e.preventDefault();
-        console.log("submit");
+                    setGagal(false);
+                }, 1000);
+            });
     };
     return (
-        <dialog id="my_modal_2" className="modal backdrop-blur-sm border-0 ">
-            <div className="lg:w-[60rem] lg:h-[43rem] h-[20rem] relative rounded-xl bg-transparant">
-                <button
-                    className=" btn btn-sm btn-circle btn-ghost absolute right-5 top-5 bg-white shadow-xl border border-gray-500 z-[100] select-none"
-                    onClick={() => window.my_modal_2.close()}
-                >
-                    ✕
-                </button>
-                <div className="lg:w-[60rem] lg:h-[40rem]  h-[20rem]  p-[3rem] bg">
-                    <form
-                        onSubmit={submit}
-                        className="bg-white flex flex-col gap-[1.2rem] p-10 h-[100%] overflow-y-auto scrollModal_type rounded-2xl shadow-xl"
-                    >
-                        <InputLabel htmlFor="title" value="Title" />
-                        <TextInput
-                            id="title"
-                            name="title"
-                            type="text"
-                            value={data.title || dataBlg.title}
-                            onChange={(e) => setData("title", e.target.value)}
-                            placeholder="Title"
-                            className="border border-gray-300 rounded-md p-2"
-                        />
-                        <InputLabel htmlFor="author" value="author" />
-                        <TextInput
-                            id="author"
-                            name="author"
-                            type="text"
-                            value={data.author || dataBlg.author}
-                            onChange={(e) => setData("author", e.target.value)}
-                            placeholder="author"
-                            className="border border-gray-300 rounded-md p-2"
-                        />
-                        <InputLabel htmlFor="image" value="image" />
-                        <TextInput
-                            id="image"
-                            name="image"
-                            type="text"
-                            value={data.image || dataBlg.image}
-                            onChange={(e) => setData("image", e.target.value)}
-                            placeholder="image"
-                            className="border border-gray-300 rounded-md p-2"
-                        />
-                        <InputLabel htmlFor="content" value="content" />
-                        <Textarea
-                            id="content"
-                            name="content"
-                            type="text"
-                            value={data.content || dataBlg.content}
-                            onChange={(e) => setData("content", e.target.value)}
-                            placeholder="content"
-                            className="border  p-2 border-gray-300 scrollModal_type focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                        />
-                        <InputLabel htmlFor="tags" value="tags" />
-                        <TextInput
-                            id="tags"
-                            name="tags"
-                            type="text"
-                            value={searchTags}
-                            onChange={(e) => setSearchTags(e.target.value)}
-                            placeholder="tags"
-                            className="border border-gray-300 rounded-md p-2"
-                        />{" "}
-                        <ul className="flex flex-col gap-3">
-                            {dataSearch
-                                .filter((tag) => {
-                                    if (searchTags === "") {
-                                        return "";
-                                    } else
-                                        return tag.match(
-                                            new RegExp(searchTags, "i")
-                                        );
-                                })
-                                .map((tag) => {
-                                    return (
-                                        <li
-                                            className="bg-gray-300 p-2 rounded-md cursor-pointer"
-                                            onClick={() => {
-                                                setDataTags([...dataTags, tag]);
-                                                setSearchTags("");
-                                            }}
-                                            key={tag}
-                                        >
-                                            {tag}{" "}
-                                        </li>
-                                    );
-                                })}
-                        </ul>
-                        <div className="flex w-full flex-row gap-2 cursor-pointer ">
-                            {dataTags?.map((item, i) => {
-                                return (
-                                    <div
-                                        className="relative px-3 py-2  rounded-md"
-                                        key={i}
-                                    >
-                                        <span
-                                            onClick={() => removeTags(i)}
-                                            className=" absolute right-0 -top-2 bg-gray-300 w-5 h-6 rounded-full text-center text-black"
-                                        >
-                                            x
-                                        </span>
-                                        <span className=" px-3 py-2 bg-green-custom text-white rounded-xl ">
-                                            {item}
-                                        </span>
-                                    </div>
-                                );
-                            })}
+        <>
+            {loading && (
+                <div className="fixed z-[100] inset-0 overflow-y-auto">
+                    <div className="toast toast-center toast-top">
+                        <div className="alert alert-success mt-[5rem]">
+                            <span className="text-2xl text-white font-extrabold">
+                                Menghapus Data Berhasil
+                            </span>
                         </div>
-                        <div className="flex items-center justify-end mt-4">
-                            <PrimaryButton
-                                className="ml-4"
-                                disabled={processing}
-                            >
-                                Tambah
-                            </PrimaryButton>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </dialog>
+            )}
+            {gagal && (
+                <div className="fixed z-[100] inset-0 overflow-y-auto">
+                    <div className="toast toast-center toast-top">
+                        <div className="alert alert-success mt-[5rem]">
+                            <span className="text-2xl text-white font-extrabold">
+                                Gagal Bro
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            )}
+            <dialog
+                id="my_modal_3"
+                className="modal backdrop-blur-sm border-0 "
+            >
+                <div className="lg:w-[60rem] lg:h-[43rem] h-[20rem] relative rounded-xl bg-transparant">
+                    <div className="lg:w-[60rem] lg:h-[38rem]  h-[20rem]  p-[3rem] bg ">
+                        <div className="bg-white flex flex-col gap-[1.2rem] p-10 h-[100%]  overflow-y-auto scrollModal_type rounded-2xl shadow-xl">
+                            {/* content delete blog */}
+                            <div className="flex flex-col gap-5">
+                                <div className="flex flex-row justify-between">
+                                    <h1 className="text-3xl font-bold">
+                                        Delete Blog
+                                    </h1>
+                                    <h1 className="text-3xl font-bold">
+                                        {data?.title}
+                                    </h1>
+                                </div>
+                                <div className="flex flex-row gap-5">
+                                    <div className="flex flex-col gap-2">
+                                        <h1 className="text-xl font-bold">
+                                            Author
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            Title
+                                        </h1>
+                                        <h1 className="text-xl font-bold mb-[2.8rem]">
+                                            Image
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            Tags
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            Content
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            Views
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            Comments
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            Date
+                                        </h1>
+                                    </div>
+                                    <div className="flex flex-col gap-2">
+                                        <h1 className="text-xl font-bold">
+                                            : {data?.author}
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            : {data?.title}
+                                        </h1>
+                                        <div className="flex flex-row gap-2 text-xl font-bold">
+                                            :{" "}
+                                            <img
+                                                src={data?.image}
+                                                className="w-[8rem] "
+                                                alt=""
+                                            />
+                                        </div>
+                                        <h1 className="text-xl font-bold">
+                                            : {data?.tags?.length}
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            : {data?.content}
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            : {data?.views}
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            : {data?.comments?.length}
+                                        </h1>
+                                        <h1 className="text-xl font-bold">
+                                            :{" "}
+                                            {moment(data?.created_at).format(
+                                                "DD MMMM YYYY"
+                                            )}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* button Delete */}
+                            <div className="flex flex-row gap-5 justify-end">
+                                <button
+                                    onClick={() => window.my_modal_3.close()}
+                                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                                >
+                                    X
+                                </button>
+
+                                <button
+                                    onClick={() => onDelete()}
+                                    className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
+                                >
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+        </>
     );
 };

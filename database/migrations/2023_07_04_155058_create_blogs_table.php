@@ -21,7 +21,7 @@ return new class extends Migration
             )->nullable();
             $table->text('content');
             $table->integer('views')->nullable();
-            $table->string('comments')->nullable();
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }

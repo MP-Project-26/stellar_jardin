@@ -147,10 +147,7 @@ export default function ({ dataBlog }) {
                             >
                                 <FaEdit className="absolute -right-3 bottom-5 text-teal-600 text-3xl" />
                                 <img
-                                    src={
-                                        images ||
-                                        `/storage/assets/img/blog/${dataBlog.image}`
-                                    }
+                                    src={images || dataBlog.image}
                                     alt=""
                                     className="w-[10rem] "
                                 />{" "}

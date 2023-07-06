@@ -42,10 +42,10 @@ class BlogAdminController extends Controller
             Blog::create([
                 "title" => $request->title,
                 "author" => $request->author,
-                "image" => $imageName,
+                "image" => "/storage/assets/img/blog/" . $imageName,
                 "content" => $request->content,
                 "tags" => $tagsToArray,
-                "comments" => '',
+                "comments" => 0,
                 "views" => 0,
             ]);
 

@@ -41,6 +41,13 @@
         @apply border-[#0D7377]
     }
 
+    .paragraph-spesifik-Blog {
+        /* text wrap width 32rem */
+        overflow          : hidden;
+        display           : -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
     .paragraph-Blog {
         overflow          : hidden;
         display           : -webkit-box;

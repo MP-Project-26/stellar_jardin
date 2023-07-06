@@ -1,52 +1,60 @@
 import React from "react";
 import ImageUser from "@/assets/user.png";
+import { useEffect } from "react";
+import { useState } from "react";
+import moment from "moment/moment";
 
-const dataComments = [
-    {
-        id: 1,
-        name: "Fikri",
-        time: "10 Seccond Ago",
-        comment:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    },
-    {
-        id: 2,
-        name: "Zaldi",
-        time: "10 Seccond Ago",
-        comment:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    },
-    {
-        id: 3,
-        name: "Zaldi",
-        time: "10 Seccond Ago",
-        comment:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    },
-    {
-        id: 4,
-        name: "Zaldi",
-        time: "10 Seccond Ago",
-        comment:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    },
-    {
-        id: 5,
-        name: "Zaldi",
-        time: "10 Seccond Ago",
-        comment:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    },
-    {
-        id: 6,
-        name: "Zaldi",
-        time: "10 Seccond Ago",
-        comment:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    },
-];
+// const dataComments = [
+//     {
+//         id: 1,
+//         name: "Fikri",
+//         time: "10 Seccond Ago",
+//         comment:
+//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+//     },
+//     {
+//         id: 2,
+//         name: "Zaldi",
+//         time: "10 Seccond Ago",
+//         comment:
+//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+//     },
+//     {
+//         id: 3,
+//         name: "Zaldi",
+//         time: "10 Seccond Ago",
+//         comment:
+//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+//     },
+//     {
+//         id: 4,
+//         name: "Zaldi",
+//         time: "10 Seccond Ago",
+//         comment:
+//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+//     },
+//     {
+//         id: 5,
+//         name: "Zaldi",
+//         time: "10 Seccond Ago",
+//         comment:
+//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+//     },
+//     {
+//         id: 6,
+//         name: "Zaldi",
+//         time: "10 Seccond Ago",
+//         comment:
+//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+//     },
+// ];
 
-export default function ModalComments({ item }) {
+export default function ModalComments({ data }) {
+    const [item, setItem] = useState([]);
+    useEffect(() => {
+        console.log(data);
+        setItem(data.comments);
+    }, [data]);
     return (
         <>
             <dialog
@@ -63,34 +71,38 @@ export default function ModalComments({ item }) {
                     <div className="lg:w-[60rem] lg:h-[35rem]  h-[20rem] relative ">
                         <div className="comment ">
                             <div className="  overflow-y-scroll scrollModal max-h-[23rem] w-full">
-                                {dataComments.map((data, index) => (
-                                    <div
-                                        key={index}
-                                        className="w-full justify-center rounded-[2rem] flex flex-col gap-6 py-5 max-w-[90%]"
-                                    >
-                                        <div className="flex flex-row items-center gap-4">
-                                            <img src={ImageUser} alt="" />
+                                {item
+                                    ? item.map((data, index) => (
+                                          <div
+                                              key={index}
+                                              className="w-full justify-center rounded-[2rem] flex flex-col gap-6 py-5 max-w-[90%]"
+                                          >
+                                              <div className="flex flex-row items-center gap-4">
+                                                  <img src={ImageUser} alt="" />
 
-                                            <div className="flex flex-col">
-                                                <p className="font-roboto font-bold text-lg">
-                                                    {data.name}
-                                                </p>
-                                                <p className="font-roboto font-normal text-xs">
-                                                    {data.time}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <p className="font-roboto font-medium text-lg bg-gray-200 p-3 rounded-xl shadow-md">
-                                            {data.comment}
-                                        </p>
-                                    </div>
-                                ))}
+                                                  <div className="flex flex-col gap-1">
+                                                      <p className="font-roboto font-bold text-lg">
+                                                          {data.name}
+                                                      </p>
+                                                      <p className="font-roboto font-normal text-xs ">
+                                                          {moment(
+                                                              item.createdAt
+                                                          ).fromNow()}
+                                                      </p>
+                                                  </div>
+                                              </div>
+                                              <p className="ml-[3rem] font-roboto font-normal text-lg bg-gray-200 p-3 rounded-xl shadow-md break-words h-auto">
+                                                  {data.note}
+                                              </p>
+                                          </div>
+                                      ))
+                                    : null}
                             </div>
                         </div>
                     </div>
                     <div className="send-comment ">
                         <div className=" absolute bg-gray-100 w-full bottom-0 left-0  rounded-b-xl p-5">
-                            <div className="flex items-center  gap-[2.5rem] w-full">
+                            <form  className="flex items-center  gap-[2.5rem] w-full">
                                 <div className="flex flex-col w-full gap-3">
                                     <input
                                         type="text"
@@ -110,7 +122,7 @@ export default function ModalComments({ item }) {
                                         className="bg-green-custom text-white rounded-[1rem] px-5 py-2 font-roboto font-bold cursor-pointer hover:bg-cyan-700 transition-all duration-200 ease-in-out"
                                     />
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

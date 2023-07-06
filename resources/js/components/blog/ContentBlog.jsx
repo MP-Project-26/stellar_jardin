@@ -1,35 +1,14 @@
 import React from "react";
-import { IconButton, ButtonGroup } from "@material-tailwind/react";
-import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
 import ModalComments from "@/components/utils/modal/modalComments";
+import moment from "moment";
+import { useState } from "react";
 
-export default function ContentBlog({ data }) {
-    const [active, setActive] = React.useState(1);
-    const [dataItems, setDataItems] = React.useState(data);
-
-    const getItemProps = (index) => ({
-        className:
-            active === index
-                ? "text-[2rem] p-[2rem] border-[#209094] bg-[#209094] text-white"
-                : "text-[2rem] p-[2rem] border-green-custom bg-green-custom text-white",
-        onClick: () => setActive(index),
-    });
-
-    const next = () => {
-        if (active === 5) return;
-
-        setActive(active + 1);
-    };
-
-    const prev = () => {
-        if (active === 1) return;
-
-        setActive(active - 1);
-    };
+export default function ContentBlog({ data, meta }) {
+    const [dataModalComments, setDataModalComments] = useState([]);
     return (
         <>
-            <ModalComments />
+            <ModalComments data={dataModalComments} />
             <div className="px-5 w-full lg:w-[65%] flex flex-col gap-[5rem]">
                 {data.map((item, index) => (
                     <div className=" space-y-7" key={index}>
@@ -37,7 +16,8 @@ export default function ContentBlog({ data }) {
                             {item.title}
                         </span>
                         <p className="text-xl font-semibold ">
-                            {item.date} - {item.author} - {"Property"}
+                            {moment(item?.created_at).format("DD MMMM YYYY")}-{" "}
+                            {item.author} - {"Property"}
                         </p>
                         <img
                             src={item.image}
@@ -94,9 +74,10 @@ export default function ContentBlog({ data }) {
                                 </div>
                                 <div className="bg-green-custom px-5 py-2 flex gap-2 justify-center items-center ">
                                     <svg
-                                        onClick={() =>
-                                            window.my_modal_2.showModal()
-                                        }
+                                        onClick={() => {
+                                            setDataModalComments(item);
+                                            window.my_modal_2.showModal();
+                                        }}
                                         className="cursor-pointer"
                                         width="20"
                                         height="22"
@@ -125,9 +106,10 @@ export default function ContentBlog({ data }) {
 
                                     <p
                                         className="font-roboto text-xl font-semibold text-white cursor-pointer"
-                                        onClick={() =>
-                                            window.my_modal_2.showModal()
-                                        }
+                                        onClick={() => {
+                                            setDataModalComments(item);
+                                            window.my_modal_2.showModal();
+                                        }}
                                     >
                                         {item.comments.length}
                                     </p>
@@ -137,7 +119,7 @@ export default function ContentBlog({ data }) {
                             <div className="flex  flex-row">
                                 <div className="w-50 flex justify-end">
                                     <Link
-                                        href={item.link}
+                                        href={`/blog/spesifik/${item.id}`}
                                         className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-3 py-2 lg:px-[3.4rem] lg:py-[1.2rem]"
                                     >
                                         MORE
@@ -147,50 +129,55 @@ export default function ContentBlog({ data }) {
                         </div>
                     </div>
                 ))}
-                <div className="w-full flex justify-center items-center">
-                    <ButtonGroup
-                        variant="outlined"
-                        color="blue-gray"
-                        className="space-x-[1px]"
-                    >
-                        <IconButton
-                            onClick={prev}
-                            style={{
-                                fontSize: "2rem",
-                                padding: "2rem",
-                                borderColor: "#0D7377",
-                                backgroundColor: "#0D7377",
-                                color: "white",
-                            }}
-                        >
-                            <ArrowLeftIcon
-                                strokeWidth={2}
-                                className="h-6 w-6"
-                            />
-                        </IconButton>
-                        <IconButton {...getItemProps(1)}>1</IconButton>
-                        <IconButton {...getItemProps(2)}>2</IconButton>
-                        <IconButton {...getItemProps(3)}>3</IconButton>
-                        <IconButton {...getItemProps(4)}>4</IconButton>
-                        <IconButton {...getItemProps(5)}>5</IconButton>
-                        <IconButton
-                            onClick={next}
-                            style={{
-                                fontSize: "2rem",
-                                padding: "2rem",
-                                borderColor: "#0D7377",
-                                backgroundColor: "#0D7377",
-                                color: "white",
-                            }}
-                        >
-                            <ArrowRightIcon
-                                strokeWidth={2}
-                                className="h-6 w-6"
-                            />
-                        </IconButton>
-                    </ButtonGroup>
-                </div>
+                <Paginator meta={meta} />
             </div>
         </>
     );
 }
+
+const Paginator = ({ meta }) => {
+    const { total, per_page, current_page } = meta;
+    const last_page = Math.ceil(total / per_page);
+    const prev_page = current_page - 1;
+    const next_page = current_page + 1;
+
+    const prev = () => {
+        // router.push(`/blog?page=${prev_page}`);
+        window.location.href = `/blog?page=${prev_page}`;
+    };
+
+    const next = () => {
+        // router.push(`/blog?page=${next_page}`);
+        window.location.href = `/blog?page=${next_page}`;
+    };
+
+    return (
+        <div className="flex flex-row justify-center items-center gap-5 mt-10">
+            <div className="flex flex-row justify-center items-center gap-5">
+                <button
+                    onClick={prev}
+                    disabled={prev_page < 1}
+                    className={`${
+                        prev_page < 1 ? "bg-gray-400" : "bg-green-custom"
+                    } px-5 py-2 rounded-md text-white font-roboto font-medium`}
+                >
+                    Prev
+                </button>
+                <p className="font-roboto font-medium text-xl">
+                    {current_page} of {last_page}
+                </p>
+                <button
+                    onClick={next}
+                    disabled={next_page > last_page}
+                    className={`${
+                        next_page > last_page
+                            ? "bg-gray-400"
+                            : "bg-green-custom"
+                    } px-5 py-2 rounded-md text-white font-roboto font-medium`}
+                >
+                    Next
+                </button>
+            </div>
+        </div>
+    );
+};

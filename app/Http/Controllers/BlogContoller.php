@@ -10,7 +10,7 @@ class BlogContoller extends Controller
 {
     public function index()
     {
-        $data_blog = Blog::all();
+        $data_blog = Blog::paginate(5);
         return Inertia::render('Blog', [
             'dataBlog' => $data_blog
         ]);

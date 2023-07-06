@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogAdminController;
 use App\Http\Controllers\BlogContoller;
+use App\Http\Controllers\BlogSpesifikController;
 use App\Http\Controllers\SimulasiKPRController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
@@ -62,9 +63,9 @@ Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['
 
 
 Route::get('/blog', [BlogContoller::class, 'index']);
-Route::get('/blog/spesifik/{id}', function () {
-    return Inertia::render('blog/[...id]');
-});
+Route::get('/blog/spesifik/{id}', [BlogSpesifikController::class, 'index']);
+Route::put('/blog/comment/{id}', [BlogSpesifikController::class, 'update']);
+
 Route::get('/buy', function () {
     return Inertia::render('Buy');
 });

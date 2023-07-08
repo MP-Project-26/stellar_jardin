@@ -28,7 +28,7 @@ export default function Index({ auth, dataBlog }) {
                         onClick={() => window.my_modal_1.show()}
                         className="p-2 bg-green-custom rounded-xl text-xl font-extrabold text-white"
                     >
-                        New User
+                        New Blog
                     </button>
                 </div>
                 <div className="overflow-x-auto mt-5">

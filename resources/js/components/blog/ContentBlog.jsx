@@ -45,12 +45,12 @@ export default function ContentBlog({ data, meta }) {
                         <div className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl">
                             <p>Tags</p> <p> : </p>
                             {item.tags.map((tag, index) => (
-                                <span
+                                <button
                                     key={index}
                                     className="rounded-md px-4 py-1 bg-green-custom text-white"
                                 >
                                     {tag}
-                                </span>
+                                </button>
                             ))}
                         </div>
                         <p className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">

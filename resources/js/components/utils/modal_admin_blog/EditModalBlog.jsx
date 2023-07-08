@@ -9,12 +9,14 @@ import { useState, useEffect } from "react";
 import { useRef } from "react";
 import { FaEdit } from "react-icons/fa";
 
-export default function newModalBlog() {
+export default function ({ dataBlog }) {
     const dataSearch = ["Home", "Forniture", "Office", "Kitchen"];
     const [searchTags, setSearchTags] = useState("");
-    const [dataTags, setDataTags] = useState([]);
     const [images, setImages] = useState("");
+    const [dataImages, setDataImages] = useState();
+    const [dataTags, setDataTags] = useState([]);
     const refImage = useRef(null);
+
     const { data, setData, post, processing, errors, reset } = useForm({
         title: "",
         author: "",
@@ -22,6 +24,9 @@ export default function newModalBlog() {
         content: "",
         tags: [],
     });
+    useEffect(() => {
+        setDataTags(dataBlog.tags);
+    }, [dataBlog]);
 
     const removeTags = (indexToRemove) => {
         setDataTags([
@@ -35,7 +40,7 @@ export default function newModalBlog() {
 
     const addImageToPost = (e) => {
         const render = new FileReader();
-        setData("image", e.target.files[0]);
+        setDataImages(e.target.files[0]);
         if (e.target.files[0]) {
             render.readAsDataURL(e.target.files[0]);
         }
@@ -46,20 +51,26 @@ export default function newModalBlog() {
 
     const submit = async (e) => {
         e.preventDefault();
-
-        // try {
         const formData = new FormData();
-        formData.append("title", data.title);
-        formData.append("author", data.author);
-        formData.append("image", data.image);
-        formData.append("content", data.content);
+        formData.append("_method", "PUT");
+        formData.append("title", data.title ? data.title : dataBlog.title);
+        formData.append("author", data.author ? data.author : dataBlog.author);
+        formData.append("image", dataImages ? dataImages : "");
+        formData.append(
+            "content",
+            data.content ? data.content : dataBlog.content
+        );
         formData.append("tags", data.tags);
 
-        const response = await axios.post("/admin/blog", formData, {
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
-        });
+        const response = await axios.post(
+            `/admin/blog/edit/${dataBlog.id}`,
+            formData,
+            {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            }
+        );
 
         if (response.status) {
             window.my_modal_1.close();
@@ -80,13 +91,13 @@ export default function newModalBlog() {
                 </div>
             )}
             <dialog
-                id="my_modal_1"
+                id="my_modal_2"
                 className="modal backdrop-blur-sm border-0 "
             >
                 <div className="lg:w-[60rem] lg:h-[43rem] h-[20rem] relative rounded-xl bg-transparant">
                     <button
                         className=" btn btn-sm btn-circle btn-ghost absolute right-5 top-5 bg-white shadow-xl border border-gray-500 z-[100] select-none"
-                        onClick={() => window.my_modal_1.close()}
+                        onClick={() => window.my_modal_2.close()}
                     >
                         ✕
                     </button>
@@ -100,7 +111,9 @@ export default function newModalBlog() {
                                 id="title"
                                 name="title"
                                 type="text"
-                                value={data.title}
+                                value={
+                                    data.title || dataBlog.title || data.title
+                                }
                                 onChange={(e) =>
                                     setData("title", e.target.value)
                                 }
@@ -112,7 +125,11 @@ export default function newModalBlog() {
                                 id="author"
                                 name="author"
                                 type="text"
-                                value={data.author}
+                                value={
+                                    data.author ||
+                                    dataBlog.author ||
+                                    data.author
+                                }
                                 onChange={(e) =>
                                     setData("author", e.target.value)
                                 }
@@ -126,22 +143,20 @@ export default function newModalBlog() {
                             >
                                 <FaEdit className="absolute -right-3 bottom-5 text-teal-600 text-3xl" />
                                 <img
-                                    src={
-                                        images ||
-                                        "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000"
-                                    }
+                                    src={images || dataBlog.image}
                                     alt=""
-                                    className="w-[10rem] h-[10rem]"
+                                    className="w-[10rem] "
                                 />{" "}
                                 <span
                                     className="
                             text-md text-teal-400
                             "
                                 >
-                                    max 2 mb
+                                    Max 2 MB
                                 </span>
                             </div>
                             <input
+                                required
                                 id="image"
                                 name="image"
                                 ref={refImage}
@@ -153,10 +168,15 @@ export default function newModalBlog() {
                             />
                             <InputLabel htmlFor="content" value="content" />
                             <Textarea
+                                required
                                 id="content"
                                 name="content"
                                 type="text"
-                                value={data.content}
+                                value={
+                                    data.content ||
+                                    dataBlog.content ||
+                                    data.content
+                                }
                                 onChange={(e) =>
                                     setData("content", e.target.value)
                                 }

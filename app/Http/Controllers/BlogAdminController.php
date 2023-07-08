@@ -36,6 +36,8 @@ class BlogAdminController extends Controller
     public function store(BlogStoreRequest $request)
     {
         try {
+
+
             $tagsToArray = explode(',', $request->tags);
             $imageName = Str::random(32) . '.' . $request->image->getClientOriginalExtension();
 
@@ -170,6 +172,4 @@ class BlogAdminController extends Controller
             ], 500);
         }
     }
-
-  
 }

@@ -8,15 +8,15 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRef } from "react";
 import { FaEdit } from "react-icons/fa";
+import InputError from "@/Components/login/InputError";
 
-export default function ({ dataBlog }) {
+export default function newModalBlog() {
     const dataSearch = ["Home", "Forniture", "Office", "Kitchen"];
+    const [err, setErr] = useState("");
     const [searchTags, setSearchTags] = useState("");
-    const [images, setImages] = useState("");
-    const [dataImages, setDataImages] = useState();
     const [dataTags, setDataTags] = useState([]);
+    const [images, setImages] = useState("");
     const refImage = useRef(null);
-
     const { data, setData, post, processing, errors, reset } = useForm({
         title: "",
         author: "",
@@ -24,9 +24,6 @@ export default function ({ dataBlog }) {
         content: "",
         tags: [],
     });
-    useEffect(() => {
-        setDataTags(dataBlog.tags);
-    }, [dataBlog]);
 
     const removeTags = (indexToRemove) => {
         setDataTags([
@@ -38,13 +35,9 @@ export default function ({ dataBlog }) {
         setData("tags", dataTags);
     }, [dataTags]);
 
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
-
     const addImageToPost = (e) => {
         const render = new FileReader();
-        setDataImages(e.target.files[0]);
+        setData("image", e.target.files[0]);
         if (e.target.files[0]) {
             render.readAsDataURL(e.target.files[0]);
         }
@@ -52,33 +45,42 @@ export default function ({ dataBlog }) {
             setImages(readerEvent.target.result);
         };
     };
+    useEffect(() => {
+        console.log(err);
+    }, [err]);
 
     const submit = async (e) => {
         e.preventDefault();
+        if (!data.image) {
+            setErr("Gambar tidak boleh kosong");
+            setTimeout(() => {
+                setErr("");
+            }, 3000);
+            return;
+        }
+
         const formData = new FormData();
-        formData.append("_method", "PUT");
-        formData.append("title", data.title ? data.title : dataBlog.title);
-        formData.append("author", data.author ? data.author : dataBlog.author);
-        formData.append("image", dataImages ? dataImages : "");
-        formData.append(
-            "content",
-            data.content ? data.content : dataBlog.content
-        );
+        formData.append("title", data.title);
+        formData.append("author", data.author);
+        formData.append("image", data.image);
+        formData.append("content", data.content);
         formData.append("tags", data.tags);
 
-        const response = await axios.post(
-            `/admin/blog/edit/${dataBlog.id}`,
-            formData,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            }
-        );
+        const response = await axios.post("/admin/blog", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+
+        console.log(response.data.message);
 
         if (response.status) {
             window.my_modal_1.close();
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+            // } else if (response.response.data.message) {
+            //     setErr(response.response.data.message);
         }
     };
     return (
@@ -95,13 +97,13 @@ export default function ({ dataBlog }) {
                 </div>
             )}
             <dialog
-                id="my_modal_2"
+                id="my_modal_1"
                 className="modal backdrop-blur-sm border-0 "
             >
                 <div className="lg:w-[60rem] lg:h-[43rem] h-[20rem] relative rounded-xl bg-transparant">
                     <button
                         className=" btn btn-sm btn-circle btn-ghost absolute right-5 top-5 bg-white shadow-xl border border-gray-500 z-[100] select-none"
-                        onClick={() => window.my_modal_2.close()}
+                        onClick={() => window.my_modal_1.close()}
                     >
                         ✕
                     </button>
@@ -112,12 +114,11 @@ export default function ({ dataBlog }) {
                         >
                             <InputLabel htmlFor="title" value="Title" />
                             <TextInput
+                                required
                                 id="title"
                                 name="title"
                                 type="text"
-                                value={
-                                    data.title || dataBlog.title || data.title
-                                }
+                                value={data.title}
                                 onChange={(e) =>
                                     setData("title", e.target.value)
                                 }
@@ -126,14 +127,11 @@ export default function ({ dataBlog }) {
                             />
                             <InputLabel htmlFor="author" value="author" />
                             <TextInput
+                                required
                                 id="author"
                                 name="author"
                                 type="text"
-                                value={
-                                    data.author ||
-                                    dataBlog.author ||
-                                    data.author
-                                }
+                                value={data.author}
                                 onChange={(e) =>
                                     setData("author", e.target.value)
                                 }
@@ -147,38 +145,41 @@ export default function ({ dataBlog }) {
                             >
                                 <FaEdit className="absolute -right-3 bottom-5 text-teal-600 text-3xl" />
                                 <img
-                                    src={images || dataBlog.image}
+                                    src={
+                                        images ||
+                                        "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000"
+                                    }
                                     alt=""
-                                    className="w-[10rem] "
+                                    className="w-[10rem] h-[10rem]"
                                 />{" "}
                                 <span
                                     className="
                             text-md text-teal-400
                             "
                                 >
-                                    Max 2 MB
+                                    max 2 mb
                                 </span>
+                                {err && (
+                                    <span className="text-red-800">{err}</span>
+                                )}
                             </div>
                             <input
                                 id="image"
                                 name="image"
                                 ref={refImage}
-                                hidden
+                                // hidden
                                 type="file"
                                 onChange={addImageToPost}
                                 placeholder="image"
-                                className=" py-[2rem]"
+                                className=" py-[2rem] hidden"
                             />
                             <InputLabel htmlFor="content" value="content" />
                             <Textarea
+                                required
                                 id="content"
                                 name="content"
                                 type="text"
-                                value={
-                                    data.content ||
-                                    dataBlog.content ||
-                                    data.content
-                                }
+                                value={data.content}
                                 onChange={(e) =>
                                     setData("content", e.target.value)
                                 }

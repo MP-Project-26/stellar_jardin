@@ -1,5 +1,5 @@
-import EditModalBlog from "@/Components/utils/modal_admin/EditModalBlog";
-import NewModalBlog from "@/Components/utils/modal_admin/newModalBlog";
+import EditModalBlog from "@/Components/utils/modal_admin_blog/EditModalBlog";
+import NewModalBlog from "@/Components/utils/modal_admin_blog/newModalBlog";
 import LayoutAdmin from "@/Layouts/LayoutAdmin";
 import axios from "axios";
 import moment from "moment/moment";
@@ -73,7 +73,9 @@ export default function Index({ auth, dataBlog }) {
                                 <tr key={i}>
                                     <th className=" border-r">{i + 1}</th>
                                     <td className=" border-r">{res?.author}</td>
-                                    <td className=" border-r w-[7rem]">{res?.title}</td>
+                                    <td className=" border-r w-[7rem]">
+                                        {res?.title}
+                                    </td>
                                     <td className=" border-r w-[16rem]">
                                         <img
                                             src={res?.image}
@@ -131,9 +133,7 @@ export default function Index({ auth, dataBlog }) {
 const DeleteModalBlog = ({ data }) => {
     const [loading, setLoading] = useState(false);
     const [gagal, setGagal] = useState(false);
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
+
     const onDelete = () => {
         axios
             .delete(`/admin/blog/delete/${data.id}`)

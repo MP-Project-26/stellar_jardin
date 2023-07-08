@@ -10,7 +10,6 @@ import PopularBlog from "@/components/blog/PopularBlog";
 import { useEffect } from "react";
 import { useState } from "react";
 
-
 export default function Blog({ dataBlog }) {
     const [data, setData] = useState([]);
     const [pupular, setPupular] = useState([]);

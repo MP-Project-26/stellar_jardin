@@ -75,12 +75,12 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                         <p>Tags</p> <p> : </p>
                         {item.tags &&
                             item.tags.map((tag, i) => (
-                                <span
+                                <button
                                     key={i}
                                     className="rounded-md px-4 py-1 bg-green-custom text-white"
                                 >
                                     {tag}
-                                </span>
+                                </button>
                             ))}
                     </div>
                     <div className="flex  flex-row">

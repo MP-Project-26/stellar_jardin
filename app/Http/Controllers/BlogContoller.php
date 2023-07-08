@@ -15,4 +15,18 @@ class BlogContoller extends Controller
             'dataBlog' => $data_blog,
         ]);
     }
+
+    // get tag from database
+    public function getTag($slug)
+    {
+        // get tag from database
+        $data_tag = Blog::select('tags')->get();
+        // value data tags in array
+        $data_tag = $data_tag->pluck('tags')->toArray();
+        
+        return Inertia::render('blog/[...tag]', [
+            'dataTag' => $data_tag,
+            'slug' => $slug
+        ]);
+    }
 }

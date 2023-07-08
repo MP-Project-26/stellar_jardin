@@ -12,7 +12,7 @@ class BlogContoller extends Controller
     {
         $data_blog = Blog::paginate(5);
         return Inertia::render('Blog', [
-            'dataBlog' => $data_blog
+            'dataBlog' => $data_blog,
         ]);
     }
 }

@@ -4,51 +4,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import moment from "moment/moment";
 
-// const dataComments = [
-//     {
-//         id: 1,
-//         name: "Fikri",
-//         time: "10 Seccond Ago",
-//         comment:
-//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-//     },
-//     {
-//         id: 2,
-//         name: "Zaldi",
-//         time: "10 Seccond Ago",
-//         comment:
-//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-//     },
-//     {
-//         id: 3,
-//         name: "Zaldi",
-//         time: "10 Seccond Ago",
-//         comment:
-//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-//     },
-//     {
-//         id: 4,
-//         name: "Zaldi",
-//         time: "10 Seccond Ago",
-//         comment:
-//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-//     },
-//     {
-//         id: 5,
-//         name: "Zaldi",
-//         time: "10 Seccond Ago",
-//         comment:
-//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-//     },
-//     {
-//         id: 6,
-//         name: "Zaldi",
-//         time: "10 Seccond Ago",
-//         comment:
-//             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-//     },
-// ];
-
 export default function ModalComments({ data }) {
     const [item, setItem] = useState([]);
     useEffect(() => {
@@ -86,7 +41,7 @@ export default function ModalComments({ data }) {
                                                       </p>
                                                       <p className="font-roboto font-normal text-xs ">
                                                           {moment(
-                                                              item.createdAt
+                                                              item?.createdAt
                                                           ).fromNow()}
                                                       </p>
                                                   </div>

@@ -11,6 +11,7 @@ class BlogSpesifikController extends Controller
     public function index($id)
     {
         $blogSpesifikall = Blog::find($id);
+        // $blogPopular = Blog::orderBy('views', 'desc')->take(3)->get();
         return Inertia::render('blog/[...id]', [
             'blogSpesifik' => $blogSpesifikall
         ]);
@@ -51,6 +52,32 @@ class BlogSpesifikController extends Controller
             return response()->json([
                 'message' => "Terjadi kesalahan",
                 "error" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    //  Update the specified views in database.
+    public function updateViews(Request $request, $id)
+    {
+        try {
+            $blog = Blog::find($id);
+            if (!$blog) {
+                return response()->json([
+                    'message' => 'Blog Not Found.'
+                ], 404);
+            }
+
+            $blog->update([
+                "views" => $request->views + 1,
+            ]);
+
+            return response()->json([
+                'message' => "success",
+                'status' => true,
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => "Terjadi kesalahan"
             ], 500);
         }
     }

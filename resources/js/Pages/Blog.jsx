@@ -11,34 +11,17 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-const pupular = [
-    {
-        id: 1,
-        title: "Manage House Property",
-        author: "Fikri",
-        image: "./assets/img/blog/ourblog1-1.png",
-        link: "/blog/spesifik/1",
-        views: 1222,
-        comments: 12,
-        date: 1687779024740,
-    },
-    {
-        id: 2,
-        title: "Manage House Property",
-        author: "Zaldi",
-        image: "./assets/img/carousal/carousal2.png",
-        link: "/blog/spesifik/2",
-        views: 1152,
-        comments: 2,
-        date: 1687779090579,
-    },
-];
-
 export default function Blog({ dataBlog }) {
     const [data, setData] = useState([]);
-    // useEffect(() => {
-    //   console.log(data);
-    // }, [data]);
+    const [pupular, setPupular] = useState([]);
+
+    useEffect(() => {
+        const dataPopularBlog = [...dataBlog.data].sort(
+            (a, b) => b.views - a.views
+        );
+        setPupular(dataPopularBlog.slice(0, 3));
+    }, [dataBlog]);
+
     useEffect(() => {
         setData(dataBlog.data);
     }, [dataBlog]);
@@ -52,7 +35,7 @@ export default function Blog({ dataBlog }) {
                         </div>
                     </div>
                     <div className="flex flex-col lg:flex-row   w-full  justify-between gap-[5rem] columns-2">
-                        <ContentBlog data={data} meta={dataBlog}/>
+                        <ContentBlog data={data} meta={dataBlog} />
 
                         {/* kanan */}
                         <div className="px-5 flex flex-col gap-10 w-full lg:w-[35%] sticky top-0 ">
@@ -72,7 +55,6 @@ export default function Blog({ dataBlog }) {
                                 </button>
                             </div>
                             {/* Popular Posts */}
-                            <PopularBlog data={pupular} />
                             <PopularBlog data={pupular} />
                         </div>
                     </div>

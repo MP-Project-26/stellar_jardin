@@ -84,9 +84,11 @@ export default function PopularBlog({ data }) {
                                     </defs>
                                 </svg>
                                 <p className="text-xs font-semibold font-roboto">
-                                    {item.comments < 1000
-                                        ? item.comments
-                                        : item.comments / 1000 + "k"}
+                                    {item.comments
+                                        ? item.comments.length < 1000
+                                            ? item.comments.length
+                                            : item.comments.length / 1000 + "k"
+                                        : 0}
                                 </p>
                             </div>
                         </div>{" "}
@@ -115,7 +117,7 @@ export default function PopularBlog({ data }) {
                                 </defs>
                             </svg>
                             <p className="text-xs font-semibold font-roboto">
-                                {moment(item.date).fromNow()}
+                                {moment(item.createdAt).fromNow()}
                             </p>
                         </div>
                     </div>

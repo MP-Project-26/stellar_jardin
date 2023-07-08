@@ -3,9 +3,26 @@ import { Link } from "@inertiajs/react";
 import ModalComments from "@/components/utils/modal/modalComments";
 import moment from "moment";
 import { useState } from "react";
+import axios from "axios";
 
 export default function ContentBlog({ data, meta }) {
     const [dataModalComments, setDataModalComments] = useState([]);
+    // const [countView, setCountView] = useState([]);
+
+    const addViewCount = async (dataView) => {
+        // console.log(dataView);
+        const response = await axios.put(
+            `/blog/view/${dataView.id}`,
+            dataView,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        console.log(response);
+    };
     return (
         <>
             <ModalComments data={dataModalComments} />
@@ -119,6 +136,9 @@ export default function ContentBlog({ data, meta }) {
                             <div className="flex  flex-row">
                                 <div className="w-50 flex justify-end">
                                     <Link
+                                        onClick={() => {
+                                            addViewCount(item);
+                                        }}
                                         href={`/blog/spesifik/${item.id}`}
                                         className=" font-semibold text-xl text-white  bg-green-custom rounded-r-[2rem] rounded-tl-none rounded-bl-[2rem] px-3 py-2 lg:px-[3.4rem] lg:py-[1.2rem]"
                                     >

@@ -65,6 +65,7 @@ Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['
 Route::get('/blog', [BlogContoller::class, 'index']);
 Route::get('/blog/spesifik/{id}', [BlogSpesifikController::class, 'index']);
 Route::put('/blog/comment/{id}', [BlogSpesifikController::class, 'update']);
+Route::put('/blog/view/{id}', [BlogSpesifikController::class, 'updateViews']);
 
 Route::get('/buy', function () {
     return Inertia::render('Buy');

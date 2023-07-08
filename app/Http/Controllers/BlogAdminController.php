@@ -170,4 +170,6 @@ class BlogAdminController extends Controller
             ], 500);
         }
     }
+
+  
 }

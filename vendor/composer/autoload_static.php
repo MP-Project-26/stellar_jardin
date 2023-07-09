@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
+class ComposerStaticInit36c383c57cbdf8eecb109d28d5a659fb
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -539,7 +539,7 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
         'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
-        'App\\Http\\Controllers\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogController.php',
+        'App\\Http\\Controllers\\BlogContoller' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogContoller.php',
         'App\\Http\\Controllers\\CategoriesGalleriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoriesGalleriesController.php',
         'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\ContentController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContentController.php',
@@ -548,11 +548,13 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'App\\Http\\Controllers\\GalleriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleriesController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
+        'App\\Http\\Controllers\\PengajuanSRSController' => __DIR__ . '/../..' . '/app/Http/Controllers/PengajuanSRSController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\SimulasiKPRController' => __DIR__ . '/../..' . '/app/Http/Controllers/SimulasiKPRController.php',
         'App\\Http\\Controllers\\SpesificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/SpesificationController.php',
         'App\\Http\\Controllers\\TypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/TypeController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\admin\\BlogAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/BlogAdminController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -570,6 +572,8 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'App\\Http\\Requests\\StoreSpesificationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreSpesificationRequest.php',
         'App\\Http\\Requests\\UpdateCategories_galleriesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateCategories_galleriesRequest.php',
         'App\\Http\\Requests\\UpdateSpesificationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateSpesificationRequest.php',
+        'App\\Http\\Requests\\admin\\BlogUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/admin/BlogUpdateRequest.php',
+        'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
         'App\\Models\\Categories_galleries' => __DIR__ . '/../..' . '/app/Models/Categories_galleries.php',
         'App\\Models\\Galleries' => __DIR__ . '/../..' . '/app/Models/Galleries.php',
         'App\\Models\\Spesification' => __DIR__ . '/../..' . '/app/Models/Spesification.php',
@@ -694,6 +698,8 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'Database\\Factories\\CategoriesGalleriesFactory' => __DIR__ . '/../..' . '/database/factories/CategoriesGalleriesFactory.php',
         'Database\\Factories\\SpesificationFactory' => __DIR__ . '/../..' . '/database/factories/SpesificationFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\AdminSeeder' => __DIR__ . '/../..' . '/database/seeders/AdminSeeder.php',
+        'Database\\Seeders\\BlogSeeder' => __DIR__ . '/../..' . '/database/seeders/BlogSeeder.php',
         'Database\\Seeders\\CategoriesGalleriesSeeder' => __DIR__ . '/../..' . '/database/seeders/CategoriesGalleriesSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\GalleriesSeeder' => __DIR__ . '/../..' . '/database/seeders/GalleriesSeeder.php',
@@ -2678,6 +2684,7 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'Illuminate\\Testing\\TestResponse' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Testing/TestResponse.php',
         'Illuminate\\Testing\\TestView' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Testing/TestView.php',
         'Illuminate\\Translation\\ArrayLoader' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/ArrayLoader.php',
+        'Illuminate\\Translation\\CreatesPotentiallyTranslatedStrings' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/CreatesPotentiallyTranslatedStrings.php',
         'Illuminate\\Translation\\FileLoader' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/FileLoader.php',
         'Illuminate\\Translation\\MessageSelector' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/MessageSelector.php',
         'Illuminate\\Translation\\PotentiallyTranslatedString' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/PotentiallyTranslatedString.php',
@@ -2697,6 +2704,7 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'Illuminate\\Validation\\NotPwnedVerifier' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/NotPwnedVerifier.php',
         'Illuminate\\Validation\\PresenceVerifierInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/PresenceVerifierInterface.php',
         'Illuminate\\Validation\\Rule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rule.php',
+        'Illuminate\\Validation\\Rules\\Can' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Can.php',
         'Illuminate\\Validation\\Rules\\DatabaseRule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/DatabaseRule.php',
         'Illuminate\\Validation\\Rules\\Dimensions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php',
         'Illuminate\\Validation\\Rules\\Enum' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Enum.php',
@@ -6446,9 +6454,9 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit36c383c57cbdf8eecb109d28d5a659fb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit36c383c57cbdf8eecb109d28d5a659fb::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit36c383c57cbdf8eecb109d28d5a659fb::$classMap;
 
         }, null, ClassLoader::class);
     }

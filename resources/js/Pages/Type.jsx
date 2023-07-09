@@ -1,10 +1,11 @@
-import Layout from "@/Layouts/Layouts";
+
 import ImageSet from "@/components/type/ImageSet";
 import { Specification } from "@/components/type/Specification";
 import React, { useEffect } from "react";
 import NavMid from "@/components/type/NavMid";
 import Fasilitas from "@/components/type/Fasilitas";
 import { Link } from "@inertiajs/react";
+import Layout from "@/Layouts/Layout";
 
 
 
@@ -29,13 +30,13 @@ export default function Type({ title, galleries, idElement }) {
                                 <h1 className="text-2xl font-semibold">Rp. 1,7 Milyar</h1>
                             </div>
                             <div className="flex gap-2 mt-2">
-                                <div className=" bg-lime-500 py-2 px-6 font-medium rounded-md cursor-pointer hover:bg-lime-300">
-                                    <Link href="/simulasi_kpr" className="text-center ">Simulasi KPR</Link>
-                                </div>
+                                <Link href="/simulasi_kpr" className=" bg-lime-500 py-2 px-6 font-medium rounded-md cursor-pointer hover:bg-lime-300">
+                                    <h1 className="text-center ">Simulasi KPR</h1>
+                                </Link>
 
-                                <div className=" bg-green-custom py-2 px-6 text-white font-medium rounded-md cursor-pointer hover:bg-gray-500">
-                                    <Link href="/pengajuan_srs" className="text-center ">Pengajuan SRS</Link>
-                                </div>
+                                <Link href="/pemesanan_unit" className=" bg-green-custom py-2 px-6 text-white font-medium rounded-md cursor-pointer hover:bg-gray-500">
+                                    <h1 href="/pemesanan_unit" className="text-center ">Pesan Unit</h1>
+                                </Link>
                             </div>
                             <Specification idElement={idElement}/>
                             <Fasilitas idElement={idElement}/>

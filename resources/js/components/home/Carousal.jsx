@@ -5,11 +5,11 @@ export default function Carousel() {
     const carouselImages = [
         {
             id: 1,
-            image: '/assets/img/carousal2.png',
+            image: '/assets/img/carousal/carousal2.png',
         },
         {
             id: 2,
-            image: '/assets/img/carousal3.png',
+            image: '/assets/img/carousal/carousal3.png',
         },
     ]
     return (
@@ -36,17 +36,19 @@ export default function Carousel() {
         >
             <div className="flex relative w-full lg:h-[40rem] md:h-[30rem] h-[17rem]">
                 <img
-                    src='/assets/img/carousal1.png'
+                    src='/assets/img/carousal/carousal1.png'
                     alt="image 1"
                     className="h-full w-full object-cover"
                 />
                 <div className="absolute flex items-center w-full h-full  ">
                     <div className="md:ml-40 ml-14 mt-6 md:mt-0">
                         <h1 className="text-white lg:text-7xl md:text-5xl text-xl font-bold max-w-[30rem]">
-                        STELLAR JARDIN RESIDENCE
+                            STELLAR JARDIN RESIDENCE
                         </h1>
                         <p className="text-white lg:text-2xl md:text-md text-[0.7rem] lg:max-w-[40rem] md:max-w-[20rem] max-w-[15rem]">
-                        Keanggunan Skandinavia, Hunian Damai, Kemewahan Memukau. Wujudkan Impian Rumah Anda di Sini, Tempat Realisasi Impian Terbaik.
+                            Keanggunan Skandinavia, Hunian Damai, Kemewahan
+                            Memukau. Wujudkan Impian Rumah Anda di Sini, Tempat
+                            Realisasi Impian Terbaik.
                         </p>
                     </div>
                 </div>

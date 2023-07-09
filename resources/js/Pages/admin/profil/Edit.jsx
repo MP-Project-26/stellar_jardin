@@ -1,9 +1,9 @@
-import TextInput from "@/Components/bus/TextInput";
+import TextInput from "@/Components/login/TextInput";
 import LayoutAdmin from "@/Layouts/LayoutAdmin";
 import { useForm, usePage } from "@inertiajs/react";
 import React, { useRef, useState } from "react";
 import { Transition } from "@headlessui/react";
-import InputError from "@/Components/bus/InputError";
+import InputError from "@/Components/login/InputError";
 
 export default function Edit({ auth, mustVerifyEmail, status }) {
     return (
@@ -262,10 +262,10 @@ const EditPassword = ({ status, className = "" }) => {
     );
 };
 
-import DangerButton from "@/Components/bus/DangerButton";
-import InputLabel from "@/Components/bus/InputLabel";
-import Modal from "@/Components/bus/Modal";
-import SecondaryButton from "@/Components/bus/SecondaryButton";
+import DangerButton from "@/Components/login/DangerButton";
+import InputLabel from "@/Components/login/InputLabel";
+import Modal from "@/Components/login/Modal";
+import SecondaryButton from "@/Components/login/SecondaryButton";
 
 const DeleteUserForm = ({ className = "" }) => {
     const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);

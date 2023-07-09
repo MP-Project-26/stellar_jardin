@@ -9,11 +9,14 @@ import {
     TabPanel,
 } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
+import { set } from "react-hook-form";
 
 const ImageSet = ({ galleries }) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [activeTab, setActiveTab] = useState("Exterior");
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const [categoryDenah, setCategoryDenah] = useState(null);
+    const [titles, setTitles] = useState(null);
 
     const exteriorGallery = galleries.filter(
         (item) => item.category.category_name === "Exterior"
@@ -34,7 +37,7 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex  justify-center item-img  hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image)}
+                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
@@ -53,7 +56,7 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex lg:gap-[3rem] justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image)}
+                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
@@ -72,7 +75,7 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex  justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image)}
+                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
@@ -92,11 +95,11 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex  justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image)}
+                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
-                            className="h-full w-auto"
+                            className="h-full w-full object-cover"
                             image={`/assets/img/gallery/${item.image}`}
                             title={item.id}
                         />
@@ -132,9 +135,11 @@ const ImageSet = ({ galleries }) => {
         { label: "Denah", value: "Denah" },
     ];
 
-    const handleImageClick = (event,image) => {
+    const handleImageClick = (event,image, category_name, title) => {
         event.preventDefault();
         setIsTransitioning(true);
+        setCategoryDenah(category_name);
+        setTitles(title);
         setTimeout(() => {
             setSelectedImage(image);
             setIsTransitioning(false);
@@ -161,18 +166,23 @@ const ImageSet = ({ galleries }) => {
                     </h1>
                 </div>
             <div id="gallery" className="lg:px-40 md:px-20 px-4">
-                <img
-                    src={
-                        selectedImage
-                            ? `/assets/img/gallery/${selectedImage}`
-                            : "/assets/img/gallery/eksterior_2.jpg"
-                    }
-                    alt="image1"
-                    className={`w-auto h-full md:rounded-3xl object-cover  ${
-                        isTransitioning ? "transitioning" : ""
-                    }`}
-                    style={{ zIndex: selectedImage ? 2 : 1 }}
-                />
+                <div className="flex justify-center w-auto h-auto items-center relative">
+                    <img
+                        src={
+                            selectedImage
+                                ? `/assets/img/gallery/${selectedImage}`
+                                : "/assets/img/gallery/eksterior_2.jpg"
+                        }
+                        alt="image1"
+                        className={`w-auto md:rounded-3xl object-cover border-black border  ${
+                            isTransitioning ? "transitioning" : ""
+                        } ${categoryDenah === "Denah" ? " m-16 md:m-0 -rotate-90 md:rotate-0 w-auto h-full md:w-[80%]" : ""}`}
+                        style={{ zIndex: selectedImage ? 2 : 1 }}
+                    />
+                    <div className="flex justify-end items-end w-full h-full absolute z-30 mb-[10%]">
+                        <h1 className="bg-black bg-opacity-30 h-auto py-[1%] px-[5%] text-lg md:text-3xl text-white font-bold">{titles}</h1>
+                    </div>
+                </div>
                 <div className="py-5">
                     <Tabs value={activeTab}>
                         <TabsHeader

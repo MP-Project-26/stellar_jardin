@@ -28,8 +28,6 @@ class GalleriesController extends Controller
             'galleries' => $galleries,
             'idElement' => $idElement,
         ]);
-
-
     }
 
     /**

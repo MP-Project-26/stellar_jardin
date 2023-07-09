@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeaderAdmin({ auth }) {
     return (
-        <div className="fixed w-full  bg-green-custom p-5 top-0">
+        <div className="fixed w-full  bg-green-custom p-5 top-0 z-[200]">
             <div className="w-full flex justify-end ">
                 <div className="dropdown dropdown-end font-sans shadow-2xl font-bold text-black text-2xl md:text-3xl">
                     <label tabIndex={0} className="text-xl p-2 rounded-xl select-none bg-white m-1">

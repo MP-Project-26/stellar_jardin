@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "@inertiajs/react";
 import axios from "axios";
-import Layout from "@/Layouts/Layouts";
+import Layout from "@/Layouts/Layout";
 
 const SimulasiKPR = ({ title }) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -57,8 +57,7 @@ const SimulasiKPR = ({ title }) => {
                     jangka_waktu: numberJangkaWaktu,
                 });
 
-                const { cicilan_bulanan, jumlah_pengajuan, uang_muka } =
-                    response.data;
+                const { cicilan_bulanan, jumlah_pengajuan, uang_muka } = response.data;
                 setCicilanBulanan(cicilan_bulanan);
                 setTotalPembayaran(jumlah_pengajuan);
                 setUangMuka(uang_muka);
@@ -235,7 +234,6 @@ const SimulasiKPR = ({ title }) => {
                                 id="suku_bunga"
                                 type="number"
                                 name="suku_bunga"
-
                                 value={data.suku_bunga}
                                 onChange={(e) => {
                                     const inputValue = e.target.value;
@@ -293,7 +291,6 @@ const SimulasiKPR = ({ title }) => {
                             max={20}
                             value={data.jangka_waktu}
                             className="range range-secondary"
-
                             onChange={(e) =>
                                 setData("jangka_waktu", e.target.value)
                             }
@@ -342,7 +339,9 @@ const SimulasiKPR = ({ title }) => {
                                                 <th>{cicilanBulanan}</th>
                                             </tr>
                                             <tr>
-                                                <th>Jumlah Pengajuan Pinjaman : </th>
+                                                <th>
+                                                    Jumlah Pengajuan Pinjaman :{" "}
+                                                </th>
                                                 <th>{totalPembayaran}</th>
                                             </tr>
                                         </tbody>

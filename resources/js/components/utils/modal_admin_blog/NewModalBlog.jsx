@@ -45,9 +45,6 @@ export default function newModalBlog() {
             setImages(readerEvent.target.result);
         };
     };
-    useEffect(() => {
-        console.log(err);
-    }, [err]);
 
     const submit = async (e) => {
         e.preventDefault();
@@ -72,15 +69,11 @@ export default function newModalBlog() {
             },
         });
 
-        console.log(response.data.message);
-
         if (response.status) {
             window.my_modal_1.close();
             setTimeout(() => {
                 window.location.reload();
             }, 1500);
-            // } else if (response.response.data.message) {
-            //     setErr(response.response.data.message);
         }
     };
     return (
@@ -150,7 +143,7 @@ export default function newModalBlog() {
                                         "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000"
                                     }
                                     alt=""
-                                    className="w-[10rem] h-[10rem]"
+                                    className="w-[10rem] h-[10rem] z-50"
                                 />{" "}
                                 <span
                                     className="

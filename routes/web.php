@@ -16,7 +16,7 @@ use App\Http\Controllers\SimulasiKPRController;
 
 use App\Http\Controllers\PemesananUnitController;
 
-use App\Http\Controllers\admin\BlogAdminController;
+use App\Http\Controllers\BlogAdminController;
 use App\Http\Controllers\BlogSpesifikController;
 use App\Http\Controllers\OrderManagementController;
 

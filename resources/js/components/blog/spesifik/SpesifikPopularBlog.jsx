@@ -1,5 +1,4 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1-1.png";
 import moment from "moment/moment";
 
 export default function SpesifikPopularBlog({dataPopular}) {
@@ -13,7 +12,7 @@ export default function SpesifikPopularBlog({dataPopular}) {
                     key={index}
                     className="p-5 flex flex-row gap-6 lg:gap-2 justify-center items-center"
                 >
-                    <img src={ImageOurBlog1} alt="" className="w-[45%]" />
+                    <img src="/assets/img/blog/ourblog1-1.png" alt="" className="w-[45%]" />
                     <div className="flex flex-col gap-1">
                         <p className="font-roboto text-xl font-medium paragraph-popular">
                             {item.title}

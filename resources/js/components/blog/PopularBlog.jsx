@@ -1,8 +1,4 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1-1.png";
-import { IconButton, ButtonGroup } from "@material-tailwind/react";
-import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { Link } from "@inertiajs/react";
 import moment from "moment/moment";
 
 export default function PopularBlog({ data }) {

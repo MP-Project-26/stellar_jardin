@@ -181,7 +181,7 @@ const PemesananUnit = ({ title }) => {
                                     </label>
                                     <select
                                         required
-                                        name="unit_kavling"
+
                                         id="unit_kavling"
                                         className="border border-gray-300 rounded-md px-2 py-1 lg:w-[50%] md:w-[100%] w-full lg:mr-3"
                                         value={unitKavling}
@@ -218,8 +218,8 @@ const PemesananUnit = ({ title }) => {
                                     </label>
                                     <select
                                         required
-                                        name="sistem_pengajuan"
-                                        id="unit_kavling"
+
+                                        id="sistem_pengajuan"
                                         className="border border-gray-300 rounded-md px-2 py-1 lg:w-[50%] md:w-[100%] w-full lg:mr-3"
                                         value={sistemPengajuan}
                                         onChange={(e) => {
@@ -244,7 +244,7 @@ const PemesananUnit = ({ title }) => {
                                     <input
                                         required
                                         type="text"
-                                        name="nama_lengkap"
+
                                         id="nama_lengkap"
                                         className="border border-gray-300 rounded-md px-2 py-1"
                                         value={namaLengkap}
@@ -264,7 +264,7 @@ const PemesananUnit = ({ title }) => {
                                     <input
                                         required
                                         type="email"
-                                        name="email"
+
                                         id="email"
                                         className="border border-gray-300 rounded-md px-2 py-1"
                                         value={email}
@@ -284,7 +284,7 @@ const PemesananUnit = ({ title }) => {
                                     <input
                                         required
                                         type="text"
-                                        name="no_wa"
+
                                         id="no_wa"
                                         className="border border-gray-300 rounded-md px-2 py-1"
                                         value={noWa}
@@ -303,7 +303,7 @@ const PemesananUnit = ({ title }) => {
                                     <label htmlFor="alamat">Alamat:</label>
                                     <textarea
                                         required
-                                        name="alamat"
+
                                         id="alamat"
                                         rows="4"
                                         className="border border-gray-300 rounded-md px-2 py-1"
@@ -325,7 +325,7 @@ const PemesananUnit = ({ title }) => {
                                     </label>
                                     <textarea
                                         required
-                                        name="pesan"
+
                                         id="pesan"
                                         rows="4"
                                         className="border border-gray-300 rounded-md px-2 py-1"

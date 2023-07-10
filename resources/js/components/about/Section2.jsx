@@ -1,6 +1,6 @@
 import React from "react";
 import houseIcon from "@/assets/img/house-icon.png";
-import logo from "@/assets/logo.png";
+
 
 const Section2 = () => {
     return (
@@ -69,7 +69,7 @@ const Section2 = () => {
                             <div className="flex items-center justify-center w-32 h-32 lg:w-80 lg:h-80 md:w-40 md:h-40 bg-[#0D7377] rounded-full  lg:">
                                 <img
                                     className="lg:w-auto  md:w-auto w-20 "
-                                    src={logo}
+                                    src="/assets/img/Logo.png"
                                     alt=""
                                 />
                             </div>

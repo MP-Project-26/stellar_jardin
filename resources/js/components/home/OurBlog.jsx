@@ -1,12 +1,4 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/bg-kanan.png";
-import ImageOur1 from "@/assets/ourblog1-1.png";
-import ImageOur2 from "@/assets/ourblog1-2.png";
-import ImageOur3 from "@/assets/ourblog1-3.png";
-
-import ImageOurBlog2 from "@/assets/ourblog2.png";
-import ImageOurBlog3 from "@/assets/ourblog3.png";
-import Elipse1 from "@/assets/Ellipse1.png";
 import { Link } from "@inertiajs/react";
 
 

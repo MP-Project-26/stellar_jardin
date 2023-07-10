@@ -1,8 +1,6 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1-1.png";
 import { Link } from "@inertiajs/react";
-import ImageUser from "@/assets/user.png";
-import moment from "moment/moment";
+
 
 export default function SpesifikContentBlog({ dataContent }) {
     return (
@@ -16,7 +14,7 @@ export default function SpesifikContentBlog({ dataContent }) {
                         {item.date} - {item.author} - {"Property"}
                     </p>
                     <img
-                        src={ImageOurBlog1}
+                        src="/assets/img/blog/ourblog1-1.png"
                         alt=""
                         className="w-full"
                         data-aos="fade-right"
@@ -112,7 +110,6 @@ export default function SpesifikContentBlog({ dataContent }) {
                         </h1>
                         <div className="w-full justify-center rounded-[2rem] flex flex-col gap-6">
                             <div className="flex flex-row items-center gap-4">
-                                <img src={ImageUser} alt="" />
 
                                 <div className="flex flex-col">
                                     <p className="font-roboto font-bold text-lg">

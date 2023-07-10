@@ -1,5 +1,5 @@
 import React from "react";
-import ImageUser from "@/assets/user.png";
+
 
 const dataComments = [
     {
@@ -69,7 +69,7 @@ export default function ModalComments({ item }) {
                                         className="w-full justify-center rounded-[2rem] flex flex-col gap-6 py-5 max-w-[90%]"
                                     >
                                         <div className="flex flex-row items-center gap-4">
-                                            <img src={ImageUser} alt="" />
+                                            
 
                                             <div className="flex flex-col">
                                                 <p className="font-roboto font-bold text-lg">

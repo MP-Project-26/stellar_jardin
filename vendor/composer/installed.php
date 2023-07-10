@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '23c693adc4ed88540e876bb877909d47ce506a32',
+        'reference' => 'ad925e319fab3bf624b0643388f458caf6d961e4',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -391,7 +391,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '23c693adc4ed88540e876bb877909d47ce506a32',
+            'reference' => 'ad925e319fab3bf624b0643388f458caf6d961e4',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -742,8 +742,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -948,9 +948,9 @@
             'dev_requirement' => true,
         ),
         'spatie/flare-client-php' => array(
-            'pretty_version' => '1.4.0',
-            'version' => '1.4.0.0',
-            'reference' => '82138174d5fe2829a7f085a6bdb2a06f6def9f7a',
+            'pretty_version' => '1.4.1',
+            'version' => '1.4.1.0',
+            'reference' => '943894c6a6b00501365ac0b91ae0dce56f2226fa',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/flare-client-php',
             'aliases' => array(),

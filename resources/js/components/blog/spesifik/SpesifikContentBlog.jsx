@@ -50,17 +50,17 @@ export default function SpesifikContentBlog({ dataContent: item }) {
     return (
         <div className="px-5 w-full lg:w-[65%] flex flex-col gap-[5rem]">
             <div className=" space-y-7">
-                <span className="text-6xl font-semibold text-green-custom">
+                <span className="text-3xl lg:text-6xl font-semibold text-green-custom">
                     {item.title}
                 </span>
-                <p className="text-xl font-semibold ">
+                <p className="text-md lg:text-xl font-semibold ">
                     {moment(item?.created_at).format("DD MMMM YYYY")}-{" "}
                     {item.author} - {"Property"}
                 </p>
                 <img
                     src={item.image}
                     alt=""
-                    className="w-full"
+                    className="w-[90%] lg:w-full"
                     data-aos="fade-right"
                 />
                 <p
@@ -191,7 +191,7 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                         Tinggalkan Balasan
                     </h1>
 
-                    <div className="bg-[#f5f4f4] w-[25rem] lg:w-[35rem] justify-center rounded-[2rem] flex shadow-xl flex-col">
+                    <div className="bg-[#f5f4f4] w-[20rem] lg:w-[35rem] justify-center rounded-[2rem] flex shadow-xl flex-col">
                         <form
                             onSubmit={SumbitComment}
                             className="m-4 lg:mx-[4rem] lg:my-[4rem] flex flex-col gap-[1rem]"

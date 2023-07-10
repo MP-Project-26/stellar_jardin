@@ -56,7 +56,7 @@ export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset 
                         <img
                             src={item.image}
                             alt=""
-                            className="w-full"
+                            className="w-[90%] lg:w-full"
                             data-aos="fade-right"
                         />
                         <div className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl">
@@ -170,7 +170,7 @@ export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset 
                     </div>
                 ))}
                 <ReactPaginate
-                    className="flex flex-row gap-1 w-full justify-center items-center"
+                    className="flex flex-row gap-1 w-full justify-center items-center select-none"
                     nextLabel="next >"
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={2}

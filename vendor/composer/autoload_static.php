@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b
+class ComposerStaticInit227d1452223c145be1e7c9a5ff2bc414
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -357,8 +357,8 @@ class ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -539,7 +539,9 @@ class ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b
         'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
         'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
+        'App\\Http\\Controllers\\BlogAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogAdminController.php',
         'App\\Http\\Controllers\\BlogContoller' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogContoller.php',
+        'App\\Http\\Controllers\\BlogSpesifikController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogSpesifikController.php',
         'App\\Http\\Controllers\\CategoriesGalleriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoriesGalleriesController.php',
         'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\ContentController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContentController.php',
@@ -554,7 +556,6 @@ class ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b
         'App\\Http\\Controllers\\SimulasiKPRController' => __DIR__ . '/../..' . '/app/Http/Controllers/SimulasiKPRController.php',
         'App\\Http\\Controllers\\SpesificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/SpesificationController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
-        'App\\Http\\Controllers\\admin\\BlogAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/BlogAdminController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -567,12 +568,12 @@ class ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
+        'App\\Http\\Requests\\BlogStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BlogStoreRequest.php',
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
         'App\\Http\\Requests\\StoreCategories_galleriesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreCategories_galleriesRequest.php',
         'App\\Http\\Requests\\StoreSpesificationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreSpesificationRequest.php',
         'App\\Http\\Requests\\UpdateCategories_galleriesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateCategories_galleriesRequest.php',
         'App\\Http\\Requests\\UpdateSpesificationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateSpesificationRequest.php',
-        'App\\Http\\Requests\\admin\\BlogUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/admin/BlogUpdateRequest.php',
         'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
         'App\\Models\\Categories_galleries' => __DIR__ . '/../..' . '/app/Models/Categories_galleries.php',
         'App\\Models\\Galleries' => __DIR__ . '/../..' . '/app/Models/Galleries.php',
@@ -6458,9 +6459,9 @@ class ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit227d1452223c145be1e7c9a5ff2bc414::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit227d1452223c145be1e7c9a5ff2bc414::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit227d1452223c145be1e7c9a5ff2bc414::$classMap;
 
         }, null, ClassLoader::class);
     }

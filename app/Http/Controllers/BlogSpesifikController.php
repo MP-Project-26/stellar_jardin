@@ -12,8 +12,10 @@ class BlogSpesifikController extends Controller
     {
         $blogSpesifikall = Blog::find($id);
         // $blogPopular = Blog::orderBy('views', 'desc')->take(3)->get();
+        $all_data_blog = Blog::all();
         return Inertia::render('blog/[...id]', [
-            'blogSpesifik' => $blogSpesifikall
+            'blogSpesifik' => $blogSpesifikall,
+            'allDataBlog' => $all_data_blog
         ]);
     }
 

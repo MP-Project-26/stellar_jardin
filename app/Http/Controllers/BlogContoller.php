@@ -10,23 +10,35 @@ class BlogContoller extends Controller
 {
     public function index()
     {
-        $data_blog = Blog::paginate(5);
+        $data_blog = Blog::all();
+        $all_data_blog = Blog::all();
         return Inertia::render('Blog', [
             'dataBlog' => $data_blog,
+            'allDataBlog' => $all_data_blog
         ]);
     }
 
     // get tag from database
     public function getTag($slug)
     {
-        // get tag from database
-        $data_tag = Blog::select('tags')->get();
-        // value data tags in array
-        $data_tag = $data_tag->pluck('tags')->toArray();
-        
+
+        $data_tag = Blog::whereJsonContains('tags', $slug)->get();
+        $all_data_blog = Blog::all();
         return Inertia::render('blog/[...tag]', [
             'dataTag' => $data_tag,
-            'slug' => $slug
+            'allDataBlog' => $all_data_blog
         ]);
+    }
+
+    // search data
+    public function search(Request $request)
+    {
+        // $data_blog = Blog::where('title', 'like', '%' . $request->search . '%')->get();
+        $data_blog = Blog::where('title', 'like', '%' . $request->search . '%')->orWhere('author', 'like', '%' . $request->search . '%')->orWhere('content', 'like', '%' . $request->search . '%')->get();
+        return response()->json([
+            'message' => "success",
+            'status' => true,
+            'data' => $data_blog
+        ], 200);
     }
 }

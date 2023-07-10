@@ -7,7 +7,6 @@ import moment from "moment/moment";
 export default function ModalComments({ data }) {
     const [item, setItem] = useState([]);
     useEffect(() => {
-        console.log(data);
         setItem(data.comments);
     }, [data]);
     return (
@@ -57,7 +56,7 @@ export default function ModalComments({ data }) {
                     </div>
                     <div className="send-comment ">
                         <div className=" absolute bg-gray-100 w-full bottom-0 left-0  rounded-b-xl p-5">
-                            <form  className="flex items-center  gap-[2.5rem] w-full">
+                            <form className="flex items-center  gap-[2.5rem] w-full">
                                 <div className="flex flex-col w-full gap-3">
                                     <input
                                         type="text"

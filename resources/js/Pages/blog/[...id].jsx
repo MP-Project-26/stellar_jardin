@@ -3,31 +3,17 @@ import React from "react";
 import SpesifikContentBlog from "@/components/blog/spesifik/SpesifikContentBlog";
 import SpesifikPopularBlog from "@/components/blog/spesifik/SpesifikPopularBlog";
 import { useEffect } from "react";
+import { useState } from "react";
 
-const pupular = [
-    {
-        id: 1,
-        title: "Manage House Property",
-        author: "Fikri",
-        image: "/storage/assets/img/blog/1UChfbUR36CR7BVY8Q3RIFBbWf6T273m.jpg",
-        link: "/blog/1",
-        views: 1222,
-        comments: 12,
-        date: 1687779024740,
-    },
-    {
-        id: 2,
-        title: "Manage House Property",
-        author: "Zaldi",
-        image: "/storage/assets/img/blog/1UChfbUR36CR7BVY8Q3RIFBbWf6T273m.jpg",
-        link: "/blog/1",
-        views: 1152,
-        comments: 2,
-        date: 1687779090579,
-    },
-];
+export default function SpesifikBlog({ blogSpesifik, allDataBlog }) {
+    const [pupular, setPupular] = useState([]);
 
-export default function SpesifikBlog({ blogSpesifik }) {
+    useEffect(() => {
+        const dataPopularBlog = [...allDataBlog].sort(
+            (a, b) => b.views - a.views
+        );
+        setPupular(dataPopularBlog.slice(0, 3));
+    }, [dataBlog]);
     return (
         <Layout title="SpesifikBlog">
             <div className="w-full py-[10rem] px-0 lg:px-[6rem] bg-white">

@@ -9,21 +9,52 @@ import ContentBlog from "@/components/blog/ContentBlog";
 import PopularBlog from "@/components/blog/PopularBlog";
 import { useEffect } from "react";
 import { useState } from "react";
+import axios from "axios";
 
-export default function Blog({ dataBlog }) {
+export default function Blog({ dataBlog, allDataBlog }) {
     const [data, setData] = useState([]);
     const [pupular, setPupular] = useState([]);
+    const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const dataPopularBlog = [...dataBlog.data].sort(
+        const dataPopularBlog = [...allDataBlog].sort(
             (a, b) => b.views - a.views
         );
         setPupular(dataPopularBlog.slice(0, 3));
     }, [dataBlog]);
 
+    const handelData = async () => {
+        setLoading(true);
+        setData(dataBlog);
+        setLoading(false);
+    };
+
     useEffect(() => {
-        setData(dataBlog.data);
-    }, [dataBlog]);
+        if (!search) {
+            handelData();
+        }
+    }, [loading]);
+
+    const onSearch = async (e) => {
+        e.preventDefault();
+
+        setLoading(true);
+        const response = await axios.post(
+            `/blog/search`,
+            {
+                search: search,
+            },
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        setData(response.data.data);
+        setLoading(false);
+    };
     return (
         <Layout title="Blog">
             <div className="w-full py-[10rem] px-0 lg:px-[6rem] bg-white">
@@ -34,7 +65,7 @@ export default function Blog({ dataBlog }) {
                         </div>
                     </div>
                     <div className="flex flex-col lg:flex-row   w-full  justify-between gap-[5rem] columns-2">
-                        <ContentBlog data={data} meta={dataBlog} />
+                        <ContentBlog data={data} />
 
                         {/* kanan */}
                         <div className="px-5 flex flex-col gap-10 w-full lg:w-[35%] sticky top-0 ">
@@ -45,8 +76,11 @@ export default function Blog({ dataBlog }) {
                                     name="search"
                                     id="search"
                                     placeholder="search"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
                                 />{" "}
                                 <button
+                                    onClick={onSearch}
                                     type="sumbit"
                                     className=" rounded-xl bg-green-custom flex justify-center items-center px-5 text-white"
                                 >

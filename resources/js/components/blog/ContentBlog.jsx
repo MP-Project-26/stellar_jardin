@@ -4,30 +4,47 @@ import ModalComments from "@/components/utils/modal/modalComments";
 import moment from "moment";
 import { useState } from "react";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
+import { useEffect } from "react";
 
-export default function ContentBlog({ data, meta }) {
+export default function ContentBlog({ data: dataBlog }) {
     const [dataModalComments, setDataModalComments] = useState([]);
-    // const [countView, setCountView] = useState([]);
+    const [currentItems, setCurrentItems] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [Loading, setLoading] = useState(false);
+    const [itemOffset, setItemOffset] = useState(0);
 
     const addViewCount = async (dataView) => {
-        // console.log(dataView);
-        const response = await axios.put(
-            `/blog/view/${dataView.id}`,
-            dataView,
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }
-        );
+        await axios.put(`/blog/view/${dataView.id}`, dataView, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+    };
 
-        console.log(response);
+    useEffect(() => {
+        setLoading(true);
+        // Fetch items from another resources.
+        const endOffset = itemOffset + 2;
+        // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+        setCurrentItems(dataBlog.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(dataBlog.length / 2));
+        setLoading(false);
+    }, [itemOffset, dataBlog]);
+
+    // Invoke when user click to request another page.
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * 2) % dataBlog.length;
+        // console.log(
+        //     `User requested page number ${event.selected}, which is offset ${newOffset}`
+        // );
+        setItemOffset(newOffset);
     };
     return (
         <>
             <ModalComments data={dataModalComments} />
             <div className="px-5 w-full lg:w-[65%] flex flex-col gap-[5rem]">
-                {data.map((item, index) => (
+                {currentItems.map((item, index) => (
                     <div className=" space-y-7" key={index}>
                         <span className="text-6xl font-semibold text-green-custom">
                             {item.title}
@@ -45,12 +62,13 @@ export default function ContentBlog({ data, meta }) {
                         <div className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl">
                             <p>Tags</p> <p> : </p>
                             {item.tags.map((tag, index) => (
-                                <button
+                                <Link
+                                    href={`/blog/tag/${tag}`}
                                     key={index}
                                     className="rounded-md px-4 py-1 bg-green-custom text-white"
                                 >
                                     {tag}
-                                </button>
+                                </Link>
                             ))}
                         </div>
                         <p className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
@@ -149,55 +167,28 @@ export default function ContentBlog({ data, meta }) {
                         </div>
                     </div>
                 ))}
-                <Paginator meta={meta} />
+                <ReactPaginate
+                    className="flex flex-row gap-1 w-full justify-center items-center"
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={2}
+                    marginPagesDisplayed={1}
+                    pageCount={pageCount}
+                    previousLabel="< prev"
+                    pageClassName="bg-green-custom px-4 py-2 rounded-md text-white"
+                    pageLinkClassName="text-xl font-semibold font-roboto"
+                    previousClassName="bg-green-custom p-2 rounded-md text-white"
+                    previousLinkClassName="text-xl font-semibold font-roboto"
+                    nextClassName="bg-green-custom p-2 rounded-md text-white"
+                    nextLinkClassName="text-xl font-semibold font-roboto"
+                    breakLabel="..."
+                    breakClassName="bg-green-custom p-2 rounded-md text-white"
+                    breakLinkClassName="text-xl font-semibold font-roboto"
+                    containerClassName="pagination"
+                    activeClassName="bg-teal-500"
+                    renderOnZeroPageCount={null}
+                />
             </div>
         </>
     );
 }
-
-const Paginator = ({ meta }) => {
-    const { total, per_page, current_page } = meta;
-    const last_page = Math.ceil(total / per_page);
-    const prev_page = current_page - 1;
-    const next_page = current_page + 1;
-
-    const prev = () => {
-        // router.push(`/blog?page=${prev_page}`);
-        window.location.href = `/blog?page=${prev_page}`;
-    };
-
-    const next = () => {
-        // router.push(`/blog?page=${next_page}`);
-        window.location.href = `/blog?page=${next_page}`;
-    };
-
-    return (
-        <div className="flex flex-row justify-center items-center gap-5 mt-10">
-            <div className="flex flex-row justify-center items-center gap-5">
-                <button
-                    onClick={prev}
-                    disabled={prev_page < 1}
-                    className={`${
-                        prev_page < 1 ? "bg-gray-400" : "bg-green-custom"
-                    } px-5 py-2 rounded-md text-white font-roboto font-medium`}
-                >
-                    Prev
-                </button>
-                <p className="font-roboto font-medium text-xl">
-                    {current_page} of {last_page}
-                </p>
-                <button
-                    onClick={next}
-                    disabled={next_page > last_page}
-                    className={`${
-                        next_page > last_page
-                            ? "bg-gray-400"
-                            : "bg-green-custom"
-                    } px-5 py-2 rounded-md text-white font-roboto font-medium`}
-                >
-                    Next
-                </button>
-            </div>
-        </div>
-    );
-};

@@ -63,6 +63,7 @@ Route::get('/admin/content', [ContentController::class, 'index'])->middleware(['
 
 
 Route::get('/blog', [BlogContoller::class, 'index']);
+Route::post('/blog/search', [BlogContoller::class, 'search']);
 Route::get('/blog/tag/{slug}', [BlogContoller::class, 'getTag']);
 Route::get('/blog/spesifik/{id}', [BlogSpesifikController::class, 'index']);
 Route::put('/blog/comment/{id}', [BlogSpesifikController::class, 'update']);
@@ -70,6 +71,9 @@ Route::put('/blog/view/{id}', [BlogSpesifikController::class, 'updateViews']);
 
 Route::get('/buy', function () {
     return Inertia::render('Buy');
+});
+Route::get('/cba', function () {
+    return Inertia::render('blog/cba');
 });
 
 

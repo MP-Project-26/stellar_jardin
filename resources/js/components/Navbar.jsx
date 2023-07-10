@@ -87,7 +87,10 @@ export default function Navbar() {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/type_2" className=" font-semibold text-xl ">
+                                            <Link
+                                                href="/type_2"
+                                                className=" font-semibold text-xl "
+                                            >
                                                 Custom
                                             </Link>
                                         </li>
@@ -106,7 +109,7 @@ export default function Navbar() {
                     </div>
                     <Link href="/">
                         <img
-                            src='/assets/img/Logo.png'
+                            src="/assets/img/Logo.png"
                             alt="Logo"
                             className="w-[4rem] lg:w-[6rem] cursor-pointer"
                         />
@@ -133,7 +136,7 @@ export default function Navbar() {
                                     Type
                                 </summary>
                                 <ul
-                                    className="p-2"
+                                    className="p-2 z-[1200]"
                                     style={
                                         location === "/" && scroll <= 1.5
                                             ? {

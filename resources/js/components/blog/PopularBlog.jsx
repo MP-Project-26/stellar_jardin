@@ -1,11 +1,16 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1-1.png";
-import { IconButton, ButtonGroup } from "@material-tailwind/react";
-import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
 import moment from "moment/moment";
+import axios from "axios";
 
 export default function PopularBlog({ data }) {
+    const addViewCount = async (dataView) => {
+        await axios.put(`/blog/view/${dataView.id}`, dataView, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+    };
     return (
         <div className=" w-full border-green-custom border-[2px] flex flex-col gap-4 bg-white">
             <p className="bg-green-custom w-full text-center font-medium text-2xl text-white p-2 font-roboto">

@@ -13,14 +13,14 @@ export default function SpesifikBlog({ blogSpesifik, allDataBlog }) {
             (a, b) => b.views - a.views
         );
         setPupular(dataPopularBlog.slice(0, 3));
-    }, [dataBlog]);
+    }, [allDataBlog]);
     return (
         <Layout title="SpesifikBlog">
             <div className="w-full py-[10rem] px-0 lg:px-[6rem] bg-white">
-                <div className="flex flex-col lg:flex-row   w-full  justify-between gap-[5rem] columns-2">
+                <div className="flex flex-col xl:flex-row w-full justify-between gap-[5rem] columns-2">
                     <SpesifikContentBlog dataContent={blogSpesifik} />
                     {/* kanan */}
-                    <div className="px-5 flex flex-col gap-10 w-full lg:w-[35%] sticky top-0 ">
+                    <div className="px-5 flex flex-col gap-10 w-full xl:w-[35%] sticky top-0 ">
                         {/* Popular Posts */}
                         <SpesifikPopularBlog dataPopular={pupular} />
                     </div>

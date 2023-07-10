@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import ContentBlog from "@/components/blog/ContentBlog";
 import PopularBlog from "@/components/blog/PopularBlog";
 import Layout from "@/Layouts/Layout";
+import axios from "axios";
 
 export default function TagBlog({ dataTag, allDataBlog }) {
     const [data, setData] = useState([]);
     const [pupular, setPupular] = useState([]);
     const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [itemOffset, setItemOffset] = useState(0);
 
     useEffect(() => {
         const dataPopularBlog = [...allDataBlog].sort(
@@ -16,13 +19,37 @@ export default function TagBlog({ dataTag, allDataBlog }) {
         setPupular(dataPopularBlog.slice(0, 3));
     }, [dataTag]);
 
-    useEffect(() => {
+    const handelData = async () => {
+        setLoading(true);
         setData(dataTag);
-    }, [dataTag]);
+        setLoading(false);
+    };
 
-    const onSearch = (e) => {
+    useEffect(() => {
+        if (!search) {
+            handelData();
+        }
+    }, [loading]);
+
+    const onSearch = async (e) => {
         e.preventDefault();
-       
+
+        setLoading(true);
+        const response = await axios.post(
+            `/blog/search`,
+            {
+                search: search,
+            },
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        setItemOffset(0);
+        setData(response.data.data);
+        setLoading(false);
     };
     return (
         <Layout title="Blog">
@@ -34,7 +61,11 @@ export default function TagBlog({ dataTag, allDataBlog }) {
                         </div>
                     </div>
                     <div className="flex flex-col lg:flex-row   w-full  justify-between gap-[5rem] columns-2">
-                        <ContentBlog data={data} />
+                        <ContentBlog
+                            data={data}
+                            setItemOffset={setItemOffset}
+                            itemOffset={itemOffset}
+                        />
 
                         {/* kanan */}
                         <div className="px-5 flex flex-col gap-10 w-full lg:w-[35%] sticky top-0 ">

@@ -7,12 +7,12 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useEffect } from "react";
 
-export default function ContentBlog({ data: dataBlog }) {
+export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset }) {
     const [dataModalComments, setDataModalComments] = useState([]);
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [Loading, setLoading] = useState(false);
-    const [itemOffset, setItemOffset] = useState(0);
+    // const [itemOffset, setItemOffset] = useState(0);
 
     const addViewCount = async (dataView) => {
         await axios.put(`/blog/view/${dataView.id}`, dataView, {
@@ -104,7 +104,9 @@ export default function ContentBlog({ data: dataBlog }) {
                                     </svg>
 
                                     <p className="font-roboto text-xl font-semibold text-white">
-                                        {item.views}
+                                        {item.views < 1000
+                                            ? item.views
+                                            : item.views / 1000 + "k"}
                                     </p>
                                 </div>
                                 <div className="bg-green-custom px-5 py-2 flex gap-2 justify-center items-center ">

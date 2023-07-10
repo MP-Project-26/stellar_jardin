@@ -16,6 +16,7 @@ export default function Blog({ dataBlog, allDataBlog }) {
     const [pupular, setPupular] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
+    const [itemOffset, setItemOffset] = useState(0);
 
     useEffect(() => {
         const dataPopularBlog = [...allDataBlog].sort(
@@ -52,6 +53,7 @@ export default function Blog({ dataBlog, allDataBlog }) {
             }
         );
 
+        setItemOffset(0);
         setData(response.data.data);
         setLoading(false);
     };
@@ -65,7 +67,11 @@ export default function Blog({ dataBlog, allDataBlog }) {
                         </div>
                     </div>
                     <div className="flex flex-col lg:flex-row   w-full  justify-between gap-[5rem] columns-2">
-                        <ContentBlog data={data} />
+                        <ContentBlog
+                            data={data}
+                            setItemOffset={setItemOffset}
+                            itemOffset={itemOffset}
+                        />
 
                         {/* kanan */}
                         <div className="px-5 flex flex-col gap-10 w-full lg:w-[35%] sticky top-0 ">

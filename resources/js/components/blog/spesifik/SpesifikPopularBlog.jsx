@@ -1,8 +1,7 @@
 import React from "react";
-import ImageOurBlog1 from "@/assets/ourblog1-1.png";
 import moment from "moment/moment";
 
-export default function SpesifikPopularBlog({dataPopular}) {
+export default function SpesifikPopularBlog({ dataPopular }) {
     return (
         <div className=" w-full border-green-custom border-[2px] flex flex-col gap-4 bg-white">
             <p className="bg-green-custom w-full text-center font-medium text-2xl text-white p-2 font-roboto">
@@ -13,7 +12,7 @@ export default function SpesifikPopularBlog({dataPopular}) {
                     key={index}
                     className="p-5 flex flex-row gap-6 lg:gap-2 justify-center items-center"
                 >
-                    <img src={ImageOurBlog1} alt="" className="w-[45%]" />
+                    <img src={item.image} alt="" className="w-[45%]" />
                     <div className="flex flex-col gap-1">
                         <p className="font-roboto text-xl font-medium paragraph-popular">
                             {item.title}
@@ -81,9 +80,11 @@ export default function SpesifikPopularBlog({dataPopular}) {
                                     </defs>
                                 </svg>
                                 <p className="text-xs font-semibold font-roboto">
-                                    {item.comments < 1000
-                                        ? item.comments
-                                        : item.comments / 1000 + "k"}
+                                    {item.comments
+                                        ? item.comments.length < 1000
+                                            ? item.comments.length
+                                            : item.comments.length / 1000 + "k"
+                                        : 0}
                                 </p>
                             </div>
                         </div>{" "}

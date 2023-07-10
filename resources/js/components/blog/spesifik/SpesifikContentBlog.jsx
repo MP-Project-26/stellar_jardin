@@ -1,7 +1,7 @@
 import ImageUser from "@/assets/user.png";
 import moment from "moment/moment";
 import React, { useRef, useState, useEffect } from "react";
-import { useForm } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
 import axios from "axios";
 
 export default function SpesifikContentBlog({ dataContent: item }) {
@@ -70,18 +70,18 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                 >
                     {item.content}
                 </p>
-                <div className="w-full flex justify-between items-center">
+                <div className="w-full flex flex-col gap-10 lg:flex-row justify-between items-center">
                     <div className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl">
                         <p>Tags</p> <p> : </p>
-                        {item.tags &&
-                            item.tags.map((tag, i) => (
-                                <button
-                                    key={i}
-                                    className="rounded-md px-4 py-1 bg-green-custom text-white"
-                                >
-                                    {tag}
-                                </button>
-                            ))}
+                        {item.tags.map((tag, index) => (
+                            <Link
+                                href={`/blog/tag/${tag}`}
+                                key={index}
+                                className="rounded-md px-4 py-1 bg-green-custom text-white"
+                            >
+                                {tag}
+                            </Link>
+                        ))}
                     </div>
                     <div className="flex  flex-row">
                         <div className="bg-green-custom px-5 py-2 flex gap-2 justify-center items-center ">
@@ -112,7 +112,9 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                             </svg>
 
                             <p className="font-roboto text-xl font-semibold text-white">
-                                {item.views}
+                                {item.views < 1000
+                                    ? item.views
+                                    : item.views / 1000 + "k"}
                             </p>
                         </div>
                         <div className="bg-green-custom px-5 py-2 flex gap-2 justify-center items-center ">
@@ -150,7 +152,7 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                 </div>
                 <div className="border border-gray-500 w-full"></div>
                 <div className="comment">
-                    <div className=" space-y-5  w-[35rem] ">
+                    <div className=" space-y-5 w-[20rem] lg:w-[35rem] ">
                         {item.comments
                             ? item?.comments.map((item, i) => (
                                   <div
@@ -161,7 +163,7 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                                           <img src={ImageUser} alt="" />
 
                                           <div className="flex flex-col gap-1">
-                                              <p className="font-roboto font-bold text-lg text-white">
+                                              <p className="font-roboto font-bold text-sm lg:text-lg text-white">
                                                   {item.name}
                                               </p>
                                               <p className="font-roboto font-normal text-xs text-gray-300">
@@ -172,7 +174,7 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                                               </p>
                                           </div>
                                       </div>
-                                      <p className=" ml-14 font-roboto font-medium text-lg  px-5 pb-8 break-words ">
+                                      <p className=" m-0 xl:ml-14 font-roboto font-medium text-sm lg:text-lg  px-5 pb-8 break-words ">
                                           {item.note}
                                       </p>
                                   </div>
@@ -182,17 +184,17 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                 </div>
                 <div className="contack ">
                     <h1
-                        className={`font-extrabold text-5xl py-[2rem] text-green-custom font-roboto ${
+                        className={`font-extrabold text-lg lg:text-5xl py-[2rem] text-green-custom font-roboto ${
                             item.comments === 0 && "mt-[13rem]"
                         }`}
                     >
                         Tinggalkan Balasan
                     </h1>
 
-                    <div className="bg-[#f5f4f4] w-[35rem] justify-center rounded-[2rem] flex shadow-xl flex-col">
+                    <div className="bg-[#f5f4f4] w-[25rem] lg:w-[35rem] justify-center rounded-[2rem] flex shadow-xl flex-col">
                         <form
                             onSubmit={SumbitComment}
-                            className="mx-[4rem] my-[4rem] flex flex-col gap-[1rem]"
+                            className="m-4 lg:mx-[4rem] lg:my-[4rem] flex flex-col gap-[1rem]"
                         >
                             <div className="flex items-center gap-[2.5rem]">
                                 <p className="px-[1rem]">Name</p>

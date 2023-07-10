@@ -185,6 +185,20 @@ class GalleriesSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
+            [
+                'category_gallery_id' => 4,
+                'title' => 'Denah Lantai 1',
+                'image' => 'denah_lantai_1.png',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'category_gallery_id' => 4,
+                'title' => 'Denah Lantai 2',
+                'image' => 'denah_lantai_2.png',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
 
         ];
         Galleries::insert($data);

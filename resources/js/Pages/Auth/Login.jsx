@@ -1,7 +1,4 @@
 import TextInput from "@/Components/auth/login/TextInput";
-import FooterStelar from "@/assets/login/footer_stellar.png";
-import BGGAMBAR from "@/assets/login/BGGAMBAR.png";
-import MPFOOTER from "@/assets/login/mp-footer.png";
 import { Head, Link, useForm } from "@inertiajs/react";
 import React, { useEffect } from "react";
 import InputError from "@/Components/login/InputError";

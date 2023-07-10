@@ -1,4 +1,5 @@
 import LayoutAdmin from "@/Layouts/LayoutAdmin";
+import TableGalleries from "./TableGalleries";
 
 const data = [
     {
@@ -57,43 +58,24 @@ const data = [
     },
 ];
 
-export default function Index({ auth }) {
+export default function Index({ auth, title, galleries }) {
+
+   if(!galleries) {
+    return null;
+   }
+
     return (
-        <LayoutAdmin title="Dashboard" auth={auth}>
+        <LayoutAdmin title={title} auth={auth}>
             <div className="w-full pt-10 justify-center items-center">
                 <h1 className="font-sans font-bold text-black text-2xl md:text-3xl">
                     CONTENT MANAGEMENT
                 </h1>
+
+
+
+                {/* Line */}
                 <div className="overflow-x-auto mt-5">
-                    <table className="table">
-                        {/* head */}
-                        <thead>
-                            <tr className="bg-green-custom">
-                                <th className="text-xl font-extrabold text-white">
-                                    No
-                                </th>
-                                <th className="text-xl font-extrabold text-white">
-                                    Name
-                                </th>
-                                <th className="text-xl font-extrabold text-white">
-                                    Job
-                                </th>
-                                <th className="text-xl font-extrabold text-white">
-                                    Favorite Color
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.map((res, i) => (
-                                <tr key={i}>
-                                    <th>{i+1}</th>
-                                    <td>{res.name}</td>
-                                    <td>{res.job}</td>
-                                    <td>{res.color}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                <TableGalleries galleries={galleries} />
                 </div>
             </div>
         </LayoutAdmin>

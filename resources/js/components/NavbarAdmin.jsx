@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Logo from "@/assets/logo.png";
+
 import { MdOutlineDashboard } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
 import { Link } from "@inertiajs/react";
-import { BiLogOut, BiSolidBookContent, BiSolidContact } from "react-icons/bi";
+import { BiLogOut, BiSolidBookContent, BiSolidContact, BiSolidBook } from "react-icons/bi";
 import { AiFillSetting, AiFillLeftCircle } from "react-icons/ai";
 import { FaNewspaper } from "react-icons/fa";
 const NavbarAdmin = () => {
@@ -24,11 +24,19 @@ const NavbarAdmin = () => {
             icon: BiSolidBookContent,
         },
         { name: "Blog Management", link: "/admin/blog", icon: FaNewspaper },
+
         {
             name: "Contact Management",
             link: "/admin/contact",
             icon: BiSolidContact,
-        }
+        },
+        {
+            name: "Custumer Order",
+            link: "/admin/order",
+            icon: BiSolidBook,
+        },
+
+
     ];
     const [open, setOpen] = useState(true);
     return (
@@ -57,7 +65,7 @@ const NavbarAdmin = () => {
                         >
                             <Link href="/admin/dashboard">
                                 <img
-                                    src={Logo}
+                                    src="/assets/img/logo.png"
                                     alt="Logo"
                                     className="w-[4rem] lg:w-[8rem] cursor-pointer invert"
                                 />

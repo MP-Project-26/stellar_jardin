@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'af2151e1162b2c0572fafa4f9d13ec2aabe0399d',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -389,12 +389,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'af2151e1162b2c0572fafa4f9d13ec2aabe0399d',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -521,12 +521,12 @@
             'dev_requirement' => true,
         ),
         'nesbot/carbon' => array(
-            'pretty_version' => '2.67.0',
-            'version' => '2.67.0.0',
+            'pretty_version' => '2.68.1',
+            'version' => '2.68.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nesbot/carbon',
             'aliases' => array(),
-            'reference' => 'c1001b3bc75039b07f38a79db5237c4c529e04c8',
+            'reference' => '4f991ed2a403c85efbc4f23eb4030063fdbe01da',
             'dev_requirement' => false,
         ),
         'nette/schema' => array(
@@ -948,12 +948,12 @@
             'dev_requirement' => true,
         ),
         'spatie/flare-client-php' => array(
-            'pretty_version' => '1.4.0',
-            'version' => '1.4.0.0',
+            'pretty_version' => '1.4.1',
+            'version' => '1.4.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/flare-client-php',
             'aliases' => array(),
-            'reference' => '82138174d5fe2829a7f085a6bdb2a06f6def9f7a',
+            'reference' => '943894c6a6b00501365ac0b91ae0dce56f2226fa',
             'dev_requirement' => true,
         ),
         'spatie/ignition' => array(

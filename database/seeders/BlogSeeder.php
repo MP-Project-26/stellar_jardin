@@ -20,7 +20,7 @@ class BlogSeeder extends Seeder
             [
                 "title" => "Manage House Property",
                 "author" => "Fikri",
-                "image" => './assets/img/blog/ourblog1-1.png',
+                "image" => 'ourblog1-1.png',
                 // "tags" => ["Home", "Furniture"],
                 "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eius veritatis velit veniam ipsum amet, laborum quaerat voluptates, et repellendus laudantium quos incidunt officiis minus animi sequi tempore hic, atque dicta maxime sint eum consequuntur! Magnam exercitationem odit laboriosam fuga dolore neque impedit necessitatibus repellat cum repellendus, illum eius, atque obcaecati voluptas. Assumenda quidem ad nulla quos, nesciunt accusamus quod voluptates repudiandae eum deleniti at molestiae incidunt obcaecati reprehenderit, est impedit. Ipsam eveniet tempora sint voluptatibus beatae architecto consequatur, facilis aperiam ullam quae veritatis, aliquid impedit ratione adipisci nam iste deserunt. Minima officiis ad aperiam quia molestias ipsa ea voluptate.",
                 "views" => 100,

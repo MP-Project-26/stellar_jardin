@@ -4,7 +4,7 @@ import forms from "@tailwindcss/forms";
 /** @type {import('tailwindcss').Config} */
 
 const withMT = require("@material-tailwind/react/utils/withMT");
-const scrollbarPlugin = require('tailwind-scrollbar-hide');
+
 
 module.exports = withMT({
     content: [
@@ -32,6 +32,6 @@ module.exports = withMT({
         base: false, // applies background color and foreground color for root element by default
     },
 
-    plugins: [forms, scrollbarPlugin, require("daisyui")],
+    plugins: [forms, require("daisyui")],
 
 });

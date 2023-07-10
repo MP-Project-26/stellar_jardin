@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 import React from "react";
 import { useEffect } from "react";
-import Logo from "@/assets/Logo.png";
+
 
 export default function Navbar() {
     const [open, setOpen] = React.useState(false);
@@ -27,7 +27,7 @@ export default function Navbar() {
                 location === "/" && scroll <= 1.5
                     ? " bg-transparent text-white"
                     : "bg-green-custom shadow-lg text-white"
-            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-[20000] transition-all duration-180 ease-in-out `}
+            } lg:px-[10rem] px-0 mt-0 sticky top-0 z-40 transition-all duration-180 ease-in-out `}
         >
             <div className="navbar">
                 <div className="navbar-start">
@@ -80,14 +80,17 @@ export default function Navbar() {
                                     <ul className="p-2">
                                         <li>
                                             <Link
-                                                href="/type"
+                                                href="/type/{section}"
                                                 className=" font-semibold text-xl "
                                             >
                                                 Standart
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/type_2" className=" font-semibold text-xl ">
+                                            <Link
+                                                href="/type_2"
+                                                className=" font-semibold text-xl "
+                                            >
                                                 Custom
                                             </Link>
                                         </li>
@@ -106,7 +109,7 @@ export default function Navbar() {
                     </div>
                     <Link href="/">
                         <img
-                            src={Logo}
+                            src="/assets/img/Logo.png"
                             alt="Logo"
                             className="w-[4rem] lg:w-[6rem] cursor-pointer"
                         />
@@ -133,7 +136,7 @@ export default function Navbar() {
                                     Type
                                 </summary>
                                 <ul
-                                    className="p-2"
+                                    className="p-2 z-[1200]"
                                     style={
                                         location === "/" && scroll <= 1.5
                                             ? {
@@ -148,7 +151,7 @@ export default function Navbar() {
                                 >
                                     <li>
                                         <Link
-                                            href="/type"
+                                            href="/type/{section}"
                                             className=" font-semibold text-xl "
                                         >
                                             Standard

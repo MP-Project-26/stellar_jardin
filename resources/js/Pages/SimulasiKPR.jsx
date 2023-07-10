@@ -20,8 +20,9 @@ const SimulasiKPR = ({ title }) => {
         nilai_properti: "0",
         persentase_uang_muka: "",
         suku_bunga: "13",
-        jangka_waktu: "",
+        jangka_waktu: "5",
     });
+
     const [cicilanBulanan, setCicilanBulanan] = useState("");
     const [totalPembayaran, setTotalPembayaran] = useState("");
     const [uangMuka, setUangMuka] = useState("");
@@ -56,14 +57,17 @@ const SimulasiKPR = ({ title }) => {
                     jangka_waktu: numberJangkaWaktu,
                 });
 
-                const { cicilan_bulanan, total_pembayaran, uang_muka } =
-                    response.data;
+                const { cicilan_bulanan, jumlah_pengajuan, uang_muka } = response.data;
                 setCicilanBulanan(cicilan_bulanan);
-                setTotalPembayaran(total_pembayaran);
+                setTotalPembayaran(jumlah_pengajuan);
                 setUangMuka(uang_muka);
             } catch (error) {
                 console.log(error);
             }
+        } else {
+            setCicilanBulanan("");
+            setTotalPembayaran("");
+            setUangMuka("");
         }
     };
 
@@ -119,15 +123,12 @@ const SimulasiKPR = ({ title }) => {
 
         // Validasi jangka_waktu
         if (data.jangka_waktu === "") {
-            setData("jangka_waktu", "");
             errors.jangka_waktu = "Jangka Waktu KPR harus diisi";
             isValid = false;
         } else if (parseInt(data.jangka_waktu) < 1) {
-            setData("jangka_waktu", "");
             errors.jangka_waktu = "Jangka Waktu KPR minimal 1 Tahun";
             isValid = false;
         } else if (parseInt(data.jangka_waktu) > 20) {
-            setData("jangka_waktu", "");
             errors.jangka_waktu = "Jangka Waktu KPR  maksimal 20 Tahun";
             isValid = false;
         } else {
@@ -135,6 +136,7 @@ const SimulasiKPR = ({ title }) => {
         }
         return isValid;
     };
+
     const formatNumber = (value) => {
         const cleanedValue = value.replace(/\D/g, "");
         const numberValue = parseInt(cleanedValue, 10);
@@ -144,10 +146,11 @@ const SimulasiKPR = ({ title }) => {
     return (
         <Layout title={title}>
             <div className="w-full h-auto my-32 flex justify-center flex-col items-center px-9">
-                <div className="w-full flex justify-center mb-10">
+                <div className="w-full flex flex-col items-center mb-10">
                     <h1 className="font-sans font-bold text-3xl lg:text-5xl">
                         Simulasi <span className="text-[#0D7377]">KPR</span>
                     </h1>
+                    <p>(Bunga Flat)</p>
                 </div>
                 <form
                     onSubmit={onSubmit}
@@ -288,7 +291,6 @@ const SimulasiKPR = ({ title }) => {
                             max={20}
                             value={data.jangka_waktu}
                             className="range range-secondary"
-                            step={0}
                             onChange={(e) =>
                                 setData("jangka_waktu", e.target.value)
                             }
@@ -307,13 +309,16 @@ const SimulasiKPR = ({ title }) => {
                         )}
                     </div>
 
-                    {isLoading ? (
+                    {isLoading &&
+                    cicilanBulanan &&
+                    totalPembayaran &&
+                    uangMuka ? (
                         <div className="flex justify-center w-full">
                             <span className="loading loading-bars loading-sm"></span>
                         </div>
                     ) : (
                         <div>
-                            {cicilanBulanan && totalPembayaran && (
+                            {cicilanBulanan && totalPembayaran && uangMuka ? (
                                 <div className="overflow-x-auto w-full">
                                     <table className="table">
                                         {/* head */}
@@ -334,14 +339,39 @@ const SimulasiKPR = ({ title }) => {
                                                 <th>{cicilanBulanan}</th>
                                             </tr>
                                             <tr>
-                                                <th>Total Pembayaran : </th>
+                                                <th>
+                                                    Jumlah Pengajuan Pinjaman :{" "}
+                                                </th>
                                                 <th>{totalPembayaran}</th>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <div className="kpr-disclaimer bg-gradient-to-r from-teal-500 to-teal-600 py-4 px-6 text-white">
+                                        <p className="text-sm">
+                                            Simulasi KPR ini hanya sebagai
+                                            referensi dan tidak mengikat.
+                                            Informasi yang diberikan adalah
+                                            perkiraan berdasarkan suku bunga dan
+                                            persyaratan umum yang berlaku.
+                                            Sebelum mengambil keputusan,
+                                            pastikan Anda memperoleh informasi
+                                            yang akurat dan melakukan konsultasi
+                                            dengan pihak bank atau lembaga
+                                            keuangan yang bersangkutan.
+                                        </p>
+                                    </div>
                                 </div>
+                            ) : (
+                                (cicilanBulanan ||
+                                    totalPembayaran ||
+                                    uangMuka) && (
+                                    <span className="text-red-300">
+                                        Masukkan data yang valid
+                                    </span>
+                                )
                             )}
-                        </div> // Konten utama setelah loading selesai
+                        </div>
+                        // Konten utama setelah loading selesai
                     )}
 
                     <div className="w-full flex justify-center mt-3">
@@ -354,6 +384,7 @@ const SimulasiKPR = ({ title }) => {
                         </button>
                     </div>
                 </form>
+                <div className="lg:w-[50%] md:w-[70%] mt-5"></div>
             </div>
         </Layout>
     );

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
+class ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -530,10 +530,35 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
+        'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
+        'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',
+        'App\\Http\\Controllers\\Auth\\EmailVerificationPromptController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationPromptController.php',
+        'App\\Http\\Controllers\\Auth\\NewPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/NewPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\PasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordController.php',
+        'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
+        'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
+        'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
+        'App\\Http\\Controllers\\BlogContoller' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogContoller.php',
+        'App\\Http\\Controllers\\CategoriesGalleriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoriesGalleriesController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
+        'App\\Http\\Controllers\\ContentController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
+        'App\\Http\\Controllers\\GalleriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/GalleriesController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
+        'App\\Http\\Controllers\\OrderManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrderManagementController.php',
+        'App\\Http\\Controllers\\PemesananUnitController' => __DIR__ . '/../..' . '/app/Http/Controllers/PemesananUnitController.php',
+        'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
+        'App\\Http\\Controllers\\SimulasiKPRController' => __DIR__ . '/../..' . '/app/Http/Controllers/SimulasiKPRController.php',
+        'App\\Http\\Controllers\\SpesificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/SpesificationController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\admin\\BlogAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/BlogAdminController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\HandleInertiaRequests' => __DIR__ . '/../..' . '/app/Http/Middleware/HandleInertiaRequests.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -541,7 +566,22 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
+        'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
+        'App\\Http\\Requests\\StoreCategories_galleriesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreCategories_galleriesRequest.php',
+        'App\\Http\\Requests\\StoreSpesificationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreSpesificationRequest.php',
+        'App\\Http\\Requests\\UpdateCategories_galleriesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateCategories_galleriesRequest.php',
+        'App\\Http\\Requests\\UpdateSpesificationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateSpesificationRequest.php',
+        'App\\Http\\Requests\\admin\\BlogUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/admin/BlogUpdateRequest.php',
+        'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
+        'App\\Models\\Categories_galleries' => __DIR__ . '/../..' . '/app/Models/Categories_galleries.php',
+        'App\\Models\\Galleries' => __DIR__ . '/../..' . '/app/Models/Galleries.php',
+        'App\\Models\\PemesananUnit' => __DIR__ . '/../..' . '/app/Models/PemesananUnit.php',
+        'App\\Models\\Spesification' => __DIR__ . '/../..' . '/app/Models/Spesification.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Policies\\CategoriesGalleriesPolicy' => __DIR__ . '/../..' . '/app/Policies/CategoriesGalleriesPolicy.php',
+        'App\\Policies\\PemesananUnitPolicy' => __DIR__ . '/../..' . '/app/Policies/PemesananUnitPolicy.php',
+        'App\\Policies\\SpesificationPolicy' => __DIR__ . '/../..' . '/app/Policies/SpesificationPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -657,8 +697,17 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Factories\\CategoriesGalleriesFactory' => __DIR__ . '/../..' . '/database/factories/CategoriesGalleriesFactory.php',
+        'Database\\Factories\\PemesananUnitFactory' => __DIR__ . '/../..' . '/database/factories/PemesananUnitFactory.php',
+        'Database\\Factories\\SpesificationFactory' => __DIR__ . '/../..' . '/database/factories/SpesificationFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\AdminSeeder' => __DIR__ . '/../..' . '/database/seeders/AdminSeeder.php',
+        'Database\\Seeders\\BlogSeeder' => __DIR__ . '/../..' . '/database/seeders/BlogSeeder.php',
+        'Database\\Seeders\\CategoriesGalleriesSeeder' => __DIR__ . '/../..' . '/database/seeders/CategoriesGalleriesSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\GalleriesSeeder' => __DIR__ . '/../..' . '/database/seeders/GalleriesSeeder.php',
+        'Database\\Seeders\\PemesananUnitSeeder' => __DIR__ . '/../..' . '/database/seeders/PemesananUnitSeeder.php',
+        'Database\\Seeders\\SpesificationSeeder' => __DIR__ . '/../..' . '/database/seeders/SpesificationSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -6346,7 +6395,14 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
         'Termwind\\ValueObjects\\Style' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Style.php',
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
+        'Tests\\Feature\\Auth\\AuthenticationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/AuthenticationTest.php',
+        'Tests\\Feature\\Auth\\EmailVerificationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/EmailVerificationTest.php',
+        'Tests\\Feature\\Auth\\PasswordConfirmationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/PasswordConfirmationTest.php',
+        'Tests\\Feature\\Auth\\PasswordResetTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/PasswordResetTest.php',
+        'Tests\\Feature\\Auth\\PasswordUpdateTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/PasswordUpdateTest.php',
+        'Tests\\Feature\\Auth\\RegistrationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/RegistrationTest.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\Feature\\ProfileTest' => __DIR__ . '/../..' . '/tests/Feature/ProfileTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
@@ -6402,9 +6458,9 @@ class ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita6d85d0d09d84e24aeb33f3854c53430::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7c183ae20c30a4bb9d4abbb036e9591b::$classMap;
 
         }, null, ClassLoader::class);
     }

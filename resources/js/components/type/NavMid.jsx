@@ -20,7 +20,7 @@ const NavMid = () => {
     };
 
     return (
-        <div className="h-auto w-full px-2 my-3 lg:my-10 md:px-32 border bg-white sticky top-[8%] md:top-[6%]  lg:top-[9%] z-50 lg:px-40">
+        <div className="h-auto w-full px-2 my-3 lg:my-10 md:px-32 border bg-white sticky top-[8%] md:top-[6%]  lg:top-[9%] z-[20] lg:px-40">
             <ul className="flex gap-3 items-center py-2 ">
                 <li>
                     <button

@@ -111,7 +111,7 @@ const PemesananUnit = ({ title }) => {
 
     return (
         <Layout title={title}>
-            <div className="w-full h-full mt-20 lg:px-40 md:px-5 lg:px-20 lg:py-16 md:py-14 px-4 py-8">
+            <div className="w-full h-full mt-20  md:px-5 lg:px-20 lg:py-16 md:py-14 px-4 py-8">
                 <div className="bg-green-custom bg-opacity-10 flex flex-col justify-center items-center w-full h-full px-4 rounded-xl shadow-lg">
                     <div className="flex flex-col w-full h-full md:items-center justify-center pt-10">
                         <h1 className="lg:text-5xl md:text-3xl text-2xl font-bold text-green-custom">

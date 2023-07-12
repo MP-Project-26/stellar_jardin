@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link rel="icon" href="/assets/img/  ogo_mp.png" type="image/x-icon" />
+       <link rel="icon" href="/assets/img/Logo_mp.png" type="image/x-icon" />
+
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
@@ -19,5 +20,6 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+        <script src="https://kit.fontawesome.com/566d394829.js" crossorigin="anonymous"></script>
     </body>
 </html>

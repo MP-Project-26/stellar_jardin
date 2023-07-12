@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Galleries;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -14,9 +15,14 @@ class HomeController extends Controller
     public function index()
     {
         $galleries = Galleries::with('category')->get();
+        $lastBlog= Blog::get()->last();
+        $blogs = Blog::orderBy('created_at', 'desc')->take(3)->get();
+
         return Inertia::render('Index', [
             'title' => 'Home',
             'galleries' => $galleries,
+            'lastBlog' => $lastBlog,
+            'blogs' => $blogs,
         ]);
     }
 

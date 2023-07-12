@@ -24,6 +24,8 @@ export default function ({ dataBlog }) {
         content: "",
         tags: [],
     });
+
+    
     useEffect(() => {
         setDataTags(dataBlog.tags);
     }, [dataBlog]);
@@ -156,7 +158,6 @@ export default function ({ dataBlog }) {
                                 </span>
                             </div>
                             <input
-                                required
                                 id="image"
                                 name="image"
                                 ref={refImage}

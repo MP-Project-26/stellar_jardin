@@ -79,7 +79,7 @@ class OrderManagementController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
@@ -87,7 +87,30 @@ class OrderManagementController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //handle update
+        $pemesananUnit = PemesananUnit::find($id);
+        if (!$pemesananUnit) {
+            return response()->json([
+                'message' => 'Data Pemesanan Unit tidak ditemukan',
+            ], 404);
+        }
+
+        $pemesananUnit->update([
+            'no_unit' => $request->no_unit,
+            'sistem_pengajuan' => $request->sistem_pengajuan,
+            'nama_lengkap' => $request->nama_lengkap,
+            'email' => $request->email,
+            'no_wa' => $request->no_wa,
+            'alamat' => $request->alamat,
+            'pesan' => $request->pesan,
+        ]);
+
+        //return message
+        return response()->json([
+            'message' => 'Pemesanan Unit Berhasil diupdate',
+        ]);
+
+
     }
 
     /**
@@ -95,6 +118,21 @@ class OrderManagementController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        //delete pesanan
+        $pemesananUnit = PemesananUnit::find($id);
+        if (!$pemesananUnit) {
+            return response()->json([
+                'message' => 'Data Pemesanan Unit tidak ditemukan',
+            ], 404);
+        }
+
+        $pemesananUnit->delete();
+
+        //return message
+        return response()->json([
+            'message' => 'Pemesanan Unit Berhasil dihapus',
+        ]);
+        
     }
 }

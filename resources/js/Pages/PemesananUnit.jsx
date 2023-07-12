@@ -21,7 +21,6 @@ const PemesananUnit = ({ title }) => {
     };
 
     const handleSubmit = (e) => {
-        console.log("No WA :", noWa);
         e.preventDefault();
         const formData = new FormData();
         formData.append("no_unit", unitKavling);
@@ -49,6 +48,10 @@ const PemesananUnit = ({ title }) => {
                 setErrors("Terjadi kesalahan, silahkan coba lagi nanti");
                 scrollToTop();
             });
+            //send whatsapp
+            const message = `Order unit memalui website https://stellarjardinresidence.com/%0ANama Lengkap: ${namaLengkap}%0ANo. WA: ${noWa}%0AAlamat: ${alamat} %0AUnit: ${unitKavling} %0ASistem Pengajuan: ${sistemPengajuan} %0APesan: ${pesan} `;
+            const url = `https://api.whatsapp.com/send?phone=6281312344843&text=${message}`;
+            window.open(url, "_blank");
     };
 
     const scrollToTop = () => {
@@ -166,7 +169,18 @@ const PemesananUnit = ({ title }) => {
                                 alt=""
                             />
                         </div>
+
                         <div className="md:w-[50%] w-full">
+                            <div className="w-full md:px-8 mb-2">
+                                <button
+                                    className="bg-green-custom hover:bg-blue-gray-400 text-white px-2 py-1 rounded-md lg:w-[30%] w-full mt-3 lg:mt-0"
+                                    onClick={() =>
+                                        window.my_modal_2.showModal()
+                                    }
+                                >
+                                    Lihat Foto Unit/Kavling
+                                </button>
+                            </div>
                             <form
                                 className="flex flex-col gap-4 md:px-8"
                                 onSubmit={handleSubmit}
@@ -181,7 +195,7 @@ const PemesananUnit = ({ title }) => {
                                     </label>
                                     <select
                                         required
-
+                                        autoComplete="off"
                                         id="unit_kavling"
                                         className="border border-gray-300 rounded-md px-2 py-1 lg:w-[50%] md:w-[100%] w-full lg:mr-3"
                                         value={unitKavling}
@@ -201,15 +215,6 @@ const PemesananUnit = ({ title }) => {
                                             </option>
                                         ))}
                                     </select>
-
-                                    <button
-                                        className="bg-green-custom text-white px-2 py-1 rounded-md lg:w-[30%] w-full mt-3 lg:mt-0"
-                                        onClick={() =>
-                                            window.my_modal_2.showModal()
-                                        }
-                                    >
-                                        Lihat Foto Unit/Kavling
-                                    </button>
                                 </div>
 
                                 <div className="flex flex-col">
@@ -217,8 +222,8 @@ const PemesananUnit = ({ title }) => {
                                         Sistem Pengajuan :
                                     </label>
                                     <select
+                                    autoComplete="off"
                                         required
-
                                         id="sistem_pengajuan"
                                         className="border border-gray-300 rounded-md px-2 py-1 lg:w-[50%] md:w-[100%] w-full lg:mr-3"
                                         value={sistemPengajuan}
@@ -242,9 +247,9 @@ const PemesananUnit = ({ title }) => {
                                         Nama Lengkap:
                                     </label>
                                     <input
+                                        autoComplete="off"
                                         required
                                         type="text"
-
                                         id="nama_lengkap"
                                         className="border border-gray-300 rounded-md px-2 py-1"
                                         value={namaLengkap}
@@ -262,9 +267,9 @@ const PemesananUnit = ({ title }) => {
                                 <div className="flex flex-col">
                                     <label htmlFor="email">Email:</label>
                                     <input
+                                        autoComplete="off"
                                         required
                                         type="email"
-
                                         id="email"
                                         className="border border-gray-300 rounded-md px-2 py-1"
                                         value={email}
@@ -282,9 +287,9 @@ const PemesananUnit = ({ title }) => {
                                 <div className="flex flex-col">
                                     <label htmlFor="no_wa">No. WhatsApp:</label>
                                     <input
+                                        autoComplete="off"
                                         required
                                         type="text"
-
                                         id="no_wa"
                                         className="border border-gray-300 rounded-md px-2 py-1"
                                         value={noWa}
@@ -302,8 +307,8 @@ const PemesananUnit = ({ title }) => {
                                 <div className="flex flex-col">
                                     <label htmlFor="alamat">Alamat:</label>
                                     <textarea
+                                        autoComplete="off"
                                         required
-
                                         id="alamat"
                                         rows="4"
                                         className="border border-gray-300 rounded-md px-2 py-1"
@@ -324,8 +329,8 @@ const PemesananUnit = ({ title }) => {
                                         Pesan (Opsional):
                                     </label>
                                     <textarea
+                                        autoComplete="off"
                                         required
-
                                         id="pesan"
                                         rows="4"
                                         className="border border-gray-300 rounded-md px-2 py-1"
@@ -343,7 +348,7 @@ const PemesananUnit = ({ title }) => {
 
                                 <button
                                     type="submit"
-                                    className="bg-green-custom text-white px-4 py-2 rounded-md"
+                                    className="bg-green-custom text-white px-4 py-2 rounded-md hover:bg-blue-gray-400"
                                 >
                                     Submit
                                 </button>

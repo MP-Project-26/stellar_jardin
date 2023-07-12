@@ -19,14 +19,15 @@ import { Link } from "@inertiajs/react";
 
 
 
-const Index = ({ title, galleries }) => {
+const Index = ({ title, galleries, lastBlog, blogs }) => {
+
     return (
         <Layout title={title}>
             <CarouselHeader />
             <AboutUs />
             <SliderImage galleries={galleries} />
-            <OurBlog />
-            <BlogCard />
+            <OurBlog lastBlog={lastBlog}/>
+            <BlogCard blogs={blogs}/>
             <div className="md:py-32 py-10 bg-green-custom bg-opacity-10 ">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">
                     {/* 1 */}

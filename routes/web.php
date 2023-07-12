@@ -76,7 +76,8 @@ Route::delete('/admin/content/delete/{id}', [ContentController::class, 'destroy'
 
 Route::get('/admin/order', [OrderManagementController::class, 'index'])->middleware(['auth', 'verified'])->name('orderManagement');
 Route::post('/admin/tambah_pesanan', [OrderManagementController::class, 'store'])->middleware(['auth', 'verified'])->name('tambah_pesanan');
-
+Route::post('/admin/update_pesanan/{id}', [OrderManagementController::class, 'update'])->middleware(['auth', 'verified'])->name('update_pesanan');
+Route::post('/admin/delete_pesanan/{id}', [OrderManagementController::class, 'destroy'])->middleware(['auth', 'verified'])->name('delete_pesanan');
 
 Route::get('/blog', [BlogContoller::class, 'index']);
 Route::post('/blog/search', [BlogContoller::class, 'search']);

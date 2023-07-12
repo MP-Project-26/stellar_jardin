@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 
 
-export default function OurBlog() {
+export default function OurBlog({lastBlog}) {
+
     return (
         <>
             <div className="py-6 px-4 lg:px-40 md:px-20 bg-gray-200"
@@ -33,7 +34,7 @@ export default function OurBlog() {
                                 <div className="flex w-full justify-center h-full absolute md:items-center py-8 pl-12  lg:items-center lg:pl-20 md:pl-16">
                                     <img
                                         className="object-cover w-full h-full rounded-tl-[3rem] lg:h-[20rem] md:h-[14rem] rounded-br-[3rem] shadow-xl"
-                                        src="/assets/img/gallery/living_room_2.jpg"
+                                        src={lastBlog.image}
                                         alt=""
                                     />
                                 </div>
@@ -45,21 +46,15 @@ export default function OurBlog() {
                             >
                                 <div className="w-full  h-auto flex mb-3 ">
                                     <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold text-black">
-                                        Panduan Lengkap tentang Membeli dan
-                                        Memiliki Rumah
+                                        {lastBlog.title}
                                     </h1>
                                 </div>
-                                <p className="text-justify indent-12 font-medium lg:text-xl md:text-lg ">
-                                    Temukan panduan lengkap tentang properti
-                                    rumah, dari proses pembelian hingga tips
-                                    perawatan. Pelajari segala hal yang perlu
-                                    Anda ketahui sebelum membeli dan memiliki
-                                    rumah impian Anda.
-                                    {/* Dengan kemewahan alami dan desain minimalis yang memukau, kami menghadirkan pengalaman hidup tenang. Setiap rumah di Stellar Jardin dirancang dengan cermat untuk menciptakan lingkungan yang memikat dan memenuhi impian hidup para penghuninya. Stellar Jardin Recidense adalah takdir rumah impian Anda yang menawarkan gaya hidup yang unik dan prestisius. */}
+                                <p className="text-justify indent-12 font-medium lg:text-xl md:text-lg line-clamp-3">
+                                    {lastBlog.content}
                                 </p>
                                 <div className="flex w-full h-full justify-start  lg:w-[80%] md:py-7 py-3">
                                     <Link
-                                        href="/blog"
+                                        href={`/blog/spesifik/${lastBlog.id}`}
                                         className="bg-green-custom p-3 text-white font-medium hover:bg-blue-gray-400"
                                     >
                                         Selengkapnya

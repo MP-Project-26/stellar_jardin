@@ -357,8 +357,8 @@ class ComposerStaticInit7d47645871825b8e438623e2e7c286ea
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -1738,6 +1738,7 @@ class ComposerStaticInit7d47645871825b8e438623e2e7c286ea
         'Illuminate\\Console\\Scheduling\\Schedule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php',
         'Illuminate\\Console\\Scheduling\\ScheduleClearCacheCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php',
         'Illuminate\\Console\\Scheduling\\ScheduleFinishCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php',
+        'Illuminate\\Console\\Scheduling\\ScheduleInterruptCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php',
         'Illuminate\\Console\\Scheduling\\ScheduleListCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php',
         'Illuminate\\Console\\Scheduling\\ScheduleRunCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php',
         'Illuminate\\Console\\Scheduling\\ScheduleTestCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php',
@@ -2035,6 +2036,8 @@ class ComposerStaticInit7d47645871825b8e438623e2e7c286ea
         'Illuminate\\Database\\Events\\MigrationsEnded' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php',
         'Illuminate\\Database\\Events\\MigrationsEvent' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php',
         'Illuminate\\Database\\Events\\MigrationsStarted' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php',
+        'Illuminate\\Database\\Events\\ModelPruningFinished' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/ModelPruningFinished.php',
+        'Illuminate\\Database\\Events\\ModelPruningStarting' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/ModelPruningStarting.php',
         'Illuminate\\Database\\Events\\ModelsPruned' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/ModelsPruned.php',
         'Illuminate\\Database\\Events\\NoPendingMigrations' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php',
         'Illuminate\\Database\\Events\\QueryExecuted' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Events/QueryExecuted.php',
@@ -2263,6 +2266,7 @@ class ComposerStaticInit7d47645871825b8e438623e2e7c286ea
         'Illuminate\\Foundation\\Testing\\Wormhole' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Testing/Wormhole.php',
         'Illuminate\\Foundation\\Validation\\ValidatesRequests' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Validation/ValidatesRequests.php',
         'Illuminate\\Foundation\\Vite' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Vite.php',
+        'Illuminate\\Foundation\\ViteManifestNotFoundException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/ViteManifestNotFoundException.php',
         'Illuminate\\Hashing\\AbstractHasher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/AbstractHasher.php',
         'Illuminate\\Hashing\\Argon2IdHasher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/Argon2IdHasher.php',
         'Illuminate\\Hashing\\ArgonHasher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Hashing/ArgonHasher.php',

@@ -7,7 +7,11 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useEffect } from "react";
 
-export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset }) {
+export default function ContentBlog({
+    data: dataBlog,
+    setItemOffset,
+    itemOffset,
+}) {
     const [dataModalComments, setDataModalComments] = useState([]);
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
@@ -177,8 +181,8 @@ export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset 
                     marginPagesDisplayed={1}
                     pageCount={pageCount}
                     previousLabel="< prev"
-                    pageClassName="bg-green-custom px-4 py-2 rounded-md text-white"
-                    pageLinkClassName="text-xl font-semibold font-roboto"
+                    pageClassName=" text-xl bg-green-custom p-2 rounded-md text-white"
+                    pageLinkClassName=" rounded-md text-white  px-4 py-2 font-semibold font-roboto"
                     previousClassName="bg-green-custom p-2 rounded-md text-white"
                     previousLinkClassName="text-xl font-semibold font-roboto"
                     nextClassName="bg-green-custom p-2 rounded-md text-white"

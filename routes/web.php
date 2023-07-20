@@ -34,6 +34,7 @@ use App\Http\Controllers\OrderManagementController;
 
 
 
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return Inertia::render('About');
@@ -44,7 +45,6 @@ Route::get('/type', [GalleriesController::class, 'index']);
 Route::get('/type/{section}', [GalleriesController::class, 'index']);
 Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
 Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
-Route::get('/', [HomeController::class, 'index']);
 Route::get('/pemesanan_unit', [PemesananUnitController::class, 'index']);
 Route::post('/pemesanan_unit', [PemesananUnitController::class, 'store']);
 

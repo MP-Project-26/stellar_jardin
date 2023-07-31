@@ -8,6 +8,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRef } from "react";
 import { FaEdit } from "react-icons/fa";
+import JoditEditor from "jodit-react";
 
 export default function ({ dataBlog }) {
     const dataSearch = ["Home", "Forniture", "Office", "Kitchen"];
@@ -24,8 +25,9 @@ export default function ({ dataBlog }) {
         content: "",
         tags: [],
     });
+    const [content, setContent] = useState("");
+    const editor = useRef(null);
 
-    
     useEffect(() => {
         setDataTags(dataBlog.tags);
     }, [dataBlog]);
@@ -168,7 +170,24 @@ export default function ({ dataBlog }) {
                                 className=" py-[2rem]"
                             />
                             <InputLabel htmlFor="content" value="content" />
-                            <Textarea
+                            <JoditEditor
+                                ref={editor}
+                                value={
+                                    content || dataBlog.content || data.content
+                                }
+                                className=""
+                                // config={config}
+                                // tabIndex={1} // tabIndex of textarea
+                                // onBlur={(newContent) =>{
+                                //     setContent(newContent);
+                                //     setData("content", newContent);
+                                // }} // preferred to use only this option to update the content for performance reasons
+                                onChange={(newContent) => {
+                                    setContent(newContent);
+                                    setData("content", newContent);
+                                }}
+                            />
+                            {/* <Textarea
                                 required
                                 id="content"
                                 name="content"
@@ -183,7 +202,7 @@ export default function ({ dataBlog }) {
                                 }
                                 placeholder="content"
                                 className="border  p-2 border-gray-300 scrollModal_type focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                            />
+                            /> */}
                             <InputLabel htmlFor="tags" value="tags" />
                             <TextInput
                                 id="tags"

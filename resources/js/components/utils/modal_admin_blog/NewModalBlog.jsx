@@ -28,13 +28,7 @@ export default function newModalBlog() {
     const editor = useRef(null);
     const [content, setContent] = useState("");
 
-    // const config = useMemo(
-    //     {
-    //         readonly: false, // all options from https://xdsoft.net/jodit/docs/,
-    //         placeholder: placeholder || "Start typings...",
-    //     },
-    //     [placeholder]
-    // );
+    
 
     useEffect(() => {
         console.log(content);
@@ -63,33 +57,33 @@ export default function newModalBlog() {
 
     const submit = async (e) => {
         e.preventDefault();
-        // if (!data.image) {
-        //     setErr("Gambar tidak boleh kosong");
-        //     setTimeout(() => {
-        //         setErr("");
-        //     }, 3000);
-        //     return;
-        // }
+        if (!data.image) {
+            setErr("Gambar tidak boleh kosong");
+            setTimeout(() => {
+                setErr("");
+            }, 3000);
+            return;
+        }
 
-        // const formData = new FormData();
-        // formData.append("title", data.title);
-        // formData.append("author", data.author);
-        // formData.append("image", data.image);
-        // formData.append("content", data.content);
-        // formData.append("tags", data.tags);
+        const formData = new FormData();
+        formData.append("title", data.title);
+        formData.append("author", data.author);
+        formData.append("image", data.image);
+        formData.append("content", data.content);
+        formData.append("tags", data.tags);
 
-        // const response = await axios.post("/admin/blog", formData, {
-        //     headers: {
-        //         "Content-Type": "multipart/form-data",
-        //     },
-        // });
+        const response = await axios.post("/admin/blog", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
 
-        // if (response.status) {
-        //     window.my_modal_1.close();
-        //     setTimeout(() => {
-        //         window.location.reload();
-        //     }, 1500);
-        // }
+        if (response.status) {
+            window.my_modal_1.close();
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        }
     };
     return (
         <>
@@ -182,26 +176,20 @@ export default function newModalBlog() {
                                 className=" py-[2rem] hidden"
                             />
                             <InputLabel htmlFor="content" value="content" />
-                            {/* <Textarea
-                                required
-                                id="content"
-                                name="content"
-                                type="text"
-                                value={data.content}
-                                onChange={(e) =>
-                                    setData("content", e.target.value)
-                                }
-                                placeholder="content"
-                                className="border  p-2 border-gray-300 scrollModal_type focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                            /> */}
                             <JoditEditor
                                 ref={editor}
                                 value={content}
                                 className=""
                                 // config={config}
-                                tabIndex={1} // tabIndex of textarea
-                                onBlur={(newContent) => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-                                onChange={(newContent) => {}}
+                                // tabIndex={1} // tabIndex of textarea
+                                // onBlur={(newContent) =>{
+                                //     setContent(newContent);
+                                //     setData("content", newContent);
+                                // }} // preferred to use only this option to update the content for performance reasons
+                                onChange={(newContent) => {
+                                    setContent(newContent);
+                                    setData("content", newContent);
+                                }}
                             />
                             <InputLabel htmlFor="tags" value="tags" />
                             <TextInput

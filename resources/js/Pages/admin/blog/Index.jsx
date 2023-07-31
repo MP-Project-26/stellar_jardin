@@ -5,6 +5,7 @@ import axios from "axios";
 import moment from "moment/moment";
 import { useState } from "react";
 import { useEffect } from "react";
+import parse from "html-react-parser";
 
 export default function Index({ auth, dataBlog }) {
     const [data, setData] = useState(dataBlog);
@@ -87,7 +88,7 @@ export default function Index({ auth, dataBlog }) {
                                         {res?.tags?.length}
                                     </td>
                                     <td className=" border-r paragraph-table-Blog h-[8rem] mb-3 text-justify">
-                                        {res?.content}
+                                        {parse(res?.content)}
                                     </td>
                                     <td className=" border-r">{res?.views}</td>
                                     <td className=" border-r">

@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useEffect } from "react";
+import parse from "html-react-parser";
 
 export default function ContentBlog({
     data: dataBlog,
@@ -75,9 +76,9 @@ export default function ContentBlog({
                                 </Link>
                             ))}
                         </div>
-                        <p className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
-                            {item.content}
-                        </p>
+                        <div className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
+                           {parse(item.content)}
+                        </div>
                         <div className="w-full flex justify-between items-center">
                             <div className="flex  flex-row">
                                 <div className="bg-green-custom px-5 py-2 flex gap-2 justify-center items-center ">

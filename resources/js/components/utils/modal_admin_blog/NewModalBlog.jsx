@@ -5,10 +5,10 @@ import TextInput from "@/Components/login/TextInput";
 import { useForm } from "@inertiajs/react";
 import { Textarea } from "@material-tailwind/react";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { FaEdit } from "react-icons/fa";
 import InputError from "@/Components/login/InputError";
+import JoditEditor from "jodit-react";
 
 export default function newModalBlog() {
     const dataSearch = ["Home", "Forniture", "Office", "Kitchen"];
@@ -24,6 +24,21 @@ export default function newModalBlog() {
         content: "",
         tags: [],
     });
+
+    const editor = useRef(null);
+    const [content, setContent] = useState("");
+
+    // const config = useMemo(
+    //     {
+    //         readonly: false, // all options from https://xdsoft.net/jodit/docs/,
+    //         placeholder: placeholder || "Start typings...",
+    //     },
+    //     [placeholder]
+    // );
+
+    useEffect(() => {
+        console.log(content);
+    }, [content]);
 
     const removeTags = (indexToRemove) => {
         setDataTags([
@@ -48,33 +63,33 @@ export default function newModalBlog() {
 
     const submit = async (e) => {
         e.preventDefault();
-        if (!data.image) {
-            setErr("Gambar tidak boleh kosong");
-            setTimeout(() => {
-                setErr("");
-            }, 3000);
-            return;
-        }
+        // if (!data.image) {
+        //     setErr("Gambar tidak boleh kosong");
+        //     setTimeout(() => {
+        //         setErr("");
+        //     }, 3000);
+        //     return;
+        // }
 
-        const formData = new FormData();
-        formData.append("title", data.title);
-        formData.append("author", data.author);
-        formData.append("image", data.image);
-        formData.append("content", data.content);
-        formData.append("tags", data.tags);
+        // const formData = new FormData();
+        // formData.append("title", data.title);
+        // formData.append("author", data.author);
+        // formData.append("image", data.image);
+        // formData.append("content", data.content);
+        // formData.append("tags", data.tags);
 
-        const response = await axios.post("/admin/blog", formData, {
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
-        });
+        // const response = await axios.post("/admin/blog", formData, {
+        //     headers: {
+        //         "Content-Type": "multipart/form-data",
+        //     },
+        // });
 
-        if (response.status) {
-            window.my_modal_1.close();
-            setTimeout(() => {
-                window.location.reload();
-            }, 1500);
-        }
+        // if (response.status) {
+        //     window.my_modal_1.close();
+        //     setTimeout(() => {
+        //         window.location.reload();
+        //     }, 1500);
+        // }
     };
     return (
         <>
@@ -167,7 +182,7 @@ export default function newModalBlog() {
                                 className=" py-[2rem] hidden"
                             />
                             <InputLabel htmlFor="content" value="content" />
-                            <Textarea
+                            {/* <Textarea
                                 required
                                 id="content"
                                 name="content"
@@ -178,6 +193,15 @@ export default function newModalBlog() {
                                 }
                                 placeholder="content"
                                 className="border  p-2 border-gray-300 scrollModal_type focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                            /> */}
+                            <JoditEditor
+                                ref={editor}
+                                value={content}
+                                className=""
+                                // config={config}
+                                tabIndex={1} // tabIndex of textarea
+                                onBlur={(newContent) => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
+                                onChange={(newContent) => {}}
                             />
                             <InputLabel htmlFor="tags" value="tags" />
                             <TextInput

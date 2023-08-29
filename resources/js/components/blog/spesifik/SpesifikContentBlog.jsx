@@ -175,7 +175,7 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                                               </p>
                                           </div>
                                       </div>
-                                      <p className=" m-0 xl:ml-14 font-roboto font-medium text-sm lg:text-lg  px-5 pb-8 break-words ">
+                                      <p className=" m-0 xl:ml-14 font-roboto font-normal text-sm lg:text-lg  px-5 pb-8 break-words ">
                                           {item.note}
                                       </p>
                                   </div>

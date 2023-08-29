@@ -47,7 +47,7 @@ export default function ContentBlog({
     };
     return (
         <>
-            <ModalComments data={dataModalComments} />
+            <ModalComments data={dataModalComments} id={dataModalComments.id} />
             <div className="px-5 w-full lg:w-[65%] flex flex-col gap-[5rem]">
                 {currentItems.map((item, index) => (
                     <div className=" space-y-7" key={index}>
@@ -77,7 +77,7 @@ export default function ContentBlog({
                             ))}
                         </div>
                         <div className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
-                           {parse(item.content)}
+                            {parse(item.content)}
                         </div>
                         <div className="w-full flex justify-between items-center">
                             <div className="flex  flex-row">

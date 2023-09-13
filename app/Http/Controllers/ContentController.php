@@ -24,7 +24,7 @@ class ContentController extends Controller
     }
 
     public function search(Request $request)
-    {
+    { 
         $searchTerm = $request->input('query');
 
         $query = Galleries::with('category');

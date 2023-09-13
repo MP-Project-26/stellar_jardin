@@ -49,7 +49,7 @@ class BlogAdminController extends Controller
                 "tags" => $tagsToArray,
                 "comments" => 0,
                 "views" => 0,
-            ]);
+            ]); 
 
             // $request->image->move(public_path('assets/img/blog'), $imageName);
             Storage::disk('public')->put('assets/img/blog/' . $imageName, file_get_contents($request->image));
@@ -70,7 +70,7 @@ class BlogAdminController extends Controller
      */
     public function show(string $id)
     {
-        // blog Detail 
+        // blog Detail
         $blog = Blog::find($id);
         if (!$blog) {
             return response()->json([

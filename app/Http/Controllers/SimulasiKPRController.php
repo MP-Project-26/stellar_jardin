@@ -44,16 +44,17 @@ class SimulasiKPRController extends Controller
         $simulasi = $bungaPerBulan + $pokokPinjaman;
 
         $cicilanBulanan = $simulasi; //($pinjaman * $bungaPerBulan) / (1 - pow(1 + $bungaPerBulan, -$jumlahBulan));
-        $totalPembayaran = $cicilanBulanan * $jumlahBulan;
+        // $totalPembayaran = $cicilanBulanan * $jumlahBulan;
+
 
 
         $cicilanBulananFormatted = 'Rp ' . number_format($cicilanBulanan, 0, ',', '.');
-        $totalPembayaranFormatted = 'Rp ' . number_format($totalPembayaran, 0, ',', '.');
+        $totalPembayaranFormatted = 'Rp ' . number_format($pinjaman, 0, ',', '.');
         $uangMuka = 'Rp ' . number_format($uangMuka, 0, ',', '.');
 
         return response()->json([
             'cicilan_bulanan' => $cicilanBulananFormatted,
-            'total_pembayaran' => $totalPembayaranFormatted,
+            'jumlah_pengajuan' => $totalPembayaranFormatted,
             'uang_muka' => $uangMuka,
         ]);
     }

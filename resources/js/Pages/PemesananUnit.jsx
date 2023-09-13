@@ -203,9 +203,7 @@ const PemesananUnit = ({ title }) => {
                                             setUnitKavling(e.target.value);
                                         }}
                                     >
-                                        <option value="">
-                                            Pilih Unit/Kavling
-                                        </option>
+
                                         {dataUnitKavling.map((item, index) => (
                                             <option
                                                 key={index}

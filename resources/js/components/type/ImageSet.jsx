@@ -37,7 +37,14 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex  justify-center item-img  hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
+                    onClick={(event) =>
+                        handleImageClick(
+                            event,
+                            item.image,
+                            item.category.category_name,
+                            item.title
+                        )
+                    }
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
@@ -56,7 +63,14 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex lg:gap-[3rem] justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
+                    onClick={(event) =>
+                        handleImageClick(
+                            event,
+                            item.image,
+                            item.category.category_name,
+                            item.title
+                        )
+                    }
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
@@ -75,7 +89,14 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex  justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
+                    onClick={(event) =>
+                        handleImageClick(
+                            event,
+                            item.image,
+                            item.category.category_name,
+                            item.title
+                        )
+                    }
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
@@ -95,7 +116,14 @@ const ImageSet = ({ galleries }) => {
                 <div
                     className="flex  justify-center item-img hover:scale-110 transform transition-all duration-500 ease-in-out"
                     key={index}
-                    onClick={(event) => handleImageClick(event,item.image, item.category.category_name, item.title)}
+                    onClick={(event) =>
+                        handleImageClick(
+                            event,
+                            item.image,
+                            item.category.category_name,
+                            item.title
+                        )
+                    }
                 >
                     <a href={`#${item.id}`}>
                         <CardImage
@@ -135,7 +163,7 @@ const ImageSet = ({ galleries }) => {
         { label: "Denah", value: "Denah" },
     ];
 
-    const handleImageClick = (event,image, category_name, title) => {
+    const handleImageClick = (event, image, category_name, title) => {
         event.preventDefault();
         setIsTransitioning(true);
         setCategoryDenah(category_name);
@@ -159,12 +187,12 @@ const ImageSet = ({ galleries }) => {
     return (
         <>
             <div className="w-full  h-auto flex mb-3 lg:px-40 md:px-20 px-4">
-                    <div className="w-2 bg-green-custom mr-2 lg:mr-5 md:mr-3"></div>
-                    <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold text-green-custom">
-                        GAL
-                        <span className="text-black">ERI</span>
-                    </h1>
-                </div>
+                <div className="w-2 bg-green-custom mr-2 lg:mr-5 md:mr-3"></div>
+                <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold text-green-custom">
+                    GAL
+                    <span className="text-black">ERI</span>
+                </h1>
+            </div>
             <div id="gallery" className="lg:px-40 md:px-20 px-4">
                 <div className="flex justify-center w-auto h-auto items-center relative">
                     <img
@@ -176,11 +204,17 @@ const ImageSet = ({ galleries }) => {
                         alt="image1"
                         className={`w-auto md:rounded-3xl object-cover border-black border  ${
                             isTransitioning ? "transitioning" : ""
-                        } ${categoryDenah === "Denah" ? " m-16 md:m-0 -rotate-90 md:rotate-0 w-auto h-full md:w-[80%]" : ""}`}
+                        } ${
+                            categoryDenah === "Denah"
+                                ? " m-16 md:m-0 -rotate-90 md:rotate-0 w-auto h-full md:w-[80%]"
+                                : ""
+                        }`}
                         style={{ zIndex: selectedImage ? 2 : 1 }}
                     />
                     <div className="flex justify-end items-end w-full h-full absolute z-30 mb-[10%]">
-                        <h1 className="bg-black bg-opacity-30 h-auto py-[1%] px-[5%] text-lg md:text-3xl text-white font-bold">{titles}</h1>
+                        <h1 className="bg-black bg-opacity-30 h-auto py-[1%] px-[5%] text-lg md:text-3xl text-white font-bold">
+                            {titles}
+                        </h1>
                     </div>
                 </div>
                 <div className="py-5">
@@ -215,7 +249,6 @@ const ImageSet = ({ galleries }) => {
                                         infinite={true}
                                         className="image-slider"
                                         renderButtonGroupOutside={true}
-                                        centerMode={true}
                                         centerSlidePercentage={75}
                                         partialVisible={false}
                                         itemClass="carousel-item"
@@ -253,7 +286,7 @@ const ImageSet = ({ galleries }) => {
                                         {Potongan}
                                     </Carousel>
                                 </div>
-                            ):(
+                            ) : (
                                 <div>
                                     <Carousel
                                         responsive={responsive}

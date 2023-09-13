@@ -50,7 +50,7 @@ const SimulasiKPR = ({ title }) => {
                 const cleanJangkaWaktu = data.jangka_waktu.replace(/\D/g, "");
                 const numberJangkaWaktu = parseInt(cleanJangkaWaktu, 10);
 
-                const response = await axios.post("/simulasi_kpr", {
+                const response = await axios.post("/simulasi_kpr/create", {
                     nilai_properti: numberNilaiProperti,
                     persentase_uang_muka: numberpersentaseUangMuka,
                     suku_bunga: numberSukuBunga,
@@ -70,6 +70,10 @@ const SimulasiKPR = ({ title }) => {
             setUangMuka("");
         }
     };
+
+    console.log(cicilanBulanan);
+    console.log(uangMuka);
+    console.log(totalPembayaran);
 
     const validateForm = () => {
         let isValid = true;
@@ -128,7 +132,7 @@ const SimulasiKPR = ({ title }) => {
         } else if (parseInt(data.jangka_waktu) < 1) {
             errors.jangka_waktu = "Jangka Waktu KPR minimal 1 Tahun";
             isValid = false;
-        } else if (parseInt(data.jangka_waktu) > 20) {
+        } else if (parseInt(data.jangka_waktu) > 30) {
             errors.jangka_waktu = "Jangka Waktu KPR  maksimal 20 Tahun";
             isValid = false;
         } else {
@@ -197,7 +201,7 @@ const SimulasiKPR = ({ title }) => {
                                 className="w-full"
                                 id="persentase_uang_muka"
                                 type="number"
-                                name="persentase_uang_muka"
+                                name="persentase_uang_  muka"
                                 onChange={(e) => {
                                     const inputValue = e.target.value;
                                     const numericValue = parseInt(
@@ -284,11 +288,12 @@ const SimulasiKPR = ({ title }) => {
                             <span>|</span>
                             <span>|</span>
                             <span>|</span>
+                            <span>|</span>
                         </div>
                         <input
                             type="range"
                             min={5}
-                            max={20}
+                            max={30}
                             value={data.jangka_waktu}
                             className="range range-secondary"
                             onChange={(e) =>
@@ -300,6 +305,7 @@ const SimulasiKPR = ({ title }) => {
                             <span>10 tahun</span>
                             <span>15 tahun</span>
                             <span>20 tahun</span>
+                            <span>30 tahun</span>
                         </div>
 
                         {errors.jangka_waktu && (

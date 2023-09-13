@@ -43,7 +43,7 @@ Route::get('/about', function () {
 Route::get('/type', [GalleriesController::class, 'index']);
 Route::get('/type/{section}', [GalleriesController::class, 'index']);
 Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
-Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
+Route::post('/simulasi_kpr/create', [SimulasiKPRController::class, 'simulateKPR']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/pemesanan_unit', [PemesananUnitController::class, 'index']);
 Route::post('/pemesanan_unit', [PemesananUnitController::class, 'store']);
@@ -99,6 +99,7 @@ Route::get('/cba', function () {
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
+
 Route::middleware('auth')->group(function () {
     Route::get('admin/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('admin/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -32,7 +32,7 @@ class BlogStoreRequest extends FormRequest
                 'comments' => 'string|max:258',
                 'views' => 'string|max:258',
             ];
-        } else {
+        } else { 
             return [
                 'title' => 'nullable|string|max:258',
                 'author' => 'nullable|string',

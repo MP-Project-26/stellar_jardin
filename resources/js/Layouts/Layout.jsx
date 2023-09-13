@@ -8,6 +8,7 @@ import React from "react";
 import { useEffect } from "react";
 
 export default function Layout({ children, title }) {
+
     useEffect(() => {
         Aos.init({
             once: true,
@@ -16,6 +17,7 @@ export default function Layout({ children, title }) {
             easing: "ease-out-sine",
         });
     }, []);
+
     return (
         <>
             {title && <Head title={title} />}

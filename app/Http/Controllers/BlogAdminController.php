@@ -39,17 +39,19 @@ class BlogAdminController extends Controller
 
 
             $tagsToArray = explode(',', $request->tags);
-            $imageName = Str::random(32) . '.' . $request->image->getClientOriginalExtension();
+
+            //get image name and add
+            $imageName = $request->image->getClientOriginalName();
 
             Blog::create([
                 "title" => $request->title,
                 "author" => $request->author,
-                "image" => "/storage/assets/img/blog/" . $imageName,
+                "image" => $imageName,
                 "content" => $request->content,
                 "tags" => $tagsToArray,
                 "comments" => 0,
                 "views" => 0,
-            ]); 
+            ]);
 
             // $request->image->move(public_path('assets/img/blog'), $imageName);
             Storage::disk('public')->put('assets/img/blog/' . $imageName, file_get_contents($request->image));
@@ -107,19 +109,20 @@ class BlogAdminController extends Controller
 
             $tagsToArray = explode(',', $request->tags);
             if ($request->image) {
-                $imageName = Str::random(32) . '.' . $request->image->getClientOriginalExtension();
+                $imageName = $request->image->getClientOriginalName();
                 $blog->update([
                     "title" => $request->title,
                     "author" => $request->author,
-                    "image" => "/storage/assets/img/blog/" . $imageName,
+                    "image" =>  $imageName,
                     "content" => $request->content,
                     "tags" => $tagsToArray,
                 ]);
 
-                // remove old image
+                // remove old image if exist
                 if (Storage::disk('public')->exists('assets/img/blog/' . $blog->image)) {
                     Storage::disk('public')->delete('assets/img/blog/' . $blog->image);
                 }
+
                 // $request->image->move(public_path('assets/img/blog'), $imageName);
                 Storage::disk('public')->put('assets/img/blog/' . $imageName, file_get_contents($request->image));
             } else {

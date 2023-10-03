@@ -19,7 +19,7 @@ const BlogCard = ({blogs}) => {
                     data-aos="zoom-in-down
                     ">
                         <figure>
-                            <img src={item.image} alt="" />
+                            <img src={`/storage/assets/img/blog/${item.image }`} alt="" />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">{item.title}</h2>

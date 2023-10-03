@@ -6,8 +6,13 @@ import { useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useEffect } from "react";
+import parse from "html-react-parser";
 
-export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset }) {
+export default function ContentBlog({
+    data: dataBlog,
+    setItemOffset,
+    itemOffset,
+}) {
     const [dataModalComments, setDataModalComments] = useState([]);
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
@@ -42,7 +47,7 @@ export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset 
     };
     return (
         <>
-            <ModalComments data={dataModalComments} />
+            <ModalComments data={dataModalComments} id={dataModalComments.id} />
             <div className="px-5 w-full lg:w-[65%] flex flex-col gap-[5rem]">
                 {currentItems.map((item, index) => (
                     <div className=" space-y-7" key={index}>
@@ -54,7 +59,7 @@ export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset 
                             {item.author} - {"Property"}
                         </p>
                         <img
-                            src={item.image}
+                            src={`/storage/assets/img/blog/${item?.image}`}
                             alt=""
                             className="w-[90%] lg:w-full"
                             data-aos="fade-right"
@@ -71,9 +76,9 @@ export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset 
                                 </Link>
                             ))}
                         </div>
-                        <p className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
-                            {item.content}
-                        </p>
+                        <div className="text-lg text-justify text-black paragraph-Blog font-roboto font-medium max-w-full">
+                            {parse(item.content)}
+                        </div>
                         <div className="w-full flex justify-between items-center">
                             <div className="flex  flex-row">
                                 <div className="bg-green-custom px-5 py-2 flex gap-2 justify-center items-center ">
@@ -177,8 +182,8 @@ export default function ContentBlog({ data: dataBlog, setItemOffset, itemOffset 
                     marginPagesDisplayed={1}
                     pageCount={pageCount}
                     previousLabel="< prev"
-                    pageClassName="bg-green-custom px-4 py-2 rounded-md text-white"
-                    pageLinkClassName="text-xl font-semibold font-roboto"
+                    pageClassName=" text-xl bg-green-custom p-2 rounded-md text-white"
+                    pageLinkClassName=" rounded-md text-white  px-4 py-2 font-semibold font-roboto"
                     previousClassName="bg-green-custom p-2 rounded-md text-white"
                     previousLinkClassName="text-xl font-semibold font-roboto"
                     nextClassName="bg-green-custom p-2 rounded-md text-white"

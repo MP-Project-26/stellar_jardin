@@ -3,6 +3,7 @@ import moment from "moment/moment";
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useForm } from "@inertiajs/react";
 import axios from "axios";
+import parse from "html-react-parser";
 
 export default function SpesifikContentBlog({ dataContent: item }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -58,18 +59,18 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                     {item.author} - {"Property"}
                 </p>
                 <img
-                    src={item.image}
+                    src={`/storage/assets/img/blog/${item.image}`}
                     alt=""
                     className="w-[90%] lg:w-full"
                     data-aos="fade-right"
                 />
-                <p
-                    className="text-lg text-justify text-black font-roboto font-medium max-w-full"
+                <div
+                    className="pl-8 text-lg text-justify text-black font-roboto font-medium max-w-full"
                     data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom"
                 >
-                    {item.content}
-                </p>
+                    {parse(item.content)}
+                </div>
                 <div className="w-full flex flex-col gap-10 lg:flex-row justify-between items-center">
                     <div className="text-green-custom flex flex-row items-center gap-5 font-semibold text-xl">
                         <p>Tags</p> <p> : </p>
@@ -174,7 +175,7 @@ export default function SpesifikContentBlog({ dataContent: item }) {
                                               </p>
                                           </div>
                                       </div>
-                                      <p className=" m-0 xl:ml-14 font-roboto font-medium text-sm lg:text-lg  px-5 pb-8 break-words ">
+                                      <p className=" m-0 xl:ml-14 font-roboto font-normal text-sm lg:text-lg  px-5 pb-8 break-words ">
                                           {item.note}
                                       </p>
                                   </div>

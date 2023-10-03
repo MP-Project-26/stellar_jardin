@@ -1,5 +1,7 @@
 import React from "react";
 import moment from "moment/moment";
+import { Link } from "@inertiajs/react";
+
 
 export default function SpesifikPopularBlog({ dataPopular }) {
     return (
@@ -12,13 +14,15 @@ export default function SpesifikPopularBlog({ dataPopular }) {
                     key={index}
                     className="p-5 flex flex-row gap-6 lg:gap-2 justify-center items-center"
                 >
-                    <img src={item.image} alt="" className="w-[45%]" />
+                    <img src={`/storage/assets/img/blog/${item.image}`} alt="" className="w-[45%]" />
                     <div className="flex flex-col gap-1">
-                        <p className="font-roboto text-xl font-medium paragraph-popular">
-                            {item.title}
-                        </p>
+                        <Link
+                         href={`/blog/spesifik/${item.id}`}
+                         className="font-roboto text-xl font-medium paragraph-popular">
+                            {item?.title}
+                        </Link>
                         <p className="font-roboto text-md font-semibold text-green-custom">
-                            {item.author} | Property
+                            {item?.author} | Property
                         </p>
                         <div className="w-[50%] flex gap-5">
                             <div className="flex flex-row gap-2 text-xs items-center">
@@ -48,9 +52,9 @@ export default function SpesifikPopularBlog({ dataPopular }) {
                                     </defs>
                                 </svg>
                                 <p className="text-xs font-semibold font-roboto">
-                                    {item.views < 1000
-                                        ? item.views
-                                        : item.views / 1000 + "k"}
+                                    {item?.views < 1000
+                                        ? item?.views
+                                        : item?.views / 1000 + "k"}
                                 </p>
                             </div>
                             <div className="flex flex-row gap-2 text-xs items-center">
@@ -80,10 +84,10 @@ export default function SpesifikPopularBlog({ dataPopular }) {
                                     </defs>
                                 </svg>
                                 <p className="text-xs font-semibold font-roboto">
-                                    {item.comments
-                                        ? item.comments.length < 1000
-                                            ? item.comments.length
-                                            : item.comments.length / 1000 + "k"
+                                    {item?.comments
+                                        ? item?.comments.length < 1000
+                                            ? item?.comments.length
+                                            : item?.comments.length / 1000 + "k"
                                         : 0}
                                 </p>
                             </div>
@@ -113,7 +117,7 @@ export default function SpesifikPopularBlog({ dataPopular }) {
                                 </defs>
                             </svg>
                             <p className="text-xs font-semibold font-roboto">
-                                {moment(item.date).fromNow()}
+                                {moment(item?.date).fromNow()}
                             </p>
                         </div>
                     </div>

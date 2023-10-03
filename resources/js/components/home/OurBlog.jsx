@@ -34,7 +34,7 @@ export default function OurBlog({lastBlog}) {
                                 <div className="flex w-full justify-center h-full absolute md:items-center py-8 pl-12  lg:items-center lg:pl-20 md:pl-16">
                                     <img
                                         className="object-cover w-full h-full rounded-tl-[3rem] lg:h-[20rem] md:h-[14rem] rounded-br-[3rem] shadow-xl"
-                                        src={lastBlog.image}
+                                        src={`/storage/assets/img/blog/${lastBlog.image}`}
                                         alt=""
                                     />
                                 </div>

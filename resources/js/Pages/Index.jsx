@@ -25,7 +25,7 @@ const Index = ({ title, galleries, lastBlog, blogs }) => {
         <Layout title={title}>
             <CarouselHeader />
             <AboutUs />
-            <SliderImage galleries={galleries} />
+            {/* <SliderImage galleries={galleries} /> */}
             <OurBlog lastBlog={lastBlog}/>
             <BlogCard blogs={blogs}/>
             <div className="md:py-32 py-10 bg-green-custom bg-opacity-10 ">

@@ -34,6 +34,7 @@ use App\Http\Controllers\OrderManagementController;
 
 
 
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return Inertia::render('About');
@@ -43,7 +44,7 @@ Route::get('/about', function () {
 Route::get('/type', [GalleriesController::class, 'index']);
 Route::get('/type/{section}', [GalleriesController::class, 'index']);
 Route::get('/simulasi_kpr', [SimulasiKPRController::class, 'index']);
-Route::post('/simulasi_kpr/create', [SimulasiKPRController::class, 'simulateKPR']);
+Route::post('/simulasi_kpr', [SimulasiKPRController::class, 'simulateKPR']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/pemesanan_unit', [PemesananUnitController::class, 'index']);
 Route::post('/pemesanan_unit', [PemesananUnitController::class, 'store']);
@@ -51,7 +52,7 @@ Route::post('/pemesanan_unit', [PemesananUnitController::class, 'store']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/user', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('user');
-Route::post('/admin/user', [UserController::class, 'store'])->name('createUser');
+Route::post('/admin/user', [UserController::class, 'store'])->middleware(['auth', 'verified'])->name('createUser');
 Route::get('/admin/contact', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('contact');
 
 Route::get('/admin/blog', [BlogAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('blog');

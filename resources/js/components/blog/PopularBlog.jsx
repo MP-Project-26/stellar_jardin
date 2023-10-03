@@ -21,11 +21,13 @@ export default function PopularBlog({ data }) {
                     key={index}
                     className="p-5 flex flex-row gap-6 lg:gap-2 justify-center items-center"
                 >
-                    <img src={item.image} alt="" className="w-[45%]" />
+                    <img src={`/storage/assets/img/blog/${item?.image}`} alt="" className="w-[45%]" />
                     <div className="flex flex-col gap-1">
-                        <p className="font-roboto text-xl font-medium paragraph-popular">
+                        <Link
+                            href={`/blog/spesifik/${item.id}`}
+                         className="font-roboto text-xl font-medium paragraph-popular">
                             {item.title}
-                        </p>
+                        </Link>
                         <p className="font-roboto text-md font-semibold text-green-custom">
                             {item.author} | Property
                         </p>

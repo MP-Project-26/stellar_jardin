@@ -5,10 +5,10 @@ import TextInput from "@/Components/login/TextInput";
 import { useForm } from "@inertiajs/react";
 import { Textarea } from "@material-tailwind/react";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { FaEdit } from "react-icons/fa";
 import InputError from "@/Components/login/InputError";
+import JoditEditor from "jodit-react";
 
 export default function newModalBlog() {
     const dataSearch = ["Home", "Forniture", "Office", "Kitchen"];
@@ -24,6 +24,15 @@ export default function newModalBlog() {
         content: "",
         tags: [],
     });
+
+    const editor = useRef(null);
+    const [content, setContent] = useState("");
+
+    
+
+    useEffect(() => {
+        console.log(content);
+    }, [content]);
 
     const removeTags = (indexToRemove) => {
         setDataTags([
@@ -167,17 +176,20 @@ export default function newModalBlog() {
                                 className=" py-[2rem] hidden"
                             />
                             <InputLabel htmlFor="content" value="content" />
-                            <Textarea
-                                required
-                                id="content"
-                                name="content"
-                                type="text"
-                                value={data.content}
-                                onChange={(e) =>
-                                    setData("content", e.target.value)
-                                }
-                                placeholder="content"
-                                className="border  p-2 border-gray-300 scrollModal_type focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                            <JoditEditor
+                                ref={editor}
+                                value={content}
+                                className=""
+                                // config={config}
+                                // tabIndex={1} // tabIndex of textarea
+                                // onBlur={(newContent) =>{
+                                //     setContent(newContent);
+                                //     setData("content", newContent);
+                                // }} // preferred to use only this option to update the content for performance reasons
+                                onChange={(newContent) => {
+                                    setContent(newContent);
+                                    setData("content", newContent);
+                                }}
                             />
                             <InputLabel htmlFor="tags" value="tags" />
                             <TextInput
